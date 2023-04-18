@@ -46,7 +46,7 @@
     ?>
     
 </style>
-<?php include "./modules/header.html" ?>
+<?php include "./modules/Eheader.html" ?>
 <!-- 
 	<a href="logout.php">Logout</a>
 	<h1>This is the index page</h1>
