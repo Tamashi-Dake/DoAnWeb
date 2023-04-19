@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <meta http-equiv="refresh" content="10" /> -->
     <link
-      href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"
       rel="stylesheet"
-      type="text/css"
+      href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
     />
     <link rel="stylesheet" href="./bootstrap.css" />
     <link rel="stylesheet" href="dumbStyles.css" />
@@ -16,12 +15,28 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
+    <style>
+      .feedback {
+        position: fixed;
+        bottom: 5vh;
+        right: 3vw;
+        min-width: 50px;
+        min-height: 50px;
+        border-radius: 50px;
+        /* display: flex; */
+      }
+      .feedback i {
+        font-size: 1.5em;
+        transform: translate(0%, 20%);
+      }
+    </style>
     <header>
       <div class="left">
         <a href="About-us.php">
@@ -60,6 +75,15 @@
       </div>
     </main>
 
+    <a
+      class="btn btn-danger feedback"
+      href="feedback.php"
+      title="Gửi feedback"
+      target="_blank"
+      ><i class="fas fa-light fa-comment-dots fa-flip-horizontal"></i
+    ></a>
+    <!-- <span class="tooltiptext">Bạn gặp bọ? Báo cáo cho quản lý thôi</span> -->
+
     <footer>
       <div class="row">
         <div class="footer-logo-side">
@@ -87,6 +111,7 @@
             </li>
           </ul>
         </div>
+
         <div class="footer-quick-link">
           <h3>Thông tin chung</h3>
           <a target="_blank" href="about-us.php">

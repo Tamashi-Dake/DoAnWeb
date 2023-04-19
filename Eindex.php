@@ -69,6 +69,7 @@
         </form>
       </div>
     </main>
+    <?php include "./modules/feedback-btn.html" ?>
     <?php include "./modules/footer.html" ?>
 </body>
 </html>
