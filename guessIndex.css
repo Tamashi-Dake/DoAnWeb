@@ -6,7 +6,9 @@
   --search-bar-color: #c5c48d;
   --footer-bottom-color: #1e1c1c;
 }
-
+* {
+  box-sizing: border-box;
+}
 /* main */
 body {
   background-color: beige !important;
@@ -19,7 +21,7 @@ body {
   /* position: center; */
 }
 main {
-  min-height: 100vh;
+  min-height: 90vh;
 }
 .search-bar-wapper {
   background-color: var(--search-bar-color);
