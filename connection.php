@@ -1,23 +1,14 @@
 <?php
-$serverName = "ADMIN"; //serverName\instanceName
-$connectionInfo = array("Database" => "BaiGiuXe", "UID" => "sa", "PWD" => "123456789");
-$conn = sqlsrv_connect($serverName, $connectionInfo);
-
-if ($conn === false) {
-    echo "Connection could not be established.<br />";
-    die(print_r(sqlsrv_errors(), true));
+$servername = "localhost";
+$database = "webbaiguixe";
+$username = "root";
+$password = "123456";
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $database);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 }
-
-
-// Test DB
-
-// $sql = " INSERT INTO testName (ID, tName)
-// VALUES (2, 'Lucas');";
-// $result = sqlsrv_query($conn, $sql);
-// if ($result) {
-//     echo "New records created successfully";
-// } else {
-//     echo "Error: ";
-// }
-
+echo "Connected successfully";
+mysqli_close($conn);
 ?>

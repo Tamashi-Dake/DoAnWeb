@@ -1,3 +1,7 @@
+<?php 
+    // session_start();
+	// include("connection.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,19 +24,12 @@
     
 </style>
 <?php include "../modules/Eheader.html" ?>
-	<main>
 
-      <!-- <div class="search-bar-wapper">
-        <form class="search-bar" action="">
-          <input
-            type="text"
-            placeholder="Nhập vào biển số hoặc ID thẻ"
-            name="search"
-          />
-          <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-      </div> -->
-    </main>
+<section>
+    <h1></h1>
+</section>
+
+      
     <?php include "../modules/feedback-btn.html" ?>
     <?php include "../modules/footer.html" ?>
 </body>
