@@ -18,16 +18,17 @@
 <body>
 <style>
     <?php
-    include "../guessIndex.css";
-    include "../bootstrap.css"
+    include "../../../guessIndex.css";
+    include "../../../bootstrap.css"
     ?>
     
 </style>
-<?php include "../modules/Eheader.html" ?>
+<?php include "../../Eheader.html" ;
+    include "./chiaKhu.html"?>
 
-<main>  </main>
+
       
-    <?php include "../modules/feedback-btn.html" ?>
-    <?php include "../modules/footer.html" ?>
+    <?php include "../../feedback-btn.html" ?>
+    <?php include "../../footer.html" ?>
 </body>
 </html>
