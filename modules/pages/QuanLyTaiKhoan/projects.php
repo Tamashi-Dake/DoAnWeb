@@ -24,7 +24,8 @@
 
     <!-- Navbar + Main Sidebar Container -->
     <?php
-      include "../../adminTools.html"
+      include "../../adminTools.html";
+      include "../../../connection.php";
        ?>
 
       <!-- Content Wrapper. Contains page content -->
@@ -79,8 +80,9 @@
                     <th style="width: 1%">#</th>
                     <th style="width: 10%">Tên tài khoản</th>
                     <th style="width: 10%">Mật khẩu</th>
-                    <th style="width: 20%" class="text-center">Họ Tên</th>
-                    <th style="width: 8%" class="text-center">CCCD</th>
+                    <th style="width: 10%" class="text-center">Họ Tên</th>
+                    <th style="width: 10%" class="text-center">CCCD</th>
+                    <th style="width: 10%" class="text-center">Giới tính</th>
                     <th style="width: 20%" class="text-center">
                     <a class="btn btn-success btn-sm " href="project-add.php">
                         <i class="fas fa-plus"> </i>
@@ -90,26 +92,41 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>#</td>
-                    <td>
-                      <a> lovantam </a>
-                    </td>
+                <?php
+                // Create connection
+			// $connection = new mysqli($servername, $username, $password, $database);
+            // read all row from database table
+			$sql = "SELECT * FROM webbaiguixe.account";
+			$result = $conn->query($sql);
 
-                    <td>vantam123</td>
-                    <td class="text-center">Lò Văn 1</td>
-                    <td class="text-center">1234</td>
-                    <td class="project-actions text-center">
-                      <a class="btn btn-info btn-sm" href="project-edit.php">
-                        <i class="fas fa-pencil-alt"> </i>
+            if (!$result) {
+				die("Invalid query: " . $connection->error);
+			}
+
+            // read data of each row
+			while($row = $result->fetch_assoc()) {
+                echo "<tr>
+                    <td></td>
+                    <td>" . $row["userName"] . "</td>
+                    <td>" . $row["password"] . "</td>
+                    <td>" . $row["name"] . "</td>
+                    <td>" . $row["identityCard"] . "</td>
+                    <td>" . $row["sex"] . "</td>
+                    <td class='project-actions text-center'>
+                      <a class='btn btn-info btn-sm' href='project-edit.php'>
+                        <i class='fas fa-pencil-alt'> </i>
                         Sửa
                       </a>
-                      <a class="btn btn-danger btn-sm" href="#">
-                        <i class="fas fa-trash"> </i>
+                      <a class='btn btn-danger btn-sm' href='#'>
+                        <i class='fas fa-trash'> </i>
                         Xóa
                       </a>
                     </td>
-                  </tr>
+                </tr>";
+            }
+
+            $conn->close();
+            ?>
                 </tbody>
               </table>
             </div>
