@@ -15,7 +15,7 @@
 // 	header('Location: index.html');
 // 	exit;
 // }
-?>
+// ?>
 
 
 <!DOCTYPE html>
