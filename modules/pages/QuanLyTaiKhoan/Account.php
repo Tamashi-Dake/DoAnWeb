@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ADEPRO - Quản lý tài khoản</title>
+    <title>ADEPRO - Quản lý ô đỗ</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link
@@ -26,7 +26,7 @@
     <?php
       include "../../adminTools.html";
       include "../../../connection.php";
-       ?>
+    ?>
 
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
@@ -60,16 +60,15 @@
                 <thead>
                   <tr>
                     <th style="width: 1%">#</th>
-                    <th style="width: 10%">Tên tài khoản</th>
+                    <th style="width: 10%">Tên khu</th>
                     <th style="width: 10%">Mật khẩu</th>
                     <th style="width: 10%" class="text-center">Họ Tên</th>
                     <th style="width: 10%" class="text-center">CCCD</th>
                     <th style="width: 10%" class="text-center">Giới tính</th>
                     <th style="width: 20%" class="text-center">
-                    <a class="btn btn-success btn-sm " href="Account-add.php">
-                        <i class="fas fa-plus"> </i>
-                        Thêm
-                      </a>
+                    <?php
+                    include "Account-add.php";
+                    ?>
                   </th>
                   </tr>
                 </thead>
@@ -94,11 +93,9 @@
                     <td>" . $row["name"] . "</td>
                     <td>" . $row["identityCard"] . "</td>
                     <td>" . $row["sex"] . "</td>
-                    <td class='project-actions text-center'>
-                      <a class='btn btn-info btn-sm' href='Account-edit.php'>
-                        <i class='fas fa-pencil-alt'> </i>
-                        Sửa
-                      </a>
+                    <td class='project-actions text-center'>";
+                    include "Account-edit.php";
+                    echo"
                       <a class='btn btn-danger btn-sm' href='#'>
                         <i class='fas fa-trash'> </i>
                         Xóa
