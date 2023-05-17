@@ -9,18 +9,22 @@
     <style>
       body {
         font-family: Arial, Helvetica, sans-serif;
+        overflow: auto;
       }
 
       .row {
-        justify-content: center;
+
+      }
+      .form-group{
+        text-align:left;  
       }
       /* The Modal (background) */
       .modal {
         display: none;
         position: fixed;
         z-index: 3;
-        padding-top: 100px;
-        right: 30%;
+        /* padding-top: 100px; */
+        /* right: 30%; */
         top: 0;
         width: 100%;
         height: 100%;
@@ -35,7 +39,7 @@
         margin: auto;
         padding: 0;
         border: 1px solid #888;
-        width: 80%;
+        width: 80% !important;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
           0 6px 20px 0 rgba(0, 0, 0, 0.19);
         animation-name: animatetop;
@@ -78,6 +82,9 @@
       .modal-body {
         padding: 2px 16px;
       }
+      select{
+        margin-left: 20% !important;
+      }
     </style>
 
     <!-- Trigger/Open The Modal -->
@@ -86,17 +93,17 @@
       Thêm
     </a>
     <!-- The Modal -->
-    <div id="myModal" class="modal">
+    <div id="myModal" class="modal" style="overflow:auto;">
       <!-- Modal content -->
       <div class="modal-content">
         <div class="modal-header">
-          <h2>Modal Header</h2>
+          <h2>Thêm tài khoản</h2>
           <span class="close">&times;</span>
         </div>
         <div class="modal-body">
-          <div class="row">
+          <div class="row" style=" justify-content: center;">
             <div class="col-md-6">
-              <div class="card card-primary">
+              <div class="card card-primary" style="box-shadow:none;">
                 <div class="card-body">
                   <div class="form-group">
                     <label for="inputUser">Tên tài khoản</label>
@@ -126,7 +133,14 @@
                     />
                   </div>
                   <div class="form-group">
-                    <label for="inputCCCD">Căn cước công dân</label>
+                    <label for="selectChucVu">Chức vụ</label>
+                    <select>
+                    <option value="employee">Nhân viên</option>
+                    <option value="admin">Quản lý</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputName">Căn cước công dân</label>
                     <input
                       type="text"
                       id="inputCCCD"
@@ -134,91 +148,40 @@
                       value="#"
                     />
                   </div>
+                  <div class="form-group">
+                    <label for="inputName">Ngày sinh</label>
+                    <input
+                      type="text"
+                      id="inputBday"
+                      class="form-control"
+                      value="#"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="selectChucVu">Giới tính</label>
+                    <select>
+                    <option value="1">Nam</option>
+                    <option value="0">Nữ</option>
+                    </select>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-12">
+          <div class="row"style=" justify-content: space-between;">
+
               <a href="#" class="btn btn-secondary">Cancel</a>
               <input
                 type="submit"
                 value="Create new Account"
                 class="btn btn-success float-right"
               />
-            </div>
+
           </div>
         </div>
       </div>
     </div>
 
-
-
-    <div id="editModal" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2>Modal Header</h2>
-          <span class="close">&times;</span>
-        </div>
-        <div class="modal-body">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="card card-primary">
-                <div class="card-body">
-                  <div class="form-group">
-                    <label for="inputUser">Tên tài khoản</label>
-                    <input
-                      type="text"
-                      id="inputUser"
-                      class="form-control"
-                      value="#"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="inputPassword">Mật khẩu</label>
-                    <input
-                      type="text"
-                      id="inputPassword"
-                      class="form-control"
-                      value="#"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="inputName">Họ tên</label>
-                    <input
-                      type="text"
-                      id="inputName"
-                      class="form-control"
-                      value="#"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="inputCCCD">Căn cước công dân</label>
-                    <input
-                      type="text"
-                      id="inputCCCD"
-                      class="form-control"
-                      value="#"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <a href="#" class="btn btn-secondary">Cancel</a>
-              <input
-                type="submit"
-                value="Save Changes"
-                class="btn btn-success float-right"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <script>
       
@@ -248,31 +211,6 @@
         }
       };
 
-            // Get the modal
-            var modal1 = document.getElementById("editModal");
-
-// Get the button that opens the modal
-var btn1 = document.getElementById("editBtn");
-
-// Get the <span> element that closes the modal
-var span1 = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal
-btn1.onclick = function () {
-  modal1.style.display = "block";
-};
-
-// When the user clicks on <span> (x), close the modal
-span1.onclick = function () {
-  modal1.style.display = "none";
-};
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
     </script>
   </body>
 </html>
