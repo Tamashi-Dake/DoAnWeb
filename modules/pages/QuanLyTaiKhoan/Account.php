@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ADEPRO - Quản lý ô đỗ</title>
+    <title>ADEPRO - Quản lý Tài Khoản</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link
@@ -63,7 +63,9 @@
                     <th style="width: 10%">Tên khu</th>
                     <th style="width: 10%">Mật khẩu</th>
                     <th style="width: 10%" class="text-center">Họ Tên</th>
+                    <th style="width: 10%" class="text-center">Chức vụ</th>
                     <th style="width: 10%" class="text-center">CCCD</th>
+                    <th style="width: 10%" class="text-center">Ngày sinh</th>
                     <th style="width: 10%" class="text-center">Giới tính</th>
                     <th style="width: 20%" class="text-center">
                     <?php
@@ -91,7 +93,9 @@
                     <td>" . $row["userName"] . "</td>
                     <td>" . $row["password"] . "</td>
                     <td>" . $row["name"] . "</td>
+                    <td>" . $row["position"] . "</td>
                     <td>" . $row["identityCard"] . "</td>
+                    <td>" . $row["birth"] . "</td>
                     <td>" . $row["sex"] . "</td>
                     <td class='project-actions text-center'>";
                     include "Account-edit.php";

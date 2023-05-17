@@ -25,14 +25,80 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title">Default Modal</h4>
+              <h4 class="modal-title">Sửa thông tin tài khoản</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              <p>One fine body&hellip;</p>
+          <div class="row" style="display:block">
+            <div class="col-md-6" style="    max-width: 100%;">
+              <div class="card card-primary"style="box-shadow:none; margin:0;">
+              <div class="card-body">
+                  <div class="form-group">
+                    <label for="inputUser">Tên tài khoản</label>
+                    <input
+                      type="text"
+                      id="inputUser"
+                      class="form-control"
+                      value="#"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="inputPassword">Mật khẩu</label>
+                    <input
+                      type="text"
+                      id="inputPassword"
+                      class="form-control"
+                      value="#"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="inputName">Họ tên</label>
+                    <input
+                      type="text"
+                      id="inputName"
+                      class="form-control"
+                      value="#"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="selectChucVu">Chức vụ</label>
+                    <select>
+                    <option value="employee">Nhân viên</option>
+                    <option value="admin">Quản lý</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputName">Căn cước công dân</label>
+                    <input
+                      type="text"
+                      id="inputCCCD"
+                      class="form-control"
+                      value="#"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="inputName">Ngày sinh</label>
+                    <input
+                      type="text"
+                      id="inputBday"
+                      class="form-control"
+                      value="#"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="selectChucVu">Giới tính</label>
+                    <select>
+                    <option value="1">Nam</option>
+                    <option value="0">Nữ</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
             <div class="modal-footer justify-content-between">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               <button type="button" class="btn btn-primary">Save changes</button>
@@ -43,34 +109,6 @@
         <!-- /.modal-dialog -->
       </div>
       <!-- /.modal -->
-
-      <div class="modal fade" id="modal-overlay">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="overlay">
-                <i class="fas fa-2x fa-sync fa-spin"></i>
-            </div>
-            <div class="modal-header">
-              <h4 class="modal-title">Default Modal</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <p>One fine body&hellip;</p>
-            </div>
-            <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-          <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-      </div>
-      <!-- /.modal -->
-
-
 
 <!-- jQuery -->
 <script src="../../plugins/jquery/jquery.min.js"></script>
