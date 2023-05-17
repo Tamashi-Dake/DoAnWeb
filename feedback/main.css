@@ -27,6 +27,22 @@ body {
     border: 2px solid rgb(226, 147, 0);
 }
 
+.close-feedback {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #fff;
+    padding: 12px;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.close-feedback:hover {
+    opacity: 0.9;
+    background-color: rgb(226, 147, 0);
+    cursor: pointer;
+}
+
 .name-feedback {
     position: relative;
     text-align: center;
