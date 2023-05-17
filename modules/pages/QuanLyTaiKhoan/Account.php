@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ADEPRO - Quản lý tài khoản</title>
+    <title>ADEPRO - Quản lý ô đỗ</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link
@@ -26,7 +26,7 @@
     <?php
       include "../../adminTools.html";
       include "../../../connection.php";
-       ?>
+    ?>
 
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
@@ -52,42 +52,23 @@
           <!-- Default box -->
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Projects</h3>
-
-              <div class="card-tools">
-                <button
-                  type="button"
-                  class="btn btn-tool"
-                  data-card-widget="collapse"
-                  title="Collapse"
-                >
-                  <i class="fas fa-minus"></i>
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-tool"
-                  data-card-widget="remove"
-                  title="Remove"
-                >
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
+              <h3 class="card-title">Danh sách tài khoản</h3>
+             
             </div>
             <div class="card-body p-0">
               <table class="table table-striped projects">
                 <thead>
                   <tr>
                     <th style="width: 1%">#</th>
-                    <th style="width: 10%">Tên tài khoản</th>
+                    <th style="width: 10%">Tên khu</th>
                     <th style="width: 10%">Mật khẩu</th>
                     <th style="width: 10%" class="text-center">Họ Tên</th>
                     <th style="width: 10%" class="text-center">CCCD</th>
                     <th style="width: 10%" class="text-center">Giới tính</th>
                     <th style="width: 20%" class="text-center">
-                    <a class="btn btn-success btn-sm " href="project-add.php">
-                        <i class="fas fa-plus"> </i>
-                        Thêm
-                      </a>
+                    <?php
+                    include "Account-add.php";
+                    ?>
                   </th>
                   </tr>
                 </thead>
@@ -112,11 +93,9 @@
                     <td>" . $row["name"] . "</td>
                     <td>" . $row["identityCard"] . "</td>
                     <td>" . $row["sex"] . "</td>
-                    <td class='project-actions text-center'>
-                      <a class='btn btn-info btn-sm' href='project-edit.php'>
-                        <i class='fas fa-pencil-alt'> </i>
-                        Sửa
-                      </a>
+                    <td class='project-actions text-center'>";
+                    include "Account-edit.php";
+                    echo"
                       <a class='btn btn-danger btn-sm' href='#'>
                         <i class='fas fa-trash'> </i>
                         Xóa
@@ -164,9 +143,7 @@
     <script src="../../plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
     <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE App -->
+    <!-- AdminLTE theme -->
     <script src="../../dist/js/adminlte.min.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="../../dist/js/demo.js"></script>
   </body>
 </html>
