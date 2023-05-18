@@ -52,8 +52,14 @@
           <!-- Default box -->
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Danh sách tài khoản</h3>
-             
+              <h3 class="card-titl e">Danh sách tài khoản</h3>
+             <div style="margin-left:auto;">
+             <div class="input-group rounded">
+  <input type="search" class="form-control rounded" placeholder="Tìm kiếm" aria-label="Search" aria-describedby="search-addon" />
+  <span class="input-group-text border-0" id="search-addon">
+    <i class="fas fa-search"></i>
+  </span>
+</div></div>
             </div>
             <div class="card-body p-0">
               <table class="table table-striped projects">
