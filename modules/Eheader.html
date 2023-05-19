@@ -131,12 +131,16 @@
         background-color: var(--toolbar-color);
         color: var(--search-bar-color);
         z-index: 2;
+        justify-content: space-around;
       }
       .toolbar div {
         margin-left: 5%;
       }
+      .toolbar .fas {
+        margin-right: 10px;
+      }
     </style>
-    <header>
+    <header style="display: flex">
       <div class="left">
         <a href="About-us.php">
           <img
@@ -158,15 +162,25 @@
         <div id="pageNameDes">Hệ thống quản lý phương tiện tích hợp</div>
       </div>
     </header>
-    <!-- <nav class="toolbar">
+    <nav class="toolbar">
       <div>
-        <a href="./QuanLyTheXe/theXe.php"
-          ><i class="fas fa-regular fa-id-card"></i> Nhận xe</a
+        <a href="/DoAnWeb/Eindex.php"><i class="fas fa-info"></i> Trang chủ</a>
+      </div>
+      <div>
+        <a href="guiXe.php"
+          ><i class="fas fa-solid fa-car-side"></i>Quản lý phương tiện</a
         >
       </div>
       <div>
-        <a href="guiXe.php"><i class="fas fa-solid fa-car-side"></i> Trả xe</a>
+        <a href="/DoAnWeb/modules/pages/QuanLyTheXe/Card.php"
+          ><i class="fas fa-address-card"></i>Quản lý thẻ xe</a
+        >
       </div>
-    </nav> -->
+      <div>
+        <a href="/DoAnWeb/modules/feedback/feedback.html"
+          ><i class="fas fa-solid fa-light fa-comment-dots"></i>Báo lỗi</a
+        >
+      </div>
+    </nav>
   </body>
 </html>

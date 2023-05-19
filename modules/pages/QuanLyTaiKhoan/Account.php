@@ -55,18 +55,18 @@
               <h3 class="card-titl e">Danh sách tài khoản</h3>
              <div style="margin-left:auto;">
              <div class="input-group rounded">
-  <input type="search" class="form-control rounded" placeholder="Tìm kiếm" aria-label="Search" aria-describedby="search-addon" />
-  <span class="input-group-text border-0" id="search-addon">
-    <i class="fas fa-search"></i>
-  </span>
-</div></div>
+            <input type="search" class="form-control rounded" placeholder="Tìm kiếm" aria-label="Search" aria-describedby="search-addon" />
+            <span class="input-group-text border-0" id="search-addon">
+               <i class="fas fa-search"></i>
+              </span>
+              </div></div>
             </div>
             <div class="card-body p-0">
               <table class="table table-striped projects">
                 <thead>
                   <tr>
                     <th style="width: 1%">#</th>
-                    <th style="width: 10%">Tên khu</th>
+                    <th style="width: 10%">Tên tài khoản</th>
                     <th style="width: 10%">Mật khẩu</th>
                     <th style="width: 10%" class="text-center">Họ Tên</th>
                     <th style="width: 10%" class="text-center">Chức vụ</th>
@@ -82,46 +82,46 @@
                 </thead>
                 <tbody>
                 <?php
-                // Create connection
-			// $connection = new mysqli($servername, $username, $password, $database);
-            // read all row from database table
-			$sql = "SELECT * FROM webbaiguixe.account";
-			$result = $conn->query($sql);
+                        // Create connection
+              // $connection = new mysqli($servername, $username, $password, $database);
+                    // read all row from database table
+              $sql = "SELECT * FROM webbaiguixe.account";
+              $result = $conn->query($sql);
 
-            if (!$result) {
-				die("Invalid query: " . $connection->error);
-			}
+                    if (!$result) {
+                die("Invalid query: " . $connection->error);
+              }
 
-            // read data of each row
-			while($row = $result->fetch_assoc()) {
-                echo "<tr>
-                    <td></td>
-                    <td>" . $row["userName"] . "</td>
-                    <td>" . $row["password"] . "</td>
-                    <td>" . $row["name"] . "</td>
-                    <td>" . $row["position"] . "</td>
-                    <td>" . $row["identityCard"] . "</td>
-                    <td>" . $row["birth"] . "</td>
-                    <td>" . $row["sex"] . "</td>
-                    <td class='project-actions text-center'>";
-                    include "Account-edit.php";
-                    echo"
-                      <a class='btn btn-danger btn-sm' href='#'>
-                        <i class='fas fa-trash'> </i>
-                        Xóa
-                      </a>
-                    </td>
-                </tr>";
-            }
+                    // read data of each row
+              while($row = $result->fetch_assoc()) {
+                        echo "<tr>
+                            <td></td>
+                            <td>" . $row["userName"] . "</td>
+                            <td>" . $row["password"] . "</td>
+                            <td>" . $row["name"] . "</td>
+                            <td>" . $row["position"] . "</td>
+                            <td>" . $row["identityCard"] . "</td>
+                            <td>" . $row["birth"] . "</td>
+                            <td>" . $row["sex"] . "</td>
+                            <td class='project-actions text-center'>";
+                            include "Account-edit.php";
+                            echo"
+                              <a class='btn btn-danger' href='#'>
+                                <i class='fas fa-trash'> </i>
+                                Xóa
+                              </a>
+                            </td>
+                        </tr>";
+                    }
 
-            $conn->close();
-            ?>
-                </tbody>
-              </table>
-            </div>
-            <!-- /.card-body -->
-          </div>
-          <!-- /.card -->
+                    $conn->close();
+                    ?>
+                        </tbody>
+                      </table>
+                    </div>
+                    <!-- /.card-body -->
+                  </div>
+                  <!-- /.card -->
         </section>
         <!-- /.content -->
       </div>

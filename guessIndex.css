@@ -52,3 +52,7 @@ main {
   color: var(--link-color);
   background-color: var(--header-color);
 }
+
+.form-group {
+  text-align: left;
+}
