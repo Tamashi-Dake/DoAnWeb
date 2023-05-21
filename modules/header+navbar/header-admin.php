@@ -4,9 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <meta http-equiv="refresh" content="10" /> -->
-    <!-- <link rel="stylesheet" href="./bootstrap.css" /> -->
-    <!-- <link rel="stylesheet" href="header.css" /> -->
+    <link rel="stylesheet" href="/DoAnWeb/bootstrap.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -118,26 +116,26 @@
         color: var(--link-color);
       }
       
-  .toolbar {
-    display: flex;
-    align-items: center;
-    /* gap: 10%; */
-    position: sticky;
-    top: 0;
-    width: 100%;
-    height: 8vh;
-    border-top: 1px solid var(--header-text-color);
-    background-color: var(--toolbar-color);
-    color: var(--search-bar-color);
-    z-index: 2;
-    justify-content: space-around;
-  }
-  .toolbar div {
-    margin-left: 5%;
-  }
-  .toolbar .fas {
-    margin-right: 10px;
-  }
+      .toolbar {
+        display: flex;
+        align-items: center;
+        /* gap: 10%; */
+        position: sticky;
+        top: 0;
+        width: 100%;
+        height: 8vh;
+        border-top: 1px solid var(--header-text-color);
+        background-color: var(--toolbar-color);
+        color: var(--search-bar-color);
+        z-index: 2;
+        justify-content: space-around;
+      }
+      .toolbar div {
+        margin-left: 5%;
+      }
+      .toolbar .fas {
+        margin-right: 10px;
+      }
     </style>
     <header style="display: flex">
       <div class="left">
@@ -163,9 +161,19 @@
     </header>
     <nav class="toolbar">
   <div>
-    <a href="/DoAnWeb/modules/pages/QuanLyTaiKhoan/Account.php"><i class="fas fa-users"></i> Tài khoản</a>
+    <a href="/DoAnWeb/modules/pages/QuanLyTaiKhoan/Account.php">
+      <i class="fas fa-users"></i>Quản lý tài khoản</a>
   </div>
   <div>
+    <a href="/DoAnWeb/modules/pages/QuanLyTaiKhoan/">
+    <i class="nav-icon fas fa-table"></i>
+                <p>Quản lý ô đỗ</p>
+    </a>
+  </div>
+
+
+
+  <!-- <div>
     <a href="guiXe.php"
       ><i class="fas fa-solid fa-car-side"></i>Quản lý phương tiện</a
     >
@@ -174,11 +182,57 @@
     <a href="/DoAnWeb/modules/pages/QuanLyTheXe/Card.php"
       ><i class="fas fa-address-card"></i>Quản lý thẻ xe</a
     >
+  </div> -->
+
+ <!-- Thống kê -->
+ <div class="dropdown show">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown link
+  </a>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
   </div>
+</div>
+  <!-- <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Thống kê
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="#">
+        <i class="fas fa-car nav-icon"></i>
+                      <p>Lượng xe vào ra</p>
+                    </a>
+      <a class="dropdown-item" href="#"><i class="fas fa-money-bill nav-icon"></i>
+                      <p>Báo cáo doanh thu</p></a>
+  </div>
+</div> -->
+  <!-- feedback -->
   <div>
-    <a href="/DoAnWeb/modules/feedback/feedback.html"
-      ><i class="fas fa-solid fa-light fa-comment-dots"></i>Báo lỗi</a
-    >
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-edit"></i>
+                <p>Feedback</p>
+              </a>
+  </div>
+  <!-- Setting -->
+  <div>
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-cog"></i>
+                <p>
+                  Setting
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview" style="padding-left: 25px">
+                <div>
+                  <a href="#" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Điều chỉnh phí gửi xe</p>
+                  </a>
+                </div>
+              </ul>
   </div>
 </nav>
   </body>

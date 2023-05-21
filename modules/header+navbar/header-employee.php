@@ -176,7 +176,7 @@
     >
   </div>
   <div>
-    <a href="../../feedback/feedback.html"
+    <a href="/DoAnWeb/modules/feedback/feedback.html"
       ><i class="fas fa-solid fa-light fa-comment-dots"></i>Báo lỗi</a
     >
   </div>
