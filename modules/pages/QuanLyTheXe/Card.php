@@ -32,7 +32,7 @@
   gap: 10px;
     }
 </style>
-<?php include "../../Eheader.html" ?>
+<?php include "../../header+navbar/header-employee.php" ?>
 <main style="margin-top: 10vh">
 
       <section class="content" style=" margin:auto; max-width:95%;">
