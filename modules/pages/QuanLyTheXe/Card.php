@@ -32,9 +32,23 @@
   gap: 10px;
     }
 </style>
-<?php include "../../Eheader.html" ?>
+<?php include "../../header-navbar/header-employee.html" ?>
 <main style="margin-top: 10vh">
 
+<!-- content header -->
+<!-- <div bis_skin_checked="1">
+            <div class="row" style="grid-template-columns: repeat(2, 1fr);" bis_skin_checked="1">
+              <div class="col-sm-5" bis_skin_checked="1">
+                <h1>Quản lý Thẻ Xe</h1>
+              </div>
+              <div class="col-sm-5" bis_skin_checked="1">
+                <ol class="breadcrumb float-sm-right">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item active">Quản lý tài khoản</li>
+                </ol>
+              </div>
+            </div>
+          </div> -->
       <section class="content" style=" margin:auto; max-width:95%;">
           <!-- Default box -->
           <div class="card" >

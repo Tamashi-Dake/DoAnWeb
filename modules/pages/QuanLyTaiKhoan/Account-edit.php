@@ -17,11 +17,11 @@
   
 
   
-<button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
+<button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal">
                   Edit
                 </button>
 
-      <div class="modal fade" id="modal-default">
+                <div class="modal fade" id="modal">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -100,8 +100,8 @@
           </div>
         </div>
             <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Reset</button>
+              <button type="button" class="btn btn-primary">Lưu</button>
             </div>
           </div>
           <!-- /.modal-content -->

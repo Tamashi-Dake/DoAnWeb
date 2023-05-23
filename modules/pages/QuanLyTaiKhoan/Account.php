@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ADEPRO - Quản lý Tài Khoản</title>
+    <title>ADEPRO - Quản lý Thẻ Xe</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link
@@ -15,40 +15,30 @@
       rel="stylesheet"
       href="../../plugins/fontawesome-free/css/all.min.css"
     />
-    <!-- Theme style -->
-    <link rel="stylesheet" href="../../dist/css/adminlte.min.css" />
   </head>
-  <body class="hold-transition sidebar-mini">
-    <!-- Site wrapper -->
-    <div class="wrapper">
-
-    <!-- Navbar + Main Sidebar Container -->
+  <body>
+  <style>
     <?php
-      include "../../adminTools.html";
-      include "../../../connection.php";
+    include "../../../guessIndex.css";
+    include "../../../bootstrap.css";
+    include "../../../connection.php";
     ?>
+    th,td{
+      text-align:center !important;
+    }
+    .form-group{
+      display:grid;
+      grid-template-columns: 40% 50%;
+  gap: 10px;
+    }
+    /* .form-group label{
+      width:200px;
+    } */
+</style>
+<?php include "../../header-navbar/header-admin.html" ?>
+<main style="margin-top: 10vh">
 
-      <!-- Content Wrapper. Contains page content -->
-      <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-          <div class="container-fluid">
-            <div class="row mb-2">
-              <div class="col-sm-6">
-                <h1>Quản lý tài khoản</h1>
-              </div>
-              <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                  <li class="breadcrumb-item"><a href="#">Home</a></li>
-                  <li class="breadcrumb-item active">Quản lý tài khoản</li>
-                </ol>
-              </div>
-            </div>
-          </div>
-          <!-- /.container-fluid -->
-        </section>
-        <!-- Main content -->
-        <section class="content">
+    <section class="content" style=" margin:auto; max-width:95%;">
           <!-- Default box -->
           <div class="card">
             <div class="card-header">
@@ -123,37 +113,8 @@
                   </div>
                   <!-- /.card -->
         </section>
-        <!-- /.content -->
-      </div>
-      <!-- /.content-wrapper -->
-
-      <footer class="main-footer">
-        <strong
-          >Copyright
-          <script>
-            document.write(new Date().getFullYear());
-          </script>
-          .</strong
-        >
-        All rights reserved.
-        <div class="float-right d-none d-sm-inline-block">
-          <b>Version</b> 1.2.0
-        </div>
-      </footer>
-
-      <!-- Control Sidebar -->
-      <aside class="control-sidebar control-sidebar-dark">
-        <!-- Control sidebar content goes here -->
-      </aside>
-      <!-- /.control-sidebar -->
-    </div>
-    <!-- ./wrapper -->
-
-    <!-- jQuery -->
-    <script src="../../plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE theme -->
-    <script src="../../dist/js/adminlte.min.js"></script>
+        <?php 
+        // include "../../feedback-btn.html" ?>
+    <?php include "../../footer.html" ?>
   </body>
-</html>
+       

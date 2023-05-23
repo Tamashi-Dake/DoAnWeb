@@ -1,0 +1,4 @@
+1, Header sẽ kèm navbar cho Nhân viên hoặc Admin
+-> kiểm tra session là của admin ( hay employee) thì include header cho admin (hoặc nhân viên)
+
+2, 
