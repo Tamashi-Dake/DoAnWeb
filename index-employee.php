@@ -46,7 +46,7 @@
     ?>
     
 </style>
-<?php include "./modules/header+navbar/header-employee.php";
+<?php include "./modules/header-navbar/header-employee.html";
 ?>
 <!--  
 	<a href="logout.php">Logout</a>

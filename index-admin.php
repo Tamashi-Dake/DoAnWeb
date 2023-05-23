@@ -46,7 +46,7 @@
     ?>
     
 </style>
-<?php include "./modules/header+navbar/header-admin.php";
+<?php include "./modules/header-navbar/header-admin.html";
 ?>
 	<main>
 

@@ -14,15 +14,18 @@
 </head>
 <body class="hold-transition sidebar-mini">
 
-<button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-default">
-                  Thêm
+  
+
+  
+<button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal">
+                  Edit
                 </button>
 
-      <div class="modal fade" id="modal-default">
+                <div class="modal fade" id="modal">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title">Thêm tài khoản</h4>
+              <h4 class="modal-title">Sửa thông tin thẻ xe</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -33,71 +36,49 @@
               <div class="card card-primary"style="box-shadow:none; margin:0;">
               <div class="card-body">
                   <div class="form-group">
-                    <label for="inputUser">Tên tài khoản</label>
+                    <label for="inputUser">ID</label>
                     <input
                       type="text"
                       id="inputUser"
-                      class="form-control"
                       value="#"
                     />
                   </div>
                   <div class="form-group">
-                    <label for="inputPassword">Mật khẩu</label>
-                    <input
-                      type="text"
-                      id="inputPassword"
-                      class="form-control"
-                      value="#"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="inputName">Họ tên</label>
-                    <input
-                      type="text"
-                      id="inputName"
-                      class="form-control"
-                      value="#"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="selectChucVu">Chức vụ</label>
+                    <label for="selectChucVu">Trạng thái</label>
                     <select>
-                    <option value="employee">Nhân viên</option>
-                    <option value="admin">Quản lý</option>
+                    <option value="employee">Mở</option>
+                    <option value="admin">Khóa</option>
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="inputName">Căn cước công dân</label>
-                    <input
-                      type="text"
-                      id="inputCCCD"
-                      class="form-control"
-                      value="#"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="inputName">Ngày sinh</label>
-                    <input
-                      type="text"
-                      id="inputBday"
-                      class="form-control"
-                      value="#"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="selectChucVu">Giới tính</label>
+                    <label for="selectChucVu">Loại phương tiện</label>
                     <select>
-                    <option value="1">Nam</option>
-                    <option value="0">Nữ</option>
+                    <option value="employee">Ô tô</option>
+                    <option value="admin">Xe máy</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="selectChucVu">Loại phương tiện</label>
+                    <select>
+                    <option value="employee">Ô tô</option>
+                    <option value="admin">Xe máy</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="selectChucVu">Loại thẻ</label>
+                    <select>
+                      <option value="employee">Thường</option>
+                      <option value="admin">Tháng</option>
                     </select>
                   </div>
                 </div>
+              </div>
             </div>
           </div>
         </div>
             <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Reset</button>
-              <button type="button" class="btn btn-primary">Thêm</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+              <button type="button" class="btn btn-primary">Lưu</button>
             </div>
           </div>
           <!-- /.modal-content -->
