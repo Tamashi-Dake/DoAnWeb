@@ -78,11 +78,11 @@
                   <div class="form-group">
                     <label for="inputName">Ngày sinh</label>
                     <input
-                      type="text"
+                      type="date"
                       id="inputBday"
                       class="form-control"
-                      value="#"
                     />
+                      <!--có thể set value/min max tùy theo yêu cầu:  value="2077-01-01" min="2018-01-01" max="2018-12-31" -->
                   </div>
                   <div class="form-group">
                     <label for="selectChucVu">Giới tính</label>
@@ -111,6 +111,6 @@
 <!-- Bootstrap 4 -->
 <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script src="../../dist/js/adminlte.min.js"></script>
+<!-- <script src="../../dist/js/adminlte.min.js"></script> -->
 </body>
 </html>
