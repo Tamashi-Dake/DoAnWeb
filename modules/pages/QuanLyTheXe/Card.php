@@ -28,7 +28,7 @@
     }
     .form-group{
       display:grid;
-      grid-template-columns: 30% 50%;
+      grid-template-columns: 45% 55%;
   gap: 10px;
     }
 </style>
@@ -98,9 +98,10 @@
                             <td>" . $row["status"] . "</td>
                             <td>" . $row["vehicleType"] . "</td>
                             <td>" . $row["type"] . "</td>
-                            <td class='project-actions text-center'>";
-                            include "Card-edit.php";
-                            echo"
+                            <td class='project-actions text-center'>
+                            <a type='button' class='btn btn-default' href='Card-edit.php'>
+                            Edit
+                            </a>
                               <a class='btn btn-danger' href='#'>
                                 <i class='fas fa-trash'> </i>
                                 Xóa
