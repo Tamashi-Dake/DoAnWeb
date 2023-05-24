@@ -1,4 +1,4 @@
-1, Header sẽ kèm navbar cho Nhân viên hoặc Admin
+﻿1, Header sẽ kèm navbar cho Nhân viên hoặc Admin
 -> kiểm tra session là của admin ( hay employee) thì include header cho admin (hoặc nhân viên)
 
-2, 
+2, quanh đi quẩn lại thì phân trang liên quan đến BE nhiều quá nên tôi bó tay, chỉ tạo đc sẵn cái để hiện nó ra thôi

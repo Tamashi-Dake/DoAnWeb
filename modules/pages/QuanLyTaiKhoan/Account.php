@@ -31,6 +31,9 @@
       grid-template-columns: 40% 50%;
   gap: 10px;
     }
+    .page-link{
+      padding:10px !important;
+    }
     /* .form-group label{
       width:200px;
     } */
@@ -58,12 +61,12 @@
                     <th style="width: 1%">#</th>
                     <th style="width: 10%">Tên tài khoản</th>
                     <th style="width: 10%">Mật khẩu</th>
-                    <th style="width: 10%" class="text-center">Họ Tên</th>
-                    <th style="width: 10%" class="text-center">Chức vụ</th>
+                    <th style="width: 20%" class="text-center">Họ Tên</th>
+                    <th style="width: 8%" class="text-center">Chức vụ</th>
                     <th style="width: 10%" class="text-center">CCCD</th>
                     <th style="width: 10%" class="text-center">Ngày sinh</th>
-                    <th style="width: 10%" class="text-center">Giới tính</th>
-                    <th style="width: 20%" class="text-center">
+                    <th style="width: 8%" class="text-center">Giới tính</th>
+                    <th style="width: 15%" class="text-center">
                     <?php
                     include "Account-add.php";
                     ?>
@@ -111,6 +114,19 @@
                       </table>
                     </div>
                     <!-- /.card-body -->
+                    <div aria-label="Page navigation">
+                      <ul class="pagination justify-content-center">
+                        <li class="page-item ">
+                          <a class="page-link" href="#" tabindex="-1">Previous</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">Next</a>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                   <!-- /.card -->
         </section>
