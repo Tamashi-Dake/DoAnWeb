@@ -13,22 +13,35 @@
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
 </head>
 <body class="hold-transition sidebar-mini">
-
+<style>
+  .modal{
+    display:block !important;
+    background: #4d4b46;
+  }
+  th,td{
+      text-align:center !important;
+    }
+    .form-group{
+      display:grid;
+      grid-template-columns: 45% 55%;
+  gap: 10px;
+    }
+</style>
   
 
   
-<button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal">
+<!-- <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal">
                   Edit
-                </button>
+                </button> -->
 
-                <div class="modal fade" id="modal">
+                <div class="modal show" id="modal">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
               <h4 class="modal-title">Sửa thông tin tài khoản</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <a type="button" class="close" href="Account.php">
                 <span aria-hidden="true">&times;</span>
-              </button>
+               </a>
             </div>
             <div class="modal-body">
           <div class="row" style="display:block">
