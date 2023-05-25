@@ -68,12 +68,17 @@
               <table class="table table-striped projects">
                 <thead>
                   <tr>
-                    <th style="width: 1%">#</th>
-                    <th style="width: 20%">ID</th>
-                    <th style="width: 20%">Trạng thái</th>
-                    <th style="width: 20%" class="text-center">Loại phương tiện</th>
-                    <th style="width: 20%" class="text-center">Loại thẻ</th>
-                    <th style="width: 19%" class="text-center">
+                  <th style="width: 4%">#</th>
+                    <th style="width: 9.5%">ID thẻ</th>
+                    <th style="width: 9.5%">Trạng thái</th>
+                    <th style="width: 9.5%" class="text-center">Loại thẻ</th>
+                    <th style="width: 9.5%" class="text-center">Loại xe</th>
+                    <th style="width: 9.5%" class="text-center">Ngày đăng ký</th>
+                    <th style="width: 9.5%" class="text-center">Họ và tên</th>
+                    <th style="width: 9.5%" class="text-center">CCCD khách</th>
+                    <th style="width: 9.5%" class="text-center">Số điện thoại</th>
+                    <th style="width: 9.5%" class="text-center">Biển số xe</th>
+                    <th style="width: 9.5%" class="text-center">
                     <?php
                     include "Card-add.php";
                     ?>
@@ -85,30 +90,37 @@
                         // Create connection
               // $connection = new mysqli($servername, $username, $password, $database);
                     // read all row from database table
-              $sql = "SELECT * FROM webbaiguixe.card";
-              $result = $conn->query($sql);
+                    $sql = "SELECT * FROM card LEFT JOIN monthcard ON cardID = monthcardID WHERE card.display = 1 OR monthcard.display = 1";
+                    $result = $conn->query($sql);
 
                     if (!$result) {
                 die("Invalid query: " . $connection->error);
               }
 
                     // read data of each row
+              $i = 0;
               while($row = $result->fetch_assoc()) {
-                        echo "<tr>
-                            <td></td>
-                            <td>" . $row["cardID"] . "</td>
-                            <td>" . $row["status"] . "</td>
-                            <td>" . $row["vehicleType"] . "</td>
-                            <td>" . $row["type"] . "</td>
-                            <td class='project-actions text-center'>";
-                            include "Card-edit.php";
-                            echo"
+?>                
+                          <tr>
+                            <td><?php echo(++$i) ?></td>
+                            <td><?php echo($row["cardID"]) ?></td>
+                            <td><?php echo($row["status"]) ?></td>
+                            <td><?php echo($row["type"]) ?></td>
+                            <td><?php echo($row["vehicleType"]) ?></td>
+                            <td><?php echo($row["date"]) ?></td>
+                            <td><?php echo($row["customerName"]) ?></td>
+                            <td><?php echo($row["customerIdentityCard"]) ?></td>
+                            <td><?php echo($row["phoneNumber"]) ?></td>
+                            <td><?php echo($row["licensePlate"]) ?></td>
+                            <td class='project-actions text-center'>
+                            <?php include "Card-edit.php"; ?>
                               <a class='btn btn-danger' href='#'>
                                 <i class='fas fa-trash'> </i>
                                 Xóa
                               </a>
                             </td>
-                        </tr>";
+                        </tr>
+<?php
                     }
 
                     $conn->close();
@@ -144,6 +156,38 @@
 <script src="../../plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+  $(document).ready(function(){
+    if ($("#selectType-Add").val() == "Tháng") {
+      $(".inputForMonthCard-Add").prop('disabled', false);
+    }
+    if ($("#selectType-Add").val() == "Thường") {
+      $(".inputForMonthCard-Add").prop('disabled', true);
+    }
+    $("#selectType-Add").change(function(){
+      if ($(this).val() == "Tháng") {
+        $(".inputForMonthCard-Add").prop('disabled', false);
+      }
+      if ($(this).val() == "Thường") {
+        $(".inputForMonthCard-Add").prop('disabled', true);
+      }
+    });
 
+    if ($("#selectType-Edit").val() == "Tháng") {
+      $(".inputForMonthCard-Edit").prop('disabled', false);
+    }
+    if ($("#selectType-Edit").val() == "Thường") {
+      $(".inputForMonthCard-Edit").prop('disabled', true);
+    }
+    $("#selectType-Edit").change(function(){
+      if ($(this).val() == "Tháng") {
+        $(".inputForMonthCard-Edit").prop('disabled', false);
+      }
+      if ($(this).val() == "Thường") {
+        $(".inputForMonthCard-Edit").prop('disabled', true);
+      }
+    });
+  });
+</script>
   </body>
        
