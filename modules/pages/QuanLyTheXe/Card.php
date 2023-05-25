@@ -100,10 +100,9 @@
                             <td>" . $row["status"] . "</td>
                             <td>" . $row["vehicleType"] . "</td>
                             <td>" . $row["type"] . "</td>
-                            <td class='project-actions text-center'>
-                            <a type='button' class='btn btn-default' href='Card-edit.php'>
-                            Edit
-                            </a>
+                            <td class='project-actions text-center'>";
+                            include "Card-edit.php";
+                            echo"
                               <a class='btn btn-danger' href='#'>
                                 <i class='fas fa-trash'> </i>
                                 Xóa
@@ -140,5 +139,11 @@
         <?php 
         // include "../../feedback-btn.html" ?>
     <?php include "../../footer.html" ?>
+    
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
   </body>
        
