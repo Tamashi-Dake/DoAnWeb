@@ -1,38 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
-</head>
-<body class="hold-transition sidebar-mini">
-<style>
-  .modal{
-    display:block !important;
-    background: #4d4b46;
-  }
-  th,td{
-      text-align:center !important;
-    }
-    .form-group{
-      display:grid;
-      grid-template-columns: 45% 55%;
-  gap: 10px;
-    }
-</style>
-  
 
   
-<!-- <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal">
+<button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal">
                   Edit
-                </button> -->
+                </button>
 
                 <div class="modal show" id="modal">
         <div class="modal-dialog">
@@ -127,7 +97,4 @@
 <script src="../../plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
-<script src="../../dist/js/adminlte.min.js"></script>
-</body>
-</html>
+
