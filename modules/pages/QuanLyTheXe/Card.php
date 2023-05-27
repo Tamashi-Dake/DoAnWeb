@@ -68,9 +68,9 @@
               <table class="table table-striped projects">
                 <thead>
                   <tr>
-                  <th style="width: 4%">#</th>
+                  <th style="width: 2%">#</th>
                     <th style="width: 9.5%">ID thẻ</th>
-                    <th style="width: 9.5%">Trạng thái</th>
+                    <th style="width: 8%">Trạng thái</th>
                     <th style="width: 9.5%" class="text-center">Loại thẻ</th>
                     <th style="width: 9.5%" class="text-center">Loại xe</th>
                     <th style="width: 9.5%" class="text-center">Ngày đăng ký</th>
