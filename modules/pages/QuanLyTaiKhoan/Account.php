@@ -96,10 +96,9 @@
                             <td>" . $row["identityCard"] . "</td>
                             <td>" . $row["birth"] . "</td>
                             <td>" . $row["sex"] . "</td>
-                            <td class='project-actions text-center'>
-                            <a type='button' class='btn btn-default' href='Account-edit.php'>
-                            Edit
-                            </a>
+                            <td class='project-actions text-center'>";
+                            include "Account-edit.php";
+                            echo"
                               <a class='btn btn-danger' href='#'>
                                 <i class='fas fa-trash'> </i>
                                 Xóa

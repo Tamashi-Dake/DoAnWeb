@@ -32,41 +32,46 @@
             <div class="col-md-6" style="    max-width: 100%;">
               <div class="card card-primary"style="box-shadow:none; margin:0;">
               <div class="card-body">
-                  <div class="form-group">
-                    <label for="inputUser">ID</label>
-                    <input
-                      type="text"
-                      id="inputUser"
-                      value="#"
-                    />
+              <div class="form-group">
+                    <label for="inputUser">ID thẻ</label>
+                    <input type="text" id="inputUser" value="#" />
                   </div>
                   <div class="form-group">
-                    <label for="selectChucVu">Trạng thái</label>
+                    <label for="selectTrangThai">Trạng thái</label>
                     <select>
-                    <option value="employee">Mở</option>
-                    <option value="admin">Khóa</option>
+                      <option value="1">Mở</option>
+                      <option value="0">Khóa</option>
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="selectChucVu">Loại phương tiện</label>
+                    <label for="selectLoaiXe">Loại xe</label>
                     <select>
-                    <option value="employee">Ô tô</option>
-                    <option value="admin">Xe máy</option>
+                      <option value="Xe máy">Xe máy</option>
+                      <option value="Ô tô">Ô tô</option>
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="selectChucVu">Loại phương tiện</label>
-                    <select>
-                    <option value="employee">Ô tô</option>
-                    <option value="admin">Xe máy</option>
+                    <label for="selectType-Add">Loại thẻ</label>
+                    <select id="selectType-Add">
+                      <option value="Thường">Thường</option>
+                      <option value="Tháng">Tháng</option>
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="selectChucVu">Loại thẻ</label>
-                    <select>
-                      <option value="employee">Thường</option>
-                      <option value="admin">Tháng</option>
-                    </select>
+                    <label for="inputCustomerName">Tên khách hàng</label>
+                    <input type="text" id="inputCustomerName" class="inputForMonthCard-Add" value="#" />
+                  </div>
+                  <div class="form-group">
+                    <label for="inputCustomerIdentityCard">CCCD khách</label>
+                    <input type="text" id="inputCustomerIdentityCard" class="inputForMonthCard-Add" value="#" />
+                  </div>
+                  <div class="form-group">
+                    <label for="inputPhoneNumber">Số điện thoại</label>
+                    <input type="text" id="inputPhoneNumber" class="inputForMonthCard-Add" value="#" />
+                  </div>
+                  <div class="form-group">
+                    <label for="inputLicensePlate">Biển số xe</label>
+                    <input type="text" id="inputLicensePlate" class="inputForMonthCard-Add" value="#" />
                   </div>
                 </div>
               </div>

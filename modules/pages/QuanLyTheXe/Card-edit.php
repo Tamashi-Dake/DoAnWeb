@@ -1,38 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
-</head>
-<body class="hold-transition sidebar-mini">
-<style>
-  .modal{
-    display:block !important;
-    background: #4d4b46;
-  }
-  th,td{
-      text-align:center !important;
-    }
-    .form-group{
-      display:grid;
-      grid-template-columns: 45% 55%;
-  gap: 10px;
-    }
-</style>
-  
 
   
-<!-- <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal">
+<button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal">
                   Edit
-                </button> -->
+                </button>
 
 
                 <div class="modal show"   id="modal">
@@ -49,41 +19,50 @@
             <div class="col-md-6" style="    max-width: 100%;">
               <div class="card card-primary"style="box-shadow:none; margin:0;">
               <div class="card-body">
-                  <div class="form-group">
-                    <label for="inputUser">ID</label>
-                    <input
-                      type="text"
-                      id="inputUser"
-                      value="#"
-                    />
+              <div class="form-group">
+                    <label for="inputUser">ID thẻ</label>
+                    <input type="text" id="inputUser" value="#" />
                   </div>
                   <div class="form-group">
-                    <label for="selectChucVu">Trạng thái</label>
+                    <label for="selectTrangThai">Trạng thái</label>
                     <select>
-                    <option value="employee">Mở</option>
-                    <option value="admin">Khóa</option>
+                      <option value="1">Mở</option>
+                      <option value="0">Khóa</option>
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="selectChucVu">Loại phương tiện</label>
+                    <label for="selectLoaiXe">Loại xe</label>
                     <select>
-                    <option value="employee">Ô tô</option>
-                    <option value="admin">Xe máy</option>
+                      <option value="Xe máy">Xe máy</option>
+                      <option value="Ô tô">Ô tô</option>
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="selectChucVu">Loại phương tiện</label>
-                    <select>
-                    <option value="employee">Ô tô</option>
-                    <option value="admin">Xe máy</option>
+                    <label for="selectType-Edit">Loại thẻ</label>
+                    <select id="selectType-Edit">
+                      <option value="Thường">Thường</option>
+                      <option value="Tháng">Tháng</option>
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="selectChucVu">Loại thẻ</label>
-                    <select>
-                      <option value="employee">Thường</option>
-                      <option value="admin">Tháng</option>
-                    </select>
+                    <label for="inputDate">Ngày đăng ký</label>
+                    <input type="date" id="inputDate" class="inputForMonthCard-Edit" value="#" />
+                  </div>
+                  <div class="form-group">
+                    <label for="inputCustomerName">Tên khách hàng</label>
+                    <input type="text" id="inputCustomerName" class="inputForMonthCard-Edit" value="#" />
+                  </div>
+                  <div class="form-group">
+                    <label for="inputCustomerIdentityCard">CCCD khách</label>
+                    <input type="text" id="inputCustomerIdentityCard" class="inputForMonthCard-Edit" value="#" />
+                  </div>
+                  <div class="form-group">
+                    <label for="inputPhoneNumber">Số điện thoại</label>
+                    <input type="text" id="inputPhoneNumber" class="inputForMonthCard-Edit" value="#" />
+                  </div>
+                  <div class="form-group">
+                    <label for="inputLicensePlate">Biển số xe</label>
+                    <input type="text" id="inputLicensePlate" class="inputForMonthCard-Edit" value="#" />
                   </div>
                 </div>
               </div>
@@ -100,12 +79,5 @@
         <!-- /.modal-dialog -->
       </div>
       <!-- /.modal -->
-
-<!-- jQuery -->
-<script src="../../plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
-<!-- <script src="../../dist/js/adminlte.min.js"></script> -->
 </body>
 </html>
