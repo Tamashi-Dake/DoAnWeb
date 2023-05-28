@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -166,20 +167,27 @@
         }
     </style>
     <div id="login">
-        <form action="" class="login-name bor">
+        <form action="login_be.php" class="login-name bor" method="post">
             <img src="/DoAnWeb/login/imgs/duy.jpg" alt="duy" class="img-login">
             <i style="color: brown;" class="fa fa-xmark"></i>
             <h1 class="name-login">ĐĂNG NHẬP</h1>
             <div class="user-login">
                 <p class="text-login">Tên đăng nhập:</p>
-                <input type="text" class="input-text input-login" placeholder="Username">
+                <input type="text" class="input-text input-login" name="txtuser" placeholder="Username">
             </div>
             <div class="pass-login">
                 <p class="text-pass-login">Mật khẩu:</p>
-                <input type="password" class="input-pass input-login" placeholder="Password">
+                <input type="password" class="input-pass input-login" name="txtpass" placeholder="Password">
             </div>
-            <button class="button">LOGIN</button>
-
+                <button class="button">LOGIN</button>
+                <div class="error_login"><font color="red"><?php    if(!isset($_SESSION['error_login']))
+                                                                    {
+                                                                        unset($_SESSION['error_login']);
+                                                                    }
+                                                                    else
+                                                                        echo $_SESSION['error_login'];
+                                                                    ?>
+                                    </font>
         </form>
     </div>
 
