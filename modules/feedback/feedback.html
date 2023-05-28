@@ -12,18 +12,18 @@
 
 <body>
     <div id="feedback">
-        <form action="">
+        <form action="feedback_be.php" method="post">
             <h1 class="name-feedback">FEEDBACK</h1>
             <div class="close-feedback">
                 <i class="bi bi-x-lg"></i>
             </div>
             <div class="name">
-                <input class="input-feedback input-feedback-name" type="text" placeholder="Full name">
+                <input class="input-feedback input-feedback-name" type="text" name="txtdesc" placeholder="Full name">
             </div>
             <div class="name">
-                <input class="input-feedback input-feedback-title" type="text" placeholder="Title">
+                <input class="input-feedback input-feedback-title" type="text" name="txttitle" placeholder="Title">
             </div>
-            <textarea class="textarea-feedback" cols="10" rows="5" placeholder="Enter your opinios here"></textarea>
+            <textarea class="textarea-feedback" cols="10" rows="5" name="txtopn" placeholder="Enter your opinios here"></textarea>
             <button class="send-feedback">Send</button>
         </form>
 
