@@ -1,7 +1,7 @@
 
   
 <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal">
-<i class="fas fa-solid fa-pen-to-square"></i>Edit
+                  Edit
                 </button>
 
 
@@ -21,7 +21,7 @@
               <div class="card-body">
               <div class="form-group">
                     <label for="inputUser">ID thẻ</label>
-                    <input type="text" id="inputUser" value="#" />
+                    <input type="text" id="inputUser" disabled value="#" />
                   </div>
                   <div class="form-group">
                     <label for="selectTrangThai">Trạng thái</label>
