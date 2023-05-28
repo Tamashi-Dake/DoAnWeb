@@ -77,22 +77,22 @@
                     <div class="form-group">
                       <label for="inputCustomerName-Add">Tên khách hàng</label>
                       <input type="text" id="txtCustomerName-Add" class="inputForMonthCard-Add"
-                        name="txtCustomerName_Add" value="#" />
+                        name="txtCustomerName_Add" value="" />
                     </div>
                     <div class="form-group">
                       <label for="txtCustomerIdentityCard-Add">CCCD khách</label>
                       <input type="text" id="txtCustomerIdentityCard-Add" class="inputForMonthCard-Add"
-                        name="txtCustomerIdentityCard_Add" value="#" />
+                        name="txtCustomerIdentityCard_Add" value="" />
                     </div>
                     <div class="form-group">
                       <label for="txtPhoneNumber-Add">Số điện thoại</label>
                       <input type="text" id="txtPhoneNumber-Add" class="inputForMonthCard-Add" name="txtPhoneNumber_Add"
-                        value="#" />
+                        value="" />
                     </div>
                     <div class="form-group">
                       <label for="txtLicensePlate-Add">Biển số xe</label>
                       <input type="text" id="txtLicensePlate-Add" class="inputForMonthCard-Add"
-                        name="txtLicensePlate_Add" value="#" />
+                        name="txtLicensePlate_Add" value="" />
                     </div>
                   </div>
                 </div>
@@ -120,5 +120,4 @@
   <!-- AdminLTE App -->
   <script src="../../dist/js/adminlte.min.js"></script>
 </body>
-
 </html>

@@ -159,7 +159,7 @@
                     </td>
                     <td class='project-actions text-center'>
                       <?php include "Card-edit.php"; ?>
-                      <a class='btn btn-danger' href='#'>
+                      <a class='btn btn-danger' href='Card-delete-action.php?cardID=<?php echo ($row["cardID"]) ?>&type=<?php echo ($row["type"]) ?>'>
                         <i class='fas fa-trash'> </i>
                         Xóa
                       </a>

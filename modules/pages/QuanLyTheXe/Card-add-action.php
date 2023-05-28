@@ -1,10 +1,6 @@
 <?php include "../../../connection.php"; ?>
 
 <?php
-
-?>
-
-<?php
     date_default_timezone_set("Asia/Bangkok");
 
     $status = 1;
@@ -48,7 +44,7 @@
                     $isValid = false;
                 }
 // isValidLicensePlate
-                if (preg_match("/^[0-9A-Z ]+-?[0-9A-Z ]+$/", $customerName) != 1) {
+                if (preg_match("/^[0-9A-Z ]+-?[0-9A-Z ]+$/", $licensePlate) != 1) {
                     $error .= "<br><br>Biển số xe không hợp lệ.";
                     $isValid = false;
                 }
@@ -62,7 +58,7 @@
                         mysqli_query($conn, $sqlQuery);
                     }
                     catch (Exception $ex) {
-                        $error .= "<br><br>Lỗi hệ thống Database.<br>- Mã lỗi: ". $ex->$ex->getCode() ."<br>- Chi tiết: ". $ex->getMessage() ."<br>- Tại dòng code: ". $ex->getLine();
+                        $error .= "<br><br>Lỗi hệ thống Database.<br>- Mã lỗi: ". $ex->getCode() ."<br>- Chi tiết: ". $ex->getMessage() ."<br>- Tại dòng code: ". $ex->getLine();
                     }
                 }
                 if ($type == "Tháng") {
@@ -71,20 +67,20 @@
                         mysqli_query($conn, $sqlQuery);
                     }
                     catch (Exception $ex) {
-                        $error .= "<br><br>Lỗi hệ thống Database.<br>- Mã lỗi: ". $ex->$ex->getCode() ."<br>- Chi tiết: ". $ex->getMessage() ."<br>- Tại dòng code: ". $ex->getLine();
+                        $error .= "<br><br>Lỗi hệ thống Database.<br>- Mã lỗi: ". $ex->getCode() ."<br>- Chi tiết: ". $ex->getMessage() ."<br>- Tại dòng code: ". $ex->getLine();
                     }
                     try {
                         $sqlQuery = "INSERT INTO monthcard VALUES (". $cardID .",  '". $date ."', '". $customerName ."', '". $customerIdentityCard ."', '". $phoneNumber ."', '". $licensePlate ."', ". $display .");";
                         mysqli_query($conn, $sqlQuery);
                     }
                     catch (Exception $ex) {
-                        $error .= "<br><br>Lỗi hệ thống Database.<br>- Mã lỗi: ". $ex->$ex->getCode() ."<br>- Chi tiết: ". $ex->getMessage() ."<br>- Tại dòng code: ". $ex->getLine();
+                        $error .= "<br><br>Lỗi hệ thống Database.<br>- Mã lỗi: ". $ex->getCode() ."<br>- Chi tiết: ". $ex->getMessage() ."<br>- Tại dòng code: ". $ex->getLine();
                     }
                 }
             }
         }
     }
-//    echo($error);   // ĐÃ XONG thông báo ngầm
+   echo($error);   // ĐÃ XONG thông báo ngầm
     mysqli_close($conn);
-    header("Location: Card.php");
+    // header("Location: Card.php");
 ?>
