@@ -1,7 +1,10 @@
 <?php
+    session_start();
     $_SESSION['login'] = false;
     $_SESSION['user'] = "";
     $_SESSION['pass'] = "";
-    $_SESSION['error_login'] = "you've just log out!";
-    header("Location:login/index.php");
+    $_SESSION['position'] = "";
+    $_SESSION['error_login'] = "";
+    // session_destroy();
+    header("Location:/DoAnWeb/index-guess.php");
 ?>

@@ -1,6 +1,16 @@
+<?php session_start(); 
+  if (isset($_SESSION['login']) == false) {
+    header("Location: /DoAnWeb/login/index.php");
+  }
+  else {
+    if (($_SESSION['login']) == false) {
+      header("Location: /DoAnWeb/login/index.php");
+    }
+    else {
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -36,7 +46,9 @@
       margin: 3px !important;
     }
   </style>
-  <?php include "../../header-navbar/header-employee.html" ?>
+  <?php
+    include "../../header-navbar/header.php";
+  ?>
   <main style="margin-top: 10vh">
 
     <!-- content header -->
@@ -122,7 +134,7 @@
               $row_start = ($current_page - 1) * $sizePage + 1;
               $row_end = $current_page * $sizePage;
               // read data of each row
-              while ($row = $result->fetch_assoc()) {
+              while ($row = mysqli_fetch_assoc($result)) {
                 $i++;
                 if ($i >= $row_start && $i <= $row_end) {
                   ?>  
@@ -158,7 +170,9 @@
                       <?php echo ($row["licensePlate"]) ?>
                     </td>
                     <td class='project-actions text-center'>
-                      <?php include "Card-edit.php"; ?>
+                      <button type="button" class="btn btn-default btn_edit" data-toggle="modal" data-target="#modal" id="btn_edit_<?php echo($row["cardID"]) ?>" data-CardID_Edit="<?php echo($row["cardID"]) ?>">
+                        Edit
+                      </button>
                       <a class='btn btn-danger' href='Card-delete-action.php?cardID=<?php echo ($row["cardID"]) ?>&type=<?php echo ($row["type"]) ?>'>
                         <i class='fas fa-trash'> </i>
                         Xóa
@@ -224,6 +238,8 @@
   <?php
   // include "../../feedback-btn.html" ?>
   <?php include "../../footer.html" ?>
+  <?php include "Card-edit.php" ?>
+
 
   <!-- jQuery -->
   <script src="../../plugins/jquery/jquery.min.js"></script>
@@ -271,7 +287,28 @@
           $(".inputForMonthCard-Edit").prop('readonly', true);
         }
       });
-    });
+
+// Lấy ID khi click vào Edit
+      // for (var i = 0; i < $(".btn-edit").length; i++) {
+      //     $(this).click(function(){
+      //       var btn_edit_value;
+      //       if (i == $(this).data("CardID_Edit"))
+      //     });
+      //   }
+      // });
+
+      $(".btn-edit").foreach(function(){
+        $(this).click(function(){
+          var cardID = $(this).data("CardID_Edit");
+          $("txtCardID-Edit").html(cardID);
+        });
+      });
+    
   </script>
   
 </body>
+
+<?php 
+    }
+  }
+?>

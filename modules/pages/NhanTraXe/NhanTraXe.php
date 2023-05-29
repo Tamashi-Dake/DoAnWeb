@@ -1,3 +1,14 @@
+<?php session_start(); 
+  if (isset($_SESSION['login']) == false) {
+    header("Location: /DoAnWeb/login/index.php");
+  }
+  else {
+    if (($_SESSION['login']) == false) {
+      header("Location: /DoAnWeb/login/index.php");
+    }
+    else {
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,95 +54,104 @@ include "../../../connection.php";
       padding-left:10px
     }
 </style>
-<?php include "../../header-navbar/header-employee.html";
+<?php include "../../header-navbar/header.php";
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 
 ?>
-
-    <main class="row" style="display:grid ; grid-template-columns: repeat(2, 1fr) ">
-          <div class="col">            
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title text-center">Nhận xe</h3>
-              </div>
-              <!-- /.card-header -->
-              <!-- form start -->
-              <form>
-                <div class="card-body" >
-                  <div class="form-group">
-                    <label for="txtID">ID thẻ:</label>
-                    <input type="text" class="form-control" id="ID" placeholder="Nhập ID thẻ">
-                  </div>
-                  <div class="form-group">
-                    <label for="txtBienSo">Biển số xe</label>
-                    <input type="password" class="form-control" id="txtBienSo" placeholder="Nhập biển số xe">
-                  </div>
-                  <div class="form-group">
-                    <label for="selectCard">Loại thẻ</label>
-                    <select id="selectCard">
-                      <option value="Thường">Thường</option>
-                      <option value="Tháng">Tháng</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputDate">Ngày đăng ký</label>
-                    <input readonly type="date" id="inputDate" class="inputForMonthCard-Edit" value="<?php echo date('Y-m-d'); ?>"  />
-                  </div>
-                  <div class="form-group">
-                    <label for="txtGio">Giờ</label>
-                    <input readonly type="text" class="form-control" id="txtGio" value="<?php echo date("H:i"); ?>">
-                  </div>
-                </div>
-                <!-- /.card-body -->
-
-                <div class="card-footer">
-                <button type="reset" class="btn btn-secondary">Đặt lại</button>
-                  <button type="submit" class="btn btn-primary">Nhận</button>
-                </div>
-              </form>
+<!-- <div id="load_data"> </div> -->
+  <main class="row" style="display:grid ; grid-template-columns: repeat(2, 1fr) ">
+        <div class="col">            
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title text-center">Nhận xe</h3>
             </div>
-          </div>
-          <div class="col">            
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title text-center">Trả xe</h3>
+
+            <form>
+              <div class="card-body" >
+                <div class="form-group">
+                  <label for="txtCardID">ID thẻ:</label>
+                  <input type="text" class="form-control" id="txtCardID" placeholder="Nhập ID thẻ" value="'. $cardID .'">
+                </div>
+                <div class="form-group">
+                  <label for="txtLicensePlate">Biển số xe</label>
+                  <input type="text" class="form-control" id="txtLicensePlate" placeholder="Nhập biển số xe" value="'. $licensePlate .'">
+                </div>
+                <div class="form-group">
+                  <label for="txtType">Loại thẻ</label>
+                  <input readonly type="text" class="form-control" id="txtType" placeholder="" value="'. $type .'">
+                </div>
+                <div class="form-group">
+                  <label for="txtDate">Ngày</label>
+                  <input readonly type="text" class="form-control" id="txtDate" value="'. $date .'"  />
+                </div>
+                <div class="form-group">
+                  <label for="txtTime">Giờ</label>
+                  <input readonly type="text" class="form-control" id="txtTime" value="'. $time .'">
+                </div>
+                <div class="form-group" style="visibility:hidden">
+                    <label for=""></label>
+                    <input readonly type="text" class="form-control" id="" value="">
+                </div>
               </div>
-              <!-- /.card-header -->
-              <!-- form start -->
-              <form>
-                <div class="card-body" >
-                  <div class="form-group">
-                    <label for="txtID">ID thẻ:</label>
-                    <input type="text" class="form-control" id="ID" placeholder="Nhập ID thẻ">
-                  </div>
-                  <div class="form-group">
-                    <label for="txtBienSo">Biển số xe</label>
-                    <input type="password" class="form-control" id="txtBienSo" placeholder="Nhập biển số xe">
-                  </div>
-                  <div class="form-group">
-                    <label for="inputDate">Ngày đăng ký</label>
-                    <input readonly type="date" id="inputDate" class="inputForMonthCard-Edit" value="<?php echo date('Y-m-d'); ?>"  />
-                  </div>
-                  <div class="form-group">
-                    <label for="txtGio">Giờ</label>
-                    <input readonly type="text" class="form-control" id="txtGio" value="<?php echo date("H:i"); ?>">
-                  </div>
-                  <div class="form-group">
-                    <label for="txtTien">Thành tiền</label>
-                    <input readonly class="form-control" id="txtTien" value="<?php  ?>">
-                  </div>
-                </div>
-                <!-- /.card-body -->
+              <!-- /.card-body -->
 
-                <div class="card-footer">
-                <button type="reset" class="btn btn-secondary">Đặt lại</button>
-                  <button type="submit" class="btn btn-primary">Trả</button>
-                </div>
-              </form>
-            </div>
+              <div class="card-footer">
+              <button type="reset" class="btn btn-secondary">Đặt lại</button>
+                <button type="submit" class="btn btn-primary">Nhận</button>
+              </div>
+            </form>
           </div>
-    </main>
+        </div>
+        <div class="col">            
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title text-center">Trả xe</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form>
+              <div class="card-body" >
+                <div class="form-group">
+                  <label for="txtID">ID thẻ:</label>
+                  <input type="text" class="form-control" id="ID" placeholder="Nhập ID thẻ" value="'. $cardID .'">
+                </div>
+                <div class="form-group">
+                  <label for="txtLicensePlate">Biển số xe</label>
+                  <input type="text" class="form-control" id="txtLicensePlate" placeholder="Nhập biển số xe" value="'. $licensePlate .'">
+                </div>
+                <div class="form-group">
+                  <label for="txtType">Loại thẻ</label>
+                  <input readonly type="text" class="form-control" id="txtType" placeholder="" value="'. $type .'">
+                </div>
+                <div class="form-group">
+                  <label for="txtDate">Ngày</label>
+                  <input readonly type="text" class="form-control" id="txtDate" value="'. $date .'"  />
+                </div>
+                <div class="form-group">
+                  <label for="txtTime">Giờ</label>
+                  <input readonly type="text" class="form-control" id="txtTime" value="'. $time .'">
+                </div>
+                <div class="form-group">
+                  <label for="txtTien">Thành tiền</label>
+                  <input readonly class="form-control" id="txtTien" value="<'. $money .'">
+                </div>
+              </div>
+              <!-- /.card-body -->
 
+              <div class="card-footer">
+              <button type="reset" class="btn btn-secondary">Đặt lại</button>
+                <button type="submit" class="btn btn-primary">Trả</button>
+              </div>
+            </form>
+          </div>
+        </div>
+  </main>
 <?php include "../../footer.html" ?>
 </body>
 </html>
+
+
+<?php 
+    }
+  }
+?>

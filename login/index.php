@@ -1,4 +1,6 @@
-
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -180,14 +182,15 @@
                 <input type="password" class="input-pass input-login" name="txtpass" placeholder="Password">
             </div>
                 <button class="button">LOGIN</button>
-                <div class="error_login"><font color="red"><?php    if(!isset($_SESSION['error_login']))
+                <div class="error_login" style="margin-top:20px;"><center><font color="red"><b><?php    if(!isset($_SESSION['error_login']))
                                                                     {
                                                                         unset($_SESSION['error_login']);
                                                                     }
                                                                     else
                                                                         echo $_SESSION['error_login'];
                                                                     ?>
-                                    </font>
+                                    </b></font></center>
+                </div>
         </form>
     </div>
 
