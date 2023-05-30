@@ -1,9 +1,8 @@
-.feedback {
-    position: fixed;
+#feedback {
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 25%;
     width: 300px;
     max-width: calc(100%-40px);
     min-width: 200px;
@@ -15,6 +14,11 @@
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
     border: 2px solid rgb(226, 147, 0);
+}
+
+.name-feedback {
+    position: relative;
+    text-align: center;
 }
 
 .close-feedback {
@@ -31,11 +35,6 @@
     opacity: 0.9;
     background-color: rgb(226, 147, 0);
     cursor: pointer;
-}
-
-.name-feedback {
-    position: relative;
-    text-align: center;
 }
 
 .input-feedback {
