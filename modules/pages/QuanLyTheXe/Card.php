@@ -95,14 +95,14 @@
                 <th style="width: 9.5%" class="text-center">Số điện thoại</th>
                 <th style="width: 9.5%" class="text-center">Biển số xe</th>
                 <th style="width: 9.5%" class="text-center">
-<?php
-                  include "Card-add.php";
-?>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-<?php
+    <?php
+                    include "Card-add.php";
+    ?>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+    <?php
               // Create connection
               // $connection = new mysqli($servername, $username, $password, $database);
               // read all row from database table
@@ -179,11 +179,11 @@
                       </a>
                     </td>
                   </tr>
-<?php
-                }
-              }
-              $conn->close();
-?>
+      <?php
+                    }
+                  }
+                  $conn->close();
+      ?>
             </tbody>
           </table>
         </div>
@@ -197,32 +197,32 @@
             <li class="page-item ">
               <a class="page-link" href="?page=<?php echo(($current_page-1)) ?>"><</a>
             </li>
-<?php
+    <?php
             if ($current_page > 3) {
-?>
+    ?>
               <b style="margin-top: 7px;"> . . . </b>
-<?php
+    <?php
             }
             for ($i = 1; $i <= $number_pages; $i++) {
               if (abs($i - $current_page) <= 2) {
                 if ($i == $current_page) {
-?>
+    ?>
                   <li class="page-item"><a class="page-link" href="?page=<?php echo($i) ?>" style="background-color: #ccc;"><?php echo($i) ?></a></li>
-<?php
+    <?php
                 }
                 else {
-?>
+    ?>
                   <li class="page-item"><a class="page-link" href="?page=<?php echo($i) ?>"><?php echo($i) ?></a></li>
-<?php
+    <?php
                 }
               }
             }
             if ($number_pages - $current_page > 2) {
-?>
+    ?>
               <b style="margin-top: 7px;"> . . . </b>
-<?php
+    <?php
             }
-?>
+    ?>
             <li class="page-item">
               <a class="page-link" href="?page=<?php echo(($current_page+1)) ?>">></a>
             </li>
@@ -288,7 +288,7 @@
         }
       });
 
-// Lấy ID khi click vào Edit
+      // Lấy ID khi click vào Edit
       // for (var i = 0; i < $(".btn-edit").length; i++) {
       //     $(this).click(function(){
       //       var btn_edit_value;
@@ -308,7 +308,8 @@
   
 </body>
 
-<?php 
+    <?php 
     }
   }
-?>
+    ?>
+    </html>
