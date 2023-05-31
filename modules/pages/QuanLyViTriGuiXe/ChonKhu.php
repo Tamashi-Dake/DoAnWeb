@@ -39,7 +39,7 @@
     <div class="Areas">
       <h5>vị trí cho xe máy</h5>
       <div class="Area-list">
-        <a class="area-link" href="../QuanLyKhuGuiXe/parkingLocation.php">
+        <a class="area-link" href="../QuanLyViTriGuiXe/parkingLocation.php?vehicleType=Xe máy">
           <div class="Area">
             <i
               class="fa area-icon fa-motorcycle"
@@ -65,7 +65,7 @@
     <div class="Areas">
       <h5>vị trí cho ô tô</h5>
       <div class="Area-list">
-        <a class="area-link" href="../QuanLyKhuGuiXe/parkingLocation.php">
+        <a class="area-link" href="../QuanLyViTriGuiXe/parkingLocation.php?vehicleType=Ô tô">
           <div class="Area">
             <i
               class="fa area-icon fa-car"

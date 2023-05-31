@@ -47,7 +47,18 @@
                      <input type="text" name="txtCardID_<?php echo($i) ?>" id="cardID_<?php echo($i) ?>" placeholder="ID thẻ" value="<?php ?>">
                     <input type="text" name="txtLicensePlate_<?php echo($i) ?>" id="licensePlate_<?php echo($i) ?>" placeholder="Biển số" value="<?php ?>">
                 </div>
-                <i id="fa" class=" fa-solid fa-motorcycle"></i>
+                <i id="fa" class="<?php
+                if (isset($_GET['vehicleType'])) {
+                  if ($_GET['vehicleType'] == "Xe máy") {
+                    echo("fa-solid fa-motorcycle");
+                  }
+                  if ($_GET['vehicleType'] == "Ô tô") {
+                    echo("fa area-icon fa-car");
+                  }
+                } else {
+                  header("Location: ChonKhu.php");
+                }
+                ?>"></i>
             </div>
         <?php 
         }
