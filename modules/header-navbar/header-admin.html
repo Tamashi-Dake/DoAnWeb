@@ -154,6 +154,27 @@
         color: var(--link-color) !important;
         text-decoration: none;
       }
+      .dropdown-menu,
+      .dropdown-item {
+        background-color: var(--header-color);
+        padding: 5px;
+      }
+      .dropdown-menu li {
+        position: relative;
+      }
+      .dropdown-menu .dropdown-submenu {
+        display: none;
+        position: absolute;
+        left: 100%;
+        top: -7px;
+      }
+      .dropdown-menu .dropdown-submenu-left {
+        right: 100%;
+        left: auto;
+      }
+      .dropdown-menu > li:hover > .dropdown-submenu {
+        display: block;
+      }
       /* .bot[data-popper-placement^="bottom-start"] {
         float: right;
       } */
@@ -223,55 +244,56 @@
     >
   </div> -->
 
-      <!-- Thống kê  -->
-
-      <div class="dropdown">
-        <button
-          class="btn dropdown-toggle"
-          type="button"
-          id="dropdownMenuButton"
-          data-bs-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="true"
-        >
-          Thống kê
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a
+        class="nav-link dropdown-toggle"
+        href="#"
+        id="navbarDropdownMenu"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="true"
+        style="font-size: 30px"
+      >
+        &#8942;
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenu">
+        <li>
           <a class="dropdown-item" href="#">
-            <i class="fas fa-car nav-icon"></i>
-            Lượng xe vào ra
+            <i class="fas fa-solid fa-file"></i>Thống kê
           </a>
+          <ul class="dropdown-menu dropdown-submenu dropdown-submenu-left">
+            <li>
+              <a class="dropdown-item" href="#"
+                ><i class="fas fa-car nav-icon"></i> Lượng xe vào ra</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"
+                ><i class="fas fa-money-bill nav-icon"></i> Báo cáo doanh thu</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a
+            class="dropdown-item"
+            href="/DoAnWeb/modules/feedback/feedback_list.html"
+            ><i class="fas fa-solid fa-light fa-comment-dots"></i>Xem Feedback
+          </a>
+        </li>
+        <li>
           <a class="dropdown-item" href="#"
-            ><i class="fas fa-money-bill nav-icon"></i>
-            Báo cáo doanh thu
+            ><i class="fas fa-solid fa-gear"></i>Setting
           </a>
-        </div>
-      </div>
-      <!-- Xemfeedback -->
-      <div>
-        <a href="/DoAnWeb/modules/feedback/feedback_list.html"
-          ><i class="fas fa-solid fa-light fa-comment-dots"></i>Xem Feedback</a
-        >
-      </div>
-      <!-- Setting -->
-      <div class="dropdown">
-        <button
-          class="btn dropdown-toggle"
-          type="button"
-          id="dropdownMenuButton"
-          data-bs-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="true"
-        >
-          Setting
-        </button>
-        <div class="dropdown-menu bot" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">
-            <i class="far fa-circle nav-icon"></i>
-            Điều chỉnh phí gửi xe
-          </a>
-        </div>
-      </div>
+          <ul class="dropdown-menu dropdown-submenu dropdown-submenu-left">
+            <li>
+              <a class="dropdown-item" href="#"
+                ><i class="far fa-circle nav-icon"></i> Điều chỉnh phí gửi xe</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
     </nav>
   </body>
 </html>

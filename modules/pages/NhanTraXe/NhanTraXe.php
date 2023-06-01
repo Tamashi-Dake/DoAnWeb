@@ -47,7 +47,10 @@
         grid-template-columns: 40% 60%;
         padding: 5px;
     }
-
+    label{
+        margin-top: auto;
+        margin-bottom: auto;
+    }
     .card-footer {
         display: flex;
         justify-content: space-between;

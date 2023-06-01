@@ -30,7 +30,10 @@
         grid-template-columns: 40% 50%;
         gap: 10px;
     }
-
+    label{
+        margin-top: auto;
+        margin-bottom: auto;
+    }
     .page-link {
         padding: 10px !important;
     }

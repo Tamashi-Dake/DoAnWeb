@@ -41,7 +41,10 @@
         grid-template-columns: 45% 55%;
         gap: 10px;
     }
-
+    label{
+        margin-top: auto;
+        margin-bottom: auto  !important;
+    }
     .page-link {
         padding: 10px !important;
         margin: 3px !important;
