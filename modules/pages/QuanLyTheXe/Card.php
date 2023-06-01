@@ -1,4 +1,5 @@
-<?php session_start(); 
+<?php
+    session_start(); 
   if (isset($_SESSION['login']) == false) {
     header("Location: /DoAnWeb/login/index.php");
   }
@@ -49,10 +50,10 @@
     .errorMessenge {
         display: block;
         color: red;
-        grid-column: span 2;
-        text-align: center;
+        grid-column-start: 2;
+        text-align: left;
         margin-bottom: 0;
-
+        font-size:0.7rem;
     }
     </style>
     <?php
@@ -205,11 +206,11 @@
                     <ul class="pagination justify-content-center">
                         <li class="page-item ">
                             <a class="page-link" href="?page=1">
-                                <<< /a>
+                                <<</a>
                         </li>
                         <li class="page-item ">
                             <a class="page-link" href="?page=<?php echo(($current_page-1)) ?>">
-                                << /a>
+                                <</a>
                         </li>
                         <?php
             if ($current_page > 3) {
@@ -263,69 +264,71 @@
     <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script>
     $(document).ready(function() {
-                // $("#btn-add").click(function(){
-                //   cardID = $("#txtCardID-Add").val();
-                //   vehicleType = $("#selectVehicleType-Add").val();
-                //   type = $("#selectType-Add").val();
-                //   customerName = $("#txtCustomerName-Add").val();
-                //   customerIdentityCard = $("#txtCustomerIdentityCard-Add").val();
-                //   phoneNumber = $("#txtPhoneNumber-Add").val();
-                //   licensePlate = $("#txtLicensePlate-Add").val();
-                //   alert(cardID +", "+ vehicleType +", "+ type +", "+ customerName +", "+ customerIdentityCard +", "+ phoneNumber +", "+ licensePlate);
-                // });
+        // $("#btn-add").click(function(){
+        //   cardID = $("#txtCardID-Add").val();
+        //   vehicleType = $("#selectVehicleType-Add").val();
+        //   type = $("#selectType-Add").val();
+        //   customerName = $("#txtCustomerName-Add").val();
+        //   customerIdentityCard = $("#txtCustomerIdentityCard-Add").val();
+        //   phoneNumber = $("#txtPhoneNumber-Add").val();
+        //   licensePlate = $("#txtLicensePlate-Add").val();
+        //   alert(cardID +", "+ vehicleType +", "+ type +", "+ customerName +", "+ customerIdentityCard +", "+ phoneNumber +", "+ licensePlate);
+        // });
 
-                if ($("#selectType-Add").val() == "Tháng") {
-                    $(".inputForMonthCard-Add").prop('readonly', false);
-                }
-                if ($("#selectType-Add").val() == "Thường") {
-                    $(".inputForMonthCard-Add").prop('readonly', true);
-                }
-                $("#selectType-Add").change(function() {
-                    if ($(this).val() == "Tháng") {
-                        $(".inputForMonthCard-Add").prop('readonly', false);
-                    }
-                    if ($(this).val() == "Thường") {
-                        $(".inputForMonthCard-Add").prop('readonly', true);
-                    }
-                });
+        if ($("#selectType-Add").val() == "Tháng") {
+            $(".inputForMonthCard-Add").prop('readonly', false);
+        }
+        if ($("#selectType-Add").val() == "Thường") {
+            $(".inputForMonthCard-Add").prop('readonly', true);
+        }
+        $("#selectType-Add").change(function() {
+            if ($(this).val() == "Tháng") {
+                $(".inputForMonthCard-Add").prop('readonly', false);
+            }
+            if ($(this).val() == "Thường") {
+                $(".inputForMonthCard-Add").prop('readonly', true);
+            }
+        });
 
-                if ($("#selectType-Edit").val() == "Tháng") {
-                    $(".inputForMonthCard-Edit").prop('readonly', false);
-                }
-                if ($("#selectType-Edit").val() == "Thường") {
-                    $(".inputForMonthCard-Edit").prop('readonly', true);
-                }
-                $("#selectType-Edit").change(function() {
-                    if ($(this).val() == "Tháng") {
-                        $(".inputForMonthCard-Edit").prop('readonly', false);
-                    }
-                    if ($(this).val() == "Thường") {
-                        $(".inputForMonthCard-Edit").prop('readonly', true);
-                    }
-                });
+        if ($("#selectType-Edit").val() == "Tháng") {
+            $(".inputForMonthCard-Edit").prop('readonly', false);
+        }
+        if ($("#selectType-Edit").val() == "Thường") {
+            $(".inputForMonthCard-Edit").prop('readonly', true);
+        }
+        $("#selectType-Edit").change(function() {
+            if ($(this).val() == "Tháng") {
+                $(".inputForMonthCard-Edit").prop('readonly', false);
+            }
+            if ($(this).val() == "Thường") {
+                $(".inputForMonthCard-Edit").prop('readonly', true);
+            }
+        });
 
-                // Lấy ID khi click vào Edit
-                // for (var i = 0; i < $(".btn-edit").length; i++) {
-                //     $(this).click(function(){
-                //       var btn_edit_value;
-                //       if (i == $(this).data("CardID_Edit"))
-                //     });
-                //   }
-                // });
+        // Lấy ID khi click vào Edit
+        // for (var i = 0; i < $(".btn-edit").length; i++) {
+        //     $(this).click(function(){
+        //       var btn_edit_value;
+        //       if (i == $(this).data("CardID_Edit"))
+        //     });
+        //   }
+        // });
 
-                $(".btn-edit").foreach(function() {
-                    $(this).click(function() {
-                        var cardID = $(this).data("CardID_Edit");
-                        $("txtCardID-Edit").html(cardID);
-                    });
-                });
+        $(".btn-edit").foreach(function() {
+            $(this).click(function() {
+                var cardID = $(this).data("CardID_Edit");
+                $("txtCardID-Edit").html(cardID);
+            });
+        });
+    });
     </script>
 
 </body>
 
-<?php 
-    }
-  }
-    ?>
 
 </html>
+<?php
+    
+    }
+  }
+?>

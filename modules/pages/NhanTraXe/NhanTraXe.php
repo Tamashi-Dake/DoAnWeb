@@ -60,10 +60,10 @@
     .errorMessenge {
         display: block;
         color: red;
-        grid-column: span 2;
-        text-align: center;
+        grid-column-start: 2;
+        text-align: left;
         margin-bottom: 0;
-
+        font-size:0.7rem;
     }
     </style>
     <?php include "../../header-navbar/header.php";

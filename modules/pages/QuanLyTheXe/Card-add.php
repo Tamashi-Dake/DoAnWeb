@@ -67,7 +67,7 @@
                                                 <option value="Xe máy">Xe máy</option>
                                                 <option value="Ô tô">Ô tô</option>
                                             </select>
-                                            <p class="errorMessenge">Báo lỗi</p>
+                                            <p class="errorMessenge">Báo lỗi lorem</p>
                                         </div>
                                         <div class="form-group">
                                             <label for="selectType-Add">Loại thẻ</label>
