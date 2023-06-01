@@ -1,88 +1,85 @@
 <div class="modal show" id="modal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Sửa thông tin thẻ xe</h4>
-                <a type="button" class="close">
-                    <span aria-hidden="true">&times;</span>
-                </a>
-            </div>
-            <div class="modal-body">
-                <div class="row" style="display:block">
-                    <div class="col-md-6" style="    max-width: 100%;">
-                        <div class="card card-primary" style="box-shadow:none; margin:0;">
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label for="txtCardID-Edit">ID thẻ</label>
-                                    <input type="text" id="txtCardID-Edit" readonly value="" />
-                                    <p class="errorMessenge">Báo lỗi</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="selectStatus-Edit">Trạng thái</label>
-                                    <select id="selectStatus-Edit" value="<?php echo($row['status']); ?>">
-                                        <option value="1">Mở</option>
-                                        <option value="0">Khóa</option>
-                                    </select>
-                                    <p class="errorMessenge">Báo lỗi</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="selectVehicleType-Edit">Loại xe</label>
-                                    <select id="selectVehicleType-Edit" value="<?php echo($row['vehicleType']); ?>">
-                                        <option value="Xe máy">Xe máy</option>
-                                        <option value="Ô tô">Ô tô</option>
-                                    </select>
-                                    <p class="errorMessenge">Báo lỗi</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="selectType-Edit">Loại thẻ</label>
-                                    <select id="selectType-Edit" value="<?php echo($row['type']); ?>">
-                                        <option value="Thường">Thường</option>
-                                        <option value="Tháng">Tháng</option>
-                                    </select>
-                                    <p class="errorMessenge">Báo lỗi</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="txtDate">Ngày đăng ký</label>
-                                    <input type="date" id="txtDate" class="inputForMonthCard-Edit"
-                                        value="<?php echo($row['date']); ?>" />
-                                    <p class="errorMessenge">Báo lỗi</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="txtCustomerName">Tên khách hàng</label>
-                                    <input type="text" id="txtCustomerName" class="inputForMonthCard-Edit"
-                                        value="<?php echo($row['customerName']); ?>" />
-                                    <p class="errorMessenge">Báo lỗi</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="txtCustomerIdentityCard">CCCD khách</label>
-                                    <input type="text" id="txtCustomerIdentityCard" class="inputForMonthCard-Edit"
-                                        value="<?php echo($row['customerIdentityCard']); ?>" />
-                                    <p class="errorMessenge">Báo lỗi</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="txtPhoneNumber">Số điện thoại</label>
-                                    <input type="text" id="txtPhoneNumber" class="inputForMonthCard-Edit"
-                                        value="<?php echo($row['phoneNumber']); ?>" />
-                                    <p class="errorMessenge">Báo lỗi</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="txtLicensePlate">Biển số xe</label>
-                                    <input type="text" id="txtLicensePlate" class="inputForMonthCard-Edit"
-                                        value="<?php echo($row['licensePlate']); ?>" />
-                                    <p class="errorMessenge">Báo lỗi</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Sửa thông tin thẻ xe</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="Card-edit-action.php?page=<?php echo($current_page) ?><?php if (isset($_GET['search'])) { $search = $_GET['search']; echo("&search=". $_GET['search']);} ?>" method="POST">
+        <div class="modal-body">
+          <div class="row" style="display:block">
+            <div class="col-md-6" style="    max-width: 100%;">
+              <div class="card card-primary" style="box-shadow:none; margin:0;">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="txtCardID_Edit">ID thẻ</label>
+                    <input type="text" id="txtCardID_Edit" name="txtCardID_Edit" readonly value="" />
+                    <p class="errorMessenge">Báo lỗi</p>
+                  </div>
+                  <div class="form-group">
+                    <label for="selectStatus_Edit">Trạng thái</label>
+                    <select id="selectStatus_Edit" name="selectStatus_Edit" value="" >
+                      <option value="1">Mở</option>
+                      <option value="0">Khóa</option>
+                    </select>
+                    <p class="errorMessenge">Báo lỗi</p>
+                  </div>
+                  <div class="form-group">
+                    <label for="selectVehicleType_Edit">Loại xe</label>
+                    <select id="selectVehicleType_Edit" name="selectVehicleType_Edit" value="">
+                      <option value="Xe máy">Xe máy</option>
+                      <option value="Ô tô">Ô tô</option>
+                    </select>
+                    <p class="errorMessenge">Báo lỗi</p>
+                  </div>
+                  <div class="form-group">
+                    <label for="selectType_Edit">Loại thẻ</label>
+                    <select id="selectType_Edit" name="selectType_Edit" value="">
+                      <option value="Thường">Thường</option>
+                      <option value="Tháng">Tháng</option>
+                    </select>
+                    <p class="errorMessenge">Báo lỗi</p>
+                  </div>
+                  <div class="form-group">
+                    <label for="txtDate_Edit">Ngày đăng ký</label>
+                    <input type="date" id="txtDate_Edit" class="inputForMonthCard-Edit" name="txtDate_Edit" value="" />
+                    <p class="errorMessenge">Báo lỗi</p>
+                  </div>
+                  <div class="form-group">
+                    <label for="txtCustomerName_Edit">Tên khách hàng</label>
+                    <input type="text" id="txtCustomerName_Edit" class="inputForMonthCard-Edit" name="txtCustomerName_Edit" value="" />
+                    <p class="errorMessenge">Báo lỗi</p>
+                  </div>
+                  <div class="form-group">
+                    <label for="txtCustomerIdentityCard_Edit">CCCD khách</label>
+                    <input type="text" id="txtCustomerIdentityCard_Edit" class="inputForMonthCard-Edit" name="txtCustomerIdentityCard_Edit" value="" />
+                    <p class="errorMessenge">Báo lỗi</p>
+                  </div>
+                  <div class="form-group">
+                    <label for="txtPhoneNumber_Edit">Số điện thoại</label>
+                    <input type="text" id="txtPhoneNumber_Edit" class="inputForMonthCard-Edit" name="txtPhoneNumber_Edit" value="" />
+                    <p class="errorMessenge">Báo lỗi</p>
+                  </div>
+                  <div class="form-group">
+                    <label for="txtLicensePlate_Edit">Biển số xe</label>
+                    <input type="text" id="txtLicensePlate_Edit" class="inputForMonthCard-Edit" name="txtLicensePlate_Edit" value="" />
+                    <p class="errorMessenge">Báo lỗi</p>
+                  </div>
                 </div>
+              </div>
             </div>
-            <div class="modal-footer justify-content-between">
-                <button type="button" class="btn btn-default">Reset</button>
-                <button type="button" class="btn btn-primary">Lưu</button>
-            </div>
+          </div>
         </div>
-        <!-- /.modal-content -->
+        <div class="modal-footer justify-content-between">
+          <button type="reset" class="btn btn-default">Reset</button>
+          <button type="submit" class="btn btn-primary" id="btn-edit">Sửa</button>
+        </div>
+      </form>
     </div>
-    <!-- /.modal-dialog -->
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
 </div>
 <!-- /.modal -->
