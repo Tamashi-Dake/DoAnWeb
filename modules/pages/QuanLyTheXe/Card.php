@@ -195,12 +195,20 @@
                     <td class='project-actions text-center'>
                       <button type="button" class="btn btn-default btn_edit" data-toggle="modal" data-target="#modal" id="btn_edit_<?php echo($row["cardID"]) ?>" data-cardid="<?php echo($row["cardID"]) ?>">
                         <i class="fas fa-solid fa-pen-to-square"></i>
-                        Edit
+                        Sửa
                       </button>
-                      <a class='btn btn-danger' href='Card-delete-action.php?cardID=<?php echo ($row["cardID"]) ?>&type=<?php echo ($row["type"]) ?>'>
+                      <button type="button" class="btn btn-danger btn_delete" data-toggle="modal" data-target="#modalDel" id="btn_delete_<?php echo($row["cardID"]) ?>" data-cardid="<?php echo($row["cardID"]) ?>">
+                        <i class="fas fa-trash"></i>
+                        Xóa
+                      </button>
+                      
+                      <!-- <a class='btn btn-danger' href='Card-delete-action.php?cardID=
+                        <?php 
+                          // echo ($row["cardID"]) ?>&type=<?php 
+                              // echo ($row["type"]) ?>'>
                         <i class='fas fa-trash'> </i>
                         Xóa
-                      </a>
+                      </a> -->
                     </td>
                   </tr>
 <?php
@@ -262,7 +270,8 @@
   <?php
   // include "../../feedback-btn.html" ?>
   <?php include "../../footer.html" ?>
-  <?php include "Card-edit.php" ?>
+  <?php include "Card-edit.php";
+   include "Card-delete.php" ?>
 
 
   <!-- jQuery -->
