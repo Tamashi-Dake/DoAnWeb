@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ADEPRO - Quản lý tài khoản</title>
+    <title>ADEPRO - Quản lý khu vực</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -20,8 +20,7 @@
     include "../../../bootstrap.css";
     include "../../../connection.php";
 
-    ?>th,
-    td {
+    ?>th,td {
         text-align: center !important;
     }
 
@@ -58,7 +57,7 @@
             <!-- Default box -->
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-titl e">Danh sách tài khoản</h3>
+                    <h3 class="card-titl e">Danh sách khu vực</h3>
                     <div style="margin-left:auto;">
                         <div class="input-group rounded">
                             <input type="search" class="form-control rounded" placeholder="Tìm kiếm" aria-label="Search"
@@ -74,16 +73,12 @@
                         <thead>
                             <tr>
                                 <th style="width: 1%">#</th>
-                                <th style="width: 10%">Tên tài khoản</th>
-                                <th style="width: 10%">Mật khẩu</th>
-                                <th style="width: 20%" class="text-center">Họ Tên</th>
-                                <th style="width: 8%" class="text-center">Chức vụ</th>
-                                <th style="width: 10%" class="text-center">CCCD</th>
-                                <th style="width: 10%" class="text-center">Ngày sinh</th>
-                                <th style="width: 8%" class="text-center">Giới tính</th>
-                                <th style="width: 15%" class="text-center">
+                                <th style="width: 10%">Tên khu</th>
+                                <th style="width: 20%">Số xe tối đa</th>
+                                <th style="width: 20%" class="text-center">Số xe hiện tại</th>
+                                <th style="width: 20%" class="text-center">
                                     <?php
-                    include "Account-add.php";
+                    include "Area-add.php";
                     ?>
                                 </th>
                             </tr>
@@ -93,7 +88,7 @@
                         // Create connection
               // $connection = new mysqli($servername, $username, $password, $database);
                     // read all row from database table
-              $sql = "SELECT * FROM webbaiguixe.account";
+              $sql = "SELECT * FROM webbaiguixe.area";
               $result = $conn->query($sql);
 
                     if (!$result) {
@@ -104,15 +99,11 @@
               while($row = $result->fetch_assoc()) {
                         echo "<tr>
                             <td></td>
-                            <td>" . $row["userName"] . "</td>
-                            <td>" . $row["password"] . "</td>
-                            <td>" . $row["name"] . "</td>
-                            <td>" . $row["position"] . "</td>
-                            <td>" . $row["identityCard"] . "</td>
-                            <td>" . $row["birth"] . "</td>
-                            <td>" . $row["sex"] . "</td>
+                            <td>" . $row["areaName"] . "</td>
+                            <td>" . $row["maxSize"] . "</td>
+                            <td>" . $row["currentSize"] . "</td>
                             <td class='project-actions text-center'>";
-                            include "Account-edit.php";
+                            include "Area-edit.php";
                             echo"
                               <a class='btn btn-danger' href='#'>
                                 <i class='fas fa-trash'> </i>

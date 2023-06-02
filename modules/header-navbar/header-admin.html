@@ -158,6 +158,8 @@
       .dropdown-item {
         background-color: var(--header-color);
         padding: 5px;
+        border-radius: 5px;
+        padding-left: 10px !important;
       }
       .dropdown-menu li {
         position: relative;
@@ -174,6 +176,9 @@
       }
       .dropdown-menu > li:hover > .dropdown-submenu {
         display: block;
+      }
+      .padding-0 {
+        padding-left: 0 !important;
       }
       /* .bot[data-popper-placement^="bottom-start"] {
         float: right;
@@ -204,7 +209,7 @@
 
     <nav class="toolbar">
       <div>
-        <a href="/DoAnWeb/index-employee.php"
+        <a href="/DoAnWeb/index-admin.php"
           ><i class="fas fa-info"></i> Trang chủ</a
         >
       </div>
@@ -229,7 +234,7 @@
         >
       </div>
       <div>
-        <a href="/DoAnWeb/modules/pages/">
+        <a href="/DoAnWeb/modules/pages/QuanLyKhuVucGuiXe/Area.php">
           <i class="fas fa-users"></i>Quản lý khu vực gửi xe</a
         >
       </div>
@@ -263,12 +268,12 @@
           </a>
           <ul class="dropdown-menu dropdown-submenu dropdown-submenu-left">
             <li>
-              <a class="dropdown-item" href="#"
+              <a class="dropdown-item padding-0" href="#"
                 ><i class="fas fa-car nav-icon"></i> Lượng xe vào ra</a
               >
             </li>
             <li>
-              <a class="dropdown-item" href="#"
+              <a class="dropdown-item padding-0" href="#"
                 ><i class="fas fa-money-bill nav-icon"></i> Báo cáo doanh thu</a
               >
             </li>
@@ -287,7 +292,9 @@
           </a>
           <ul class="dropdown-menu dropdown-submenu dropdown-submenu-left">
             <li>
-              <a class="dropdown-item" href="#"
+              <a
+                class="dropdown-item padding-0"
+                href="/DoAnWeb/modules/pages/Setting/PriceSetting.php"
                 ><i class="far fa-circle nav-icon"></i> Điều chỉnh phí gửi xe</a
               >
             </li>
