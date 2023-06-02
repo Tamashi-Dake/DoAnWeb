@@ -1,5 +1,7 @@
 <?php include "../../../connection.php"; ?>
 <?php
+    session_start();
+    $isValid = true;
     $error = "";
     try {
         if (isset($_GET['cardID']) && isset($_GET['type'])) {
@@ -17,8 +19,19 @@
     }
     catch (Exception $ex) {
         $error .= "<br><br>Lỗi hệ thống.<br>- Mã lỗi: ". $ex->getCode() ."<br>- Chi tiết: ". $ex->getMessage() ."<br>- Tại dòng code: ". $ex->getLine();
+        $isValid = false;
     }
-    echo($error);
+
+    // echo($error);   // ĐÃ XONG thông báo ngầm
+    if ($isValid == true) {
+        $_SESSION['success'] = "Xóa thẻ thành công!";
+    }
+    else {
+        if ($error != "") {
+            $_SESSION['error'] = $error;
+        }
+    }
+
     mysqli_close($conn);
     header("Location: Card.php");
 ?>

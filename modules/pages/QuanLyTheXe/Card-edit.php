@@ -16,7 +16,7 @@
                   <div class="form-group">
                     <label for="txtCardID_Edit">ID thẻ</label>
                     <input type="text" id="txtCardID_Edit" name="txtCardID_Edit" readonly value="" />
-                    <p class="errorMessenge">Báo lỗi</p>
+                    <p id="errorID_Edit" class="errorMessenge">.</p>
                   </div>
                   <div class="form-group">
                     <label for="selectStatus_Edit">Trạng thái</label>
@@ -24,7 +24,7 @@
                       <option value="1">Mở</option>
                       <option value="0">Khóa</option>
                     </select>
-                    <p class="errorMessenge">Báo lỗi</p>
+                    <p id="errorStatus_Edit" class="errorMessenge">.</p>
                   </div>
                   <div class="form-group">
                     <label for="selectVehicleType_Edit">Loại xe</label>
@@ -32,7 +32,7 @@
                       <option value="Xe máy">Xe máy</option>
                       <option value="Ô tô">Ô tô</option>
                     </select>
-                    <p class="errorMessenge">Báo lỗi</p>
+                    <p id="errorVehicleType_Edit" class="errorMessenge">.</p>
                   </div>
                   <div class="form-group">
                     <label for="selectType_Edit">Loại thẻ</label>
@@ -40,32 +40,32 @@
                       <option value="Thường">Thường</option>
                       <option value="Tháng">Tháng</option>
                     </select>
-                    <p class="errorMessenge">Báo lỗi</p>
+                    <p id="errorType_Edit" class="errorMessenge">.</p>
                   </div>
                   <div class="form-group">
                     <label for="txtDate_Edit">Ngày đăng ký</label>
-                    <input type="date" id="txtDate_Edit" class="inputForMonthCard-Edit" name="txtDate_Edit" value="" />
-                    <p class="errorMessenge">Báo lỗi</p>
+                    <input type="date" id="txtDate_Edit" class="inputForMonthCard-Edit" name="txtDate_Edit" value="" min="2000-01-01" max="2099-12-31" required oninvalid="this.setCustomValidity('Không được để trống')"/>
+                    <p id="errorDate_Edit" class="errorMessenge">.</p>
                   </div>
                   <div class="form-group">
                     <label for="txtCustomerName_Edit">Tên khách hàng</label>
-                    <input type="text" id="txtCustomerName_Edit" class="inputForMonthCard-Edit" name="txtCustomerName_Edit" value="" />
-                    <p class="errorMessenge">Báo lỗi</p>
+                    <input type="text" id="txtCustomerName_Edit" class="inputForMonthCard-Edit" name="txtCustomerName_Edit" value="" required oninvalid="this.setCustomValidity('Không được để trống')" oninvalid="this.setCustomValidity('Không được để trống')"/>
+                    <p id="errorCustomerName_Edit" class="errorMessenge">.</p>
                   </div>
                   <div class="form-group">
                     <label for="txtCustomerIdentityCard_Edit">CCCD khách</label>
-                    <input type="text" id="txtCustomerIdentityCard_Edit" class="inputForMonthCard-Edit" name="txtCustomerIdentityCard_Edit" value="" />
-                    <p class="errorMessenge">Báo lỗi</p>
+                    <input type="text" id="txtCustomerIdentityCard_Edit" class="inputForMonthCard-Edit" name="txtCustomerIdentityCard_Edit" value="" required oninvalid="this.setCustomValidity('Không được để trống')"/>
+                    <p id="errorCustomerIdentityCard_Edit" class="errorMessenge">.</p>
                   </div>
                   <div class="form-group">
                     <label for="txtPhoneNumber_Edit">Số điện thoại</label>
-                    <input type="text" id="txtPhoneNumber_Edit" class="inputForMonthCard-Edit" name="txtPhoneNumber_Edit" value="" />
-                    <p class="errorMessenge">Báo lỗi</p>
+                    <input type="text" id="txtPhoneNumber_Edit" class="inputForMonthCard-Edit" name="txtPhoneNumber_Edit" value="" required oninvalid="this.setCustomValidity('Không được để trống')"/>
+                    <p id="errorPhoneNumber_Edit" class="errorMessenge">.</p>
                   </div>
                   <div class="form-group">
                     <label for="txtLicensePlate_Edit">Biển số xe</label>
-                    <input type="text" id="txtLicensePlate_Edit" class="inputForMonthCard-Edit" name="txtLicensePlate_Edit" value="" />
-                    <p class="errorMessenge">Báo lỗi</p>
+                    <input type="text" id="txtLicensePlate_Edit" class="inputForMonthCard-Edit" name="txtLicensePlate_Edit" value="" required oninvalid="this.setCustomValidity('Không được để trống')"/>
+                    <p id="errorLicensePlate_Edit" class="errorMessenge">.</p>
                   </div>
                 </div>
               </div>
@@ -73,8 +73,8 @@
           </div>
         </div>
         <div class="modal-footer justify-content-between">
-          <button type="reset" class="btn btn-default">Reset</button>
-          <button type="submit" class="btn btn-primary" id="btn-edit">Sửa</button>
+          <button type="reset" class="btn btn-default" id="btn_reset_edit">Reset</button>
+          <button type="submit" class="btn btn-primary" id="btn_edit">Sửa</button>
         </div>
       </form>
     </div>

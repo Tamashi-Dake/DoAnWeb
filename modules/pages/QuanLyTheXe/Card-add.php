@@ -37,9 +37,9 @@
                 <div class="card card-primary" style="box-shadow:none; margin:0;">
                   <div class="card-body">
                     <div class="form-group">
-                      <label for="txtCardID-Add">ID thẻ</label>
+                      <label for="txtCardID_Add">ID thẻ</label>
 <!-- php-start -->
-                      <input type="text" id="txtCardID-Add" name="txtCardID_Add" readonly value="<?php
+                      <input type="text" id="txtCardID_Add" name="txtCardID_Add" readonly value="<?php
                       $sqlQuery = "SELECT MAX(cardID) AS maxCardID FROM card";
                       $result = mysqli_query($conn, $sqlQuery);
                       if (mysqli_num_rows($result) > 0) {
@@ -51,7 +51,7 @@
                       }
                       echo ($cardID);
                       ?>" />
-                      <p class="errorMessenge">Báo lỗi lorem</p>
+                      <p id="errorID_Add" class="errorMessenge">.</p>
 <!-- php-end -->
                     </div>
                     <!-- <div class="form-group">
@@ -62,44 +62,44 @@
                       </select>
                     </div> -->
                     <div class="form-group">
-                      <label for="selectVehicleType-Add">Loại xe</label>
-                      <select id="selectVehicleType-Add" name="selectVehicleType_Add">
+                      <label for="selectVehicleType_Add">Loại xe</label>
+                      <select id="selectVehicleType_Add" name="selectVehicleType_Add">
                         <option value="Xe máy">Xe máy</option>
                         <option value="Ô tô">Ô tô</option>
                       </select>
-                      <p class="errorMessenge">Báo lỗi lorem</p>
+                      <p id="errorVehicleType_Add" class="errorMessenge">.</p>
                     </div>
                     <div class="form-group">
-                      <label for="selectType-Add">Loại thẻ</label>
-                      <select id="selectType-Add" name="selectType_Add">
+                      <label for="selectType_Add">Loại thẻ</label>
+                      <select id="selectType_Add" name="selectType_Add">
                         <option value="Thường">Thường</option>
                         <option value="Tháng">Tháng</option>
                       </select>
-                      <p class="errorMessenge">Báo lỗi lorem</p>
+                      <p id="errorType_Add" class="errorMessenge">.</p>
                     </div>
                     <div class="form-group">
-                      <label for="inputCustomerName-Add">Tên khách hàng</label>
-                      <input type="text" id="txtCustomerName-Add" class="inputForMonthCard-Add"
-                        name="txtCustomerName_Add" value="" />
-                      <p class="errorMessenge">Báo lỗi lorem</p>
+                      <label for="inputCustomerName_Add">Tên khách hàng</label>
+                      <input type="text" id="txtCustomerName_Add" class="inputForMonthCard_Add"
+                        name="txtCustomerName_Add" value="" required oninvalid="this.setCustomValidity('Không được để trống')"/>
+                      <p id="errorCustomerName_Add" class="errorMessenge">.</p>
                     </div>
                     <div class="form-group">
-                      <label for="txtCustomerIdentityCard-Add">CCCD khách</label>
-                      <input type="text" id="txtCustomerIdentityCard-Add" class="inputForMonthCard-Add"
-                        name="txtCustomerIdentityCard_Add" value="" />
-                      <p class="errorMessenge">Báo lỗi lorem</p>
+                      <label for="txtCustomerIdentityCard_Add">CCCD khách</label>
+                      <input type="text" id="txtCustomerIdentityCard_Add" class="inputForMonthCard_Add"
+                        name="txtCustomerIdentityCard_Add" value="" required oninvalid="this.setCustomValidity('Không được để trống')"/>
+                      <p id="errorCustomerIdentityCard_Add" class="errorMessenge">.</p>
                     </div>
                     <div class="form-group">
-                      <label for="txtPhoneNumber-Add">Số điện thoại</label>
-                      <input type="text" id="txtPhoneNumber-Add" class="inputForMonthCard-Add" name="txtPhoneNumber_Add"
-                        value="" />
-                      <p class="errorMessenge">Báo lỗi lorem</p>
+                      <label for="txtPhoneNumber_Add">Số điện thoại</label>
+                      <input type="text" id="txtPhoneNumber_Add" class="inputForMonthCard_Add" name="txtPhoneNumber_Add"
+                        value="" required oninvalid="this.setCustomValidity('Không được để trống')"/>
+                      <p id="errorPhoneNumber_Add" class="errorMessenge">.</p>
                     </div>
                     <div class="form-group">
-                      <label for="txtLicensePlate-Add">Biển số xe</label>
-                      <input type="text" id="txtLicensePlate-Add" class="inputForMonthCard-Add"
-                        name="txtLicensePlate_Add" value="" />
-                      <p class="errorMessenge">Báo lỗi lorem</p>
+                      <label for="txtLicensePlate_Add">Biển số xe</label>
+                      <input type="text" id="txtLicensePlate_Add" class="inputForMonthCard_Add"
+                        name="txtLicensePlate_Add" value="" required oninvalid="this.setCustomValidity('Không được để trống')"/>
+                      <p id="errorLicensePlate_Add" class="errorMessenge">.</p>
                     </div>
                   </div>
                 </div>
@@ -107,8 +107,8 @@
             </div>
           </div>
           <div class="modal-footer justify-content-between">
-            <button type="reset" class="btn btn-default">Reset</button>
-            <button type="submit" class="btn btn-primary" id="btn-add">Thêm</button>
+            <button type="reset" class="btn btn-default" id="btn_reset_add">Reset</button>
+            <button type="submit" class="btn btn-primary" id="btn_add">Thêm</button>
           </div>
         </form>
       </div>

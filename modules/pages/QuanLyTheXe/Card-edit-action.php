@@ -1,18 +1,19 @@
 <?php include "../../../connection.php"; ?>
 <?php
+    session_start(); 
     date_default_timezone_set("Asia/Bangkok");
 
     $display = 1;
     $error = "";
+    $isValid = true;
     try {
-        $isValid = true;
         if (isset($_POST['txtCardID_Edit'])) {
             $cardID = $_POST['txtCardID_Edit'];
 
 // Check exist
             $result = mysqli_query($conn, "SELECT * FROM card WHERE cardID = $cardID AND display = 1");
             if (mysqli_num_rows($result) <= 0) {
-                $error .= "<br><br>ID thẻ không tồn tại. ";
+                $error .= "ID thẻ không tồn tại. ";
                 $isValid = false;
             }
             else {
@@ -70,9 +71,20 @@
     }
     catch (Exception $ex) {
         $error .= "<br><br>Lỗi hệ thống.<br>- Mã lỗi: ". $ex->getCode() ."<br>- Chi tiết: ". $ex->getMessage() ."<br>- Tại dòng code: ". $ex->getLine();
+        $isValid = false;
     }
 
-    echo($error);   // ĐÃ XONG thông báo ngầm
+    // echo($error);   // ĐÃ XONG thông báo ngầm
+
+    if ($isValid == true) {
+        $_SESSION['success'] = "Sửa thông tin thẻ thành công!";
+    }
+    else {
+        if ($error != "") {
+            $_SESSION['error'] = $error;
+        }
+    }
+    
     mysqli_close($conn);
     
     if (isset($_GET['page'])) {
