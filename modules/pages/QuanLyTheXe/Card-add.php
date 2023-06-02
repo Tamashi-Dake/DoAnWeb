@@ -51,6 +51,7 @@
                       }
                       echo ($cardID);
                       ?>" />
+                      <p class="errorMessenge">Báo lỗi lorem</p>
 <!-- php-end -->
                     </div>
                     <!-- <div class="form-group">
@@ -66,6 +67,7 @@
                         <option value="Xe máy">Xe máy</option>
                         <option value="Ô tô">Ô tô</option>
                       </select>
+                      <p class="errorMessenge">Báo lỗi lorem</p>
                     </div>
                     <div class="form-group">
                       <label for="selectType-Add">Loại thẻ</label>
@@ -73,26 +75,31 @@
                         <option value="Thường">Thường</option>
                         <option value="Tháng">Tháng</option>
                       </select>
+                      <p class="errorMessenge">Báo lỗi lorem</p>
                     </div>
                     <div class="form-group">
                       <label for="inputCustomerName-Add">Tên khách hàng</label>
                       <input type="text" id="txtCustomerName-Add" class="inputForMonthCard-Add"
                         name="txtCustomerName_Add" value="" />
+                      <p class="errorMessenge">Báo lỗi lorem</p>
                     </div>
                     <div class="form-group">
                       <label for="txtCustomerIdentityCard-Add">CCCD khách</label>
                       <input type="text" id="txtCustomerIdentityCard-Add" class="inputForMonthCard-Add"
                         name="txtCustomerIdentityCard_Add" value="" />
+                      <p class="errorMessenge">Báo lỗi lorem</p>
                     </div>
                     <div class="form-group">
                       <label for="txtPhoneNumber-Add">Số điện thoại</label>
                       <input type="text" id="txtPhoneNumber-Add" class="inputForMonthCard-Add" name="txtPhoneNumber_Add"
                         value="" />
+                      <p class="errorMessenge">Báo lỗi lorem</p>
                     </div>
                     <div class="form-group">
                       <label for="txtLicensePlate-Add">Biển số xe</label>
                       <input type="text" id="txtLicensePlate-Add" class="inputForMonthCard-Add"
                         name="txtLicensePlate_Add" value="" />
+                      <p class="errorMessenge">Báo lỗi lorem</p>
                     </div>
                   </div>
                 </div>
@@ -102,8 +109,6 @@
           <div class="modal-footer justify-content-between">
             <button type="reset" class="btn btn-default">Reset</button>
             <button type="submit" class="btn btn-primary" id="btn-add">Thêm</button>
-            <!-- <input type="reset" class="btn btn-default" value="Reset"> -->
-            <!-- <input type="submit" class="btn btn-primary" id="btn-add" name="btn-add"value="Thêm"> -->
           </div>
         </form>
       </div>
