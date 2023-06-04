@@ -44,7 +44,7 @@
   <main style="margin-top: 10vh">
 
     <section class="content" style=" margin:auto; max-width:95%;">
-      <div class="card">
+    <div class="card">
         <div class="card-header">
           <h3 class="card-titl e">Danh sách Feedback</h3>
           <div style="margin-left:auto;">
@@ -101,7 +101,12 @@
                         </tbody>
                       </table>
                     </div>
-  
+    </section>
+  </main>
+  <?php
+    include "../footer.html";
+  ?>
+
 </body>
 
     </html>
