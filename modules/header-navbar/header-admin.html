@@ -148,41 +148,49 @@
         /* .toolbar div {
         margin-left: 5%;
       } */
-      .toolbar .fas {
-        margin-right: 10px;
-        display: inline-block;
-      }
-      #dropdownMenuButton {
-        color: var(--link-color) !important;
-        text-decoration: none;
-      }
-      .dropdown-menu,
-      .dropdown-item {
-        background-color: var(--header-color);
-        padding: 5px;
-        border-radius: 5px;
-        padding-left: 10px !important;
-      }
-      .dropdown-menu li {
-        position: relative;
-      }
-      .dropdown-menu .dropdown-submenu {
-        display: none;
-        position: absolute;
-        left: 100%;
-        top: -7px;
-      }
-      .dropdown-menu .dropdown-submenu-left {
-        right: 100%;
-        left: auto;
-      }
-      .dropdown-menu > li:hover > .dropdown-submenu {
-        display: block;
-      }
-      .padding-0 {
-        padding-left: 0 !important;
-      }
-      /* .bot[data-popper-placement^="bottom-start"] {
+        
+        .toolbar .fas {
+            margin-right: 10px;
+            display: inline-block;
+        }
+        
+        #dropdownMenuButton {
+            color: var(--link-color) !important;
+            text-decoration: none;
+        }
+        
+        .dropdown-menu,
+        .dropdown-item {
+            background-color: var(--header-color);
+            padding: 5px;
+            border-radius: 5px;
+            padding-left: 10px !important;
+        }
+        
+        .dropdown-menu li {
+            position: relative;
+        }
+        
+        .dropdown-menu .dropdown-submenu {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: -7px;
+        }
+        
+        .dropdown-menu .dropdown-submenu-left {
+            right: 100%;
+            left: auto;
+        }
+        
+        .dropdown-menu>li:hover>.dropdown-submenu {
+            display: block;
+        }
+        
+        .padding-0 {
+            padding-left: 0 !important;
+        }
+        /* .bot[data-popper-placement^="bottom-start"] {
         float: right;
       } */
     </style>
@@ -206,9 +214,8 @@
     </header>
 
     <nav class="toolbar">
-      <div>
-        <a href="/DoAnWeb/index-admin.php"
-          ><i class="fas fa-info"></i> Trang chủ</a
+        <div>
+            <a href="/DoAnWeb/index-admin.php"><i class="fas fa-info"></i> Trang chủ</a
         >
       </div>
       <div>
@@ -259,19 +266,18 @@
       >
         &#8942;
       </a>
-      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenu">
-        <li>
-          <a class="dropdown-item" href="#">
-            <i class="fas fa-solid fa-file"></i>Thống kê
-          </a>
-          <ul class="dropdown-menu dropdown-submenu dropdown-submenu-left">
-            <li>
-              <a class="dropdown-item padding-0" href="#"
-                ><i class="fas fa-car nav-icon"></i> Lượng xe vào ra</a
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenu">
+                <li>
+                    <a class="dropdown-item" href="#">
+                        <i class="fas fa-solid fa-file"></i>Thống kê
+                    </a>
+                    <ul class="dropdown-menu dropdown-submenu dropdown-submenu-left">
+                        <li>
+                            <a class="dropdown-item padding-0" href="/DoAnWeb/modules/dropdown.php"><i class="fas fa-car nav-icon"></i> Lượng xe vào ra</a
               >
             </li>
             <li>
-              <a class="dropdown-item padding-0" href="#"
+              <a class="dropdown-item padding-0" href="/DoAnWeb/modules/dropdown-one.php"
                 ><i class="fas fa-money-bill nav-icon"></i> Báo cáo doanh thu</a
               >
             </li>
@@ -280,14 +286,14 @@
         <li>
           <a
             class="dropdown-item"
-            href="/DoAnWeb/modules/feedback/feedback_list.html"
+            href="/DoAnWeb/modules/feedback/feedback_list.php"
             ><i class="fas fa-solid fa-light fa-comment-dots"></i>Xem Feedback
           </a>
         </div>
         </div>
         <!-- Xemfeedback -->
         <div>
-            <a href="/DoAnWeb/modules/feedback/feedback_list.html"><i class="fas fa-solid fa-light fa-comment-dots"></i>Xem Feedback</a
+            <a href="/DoAnWeb/modules/feedback/feedback_list.php"><i class="fas fa-solid fa-light fa-comment-dots"></i>Xem Feedback</a
         >
       </div>
       <!-- Setting -->
@@ -307,12 +313,9 @@
             <i class="far fa-circle nav-icon"></i>
             Điều chỉnh phí gửi xe
           </a>
-          <ul class="dropdown-menu dropdown-submenu dropdown-submenu-left">
-            <li>
-              <a
-                class="dropdown-item padding-0"
-                href="/DoAnWeb/modules/pages/Setting/PriceSetting.php"
-                ><i class="far fa-circle nav-icon"></i> Điều chỉnh phí gửi xe</a
+            <ul class="dropdown-menu dropdown-submenu dropdown-submenu-left">
+                <li>
+                    <a class="dropdown-item padding-0" href="/DoAnWeb/modules/pages/Setting/PriceSetting.php"><i class="far fa-circle nav-icon"></i> Điều chỉnh phí gửi xe</a
               >
             </li>
           </ul>
