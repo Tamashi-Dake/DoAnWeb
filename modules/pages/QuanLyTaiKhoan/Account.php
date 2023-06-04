@@ -20,11 +20,11 @@
     include "../../../connection.php";
     if(isset($_GET['search'])){
       $search=$_GET['search'];
-      $sql_count = "select * from Account where display=1 and (userName like '%$search%' or password like '%$search%' or name like '%$search%' or position like '%$search%' or identityCard like '%$search%' or birth like '%$search%' ) ";
+      $sql_count = "select * from Account where display=1 and (userName like '%$search%' or name like '%$search%' or identityCard like '%$search%') ";
     }else{
     $sql_count = "select * from Account where display=1";
     }
-    $pagesize=2;
+    $pagesize=10;
     $d = mysqli_query($conn,$sql_count);
     $count=$d->num_rows;
     $ps = ceil($count/$pagesize);
@@ -127,7 +127,7 @@
               <h3 class="card-titl e">Danh sách tài khoản</h3>
              <div style="margin-left:auto;">
              <div class="input-group rounded">
-                <input type="text" id="txtSearchAcc" name="txttimkiem_acc" class="form-control rounded" placeholder="Tìm kiếm" aria-label="Search" aria-describedby="search-addon" />
+                <input type="text" id="txtSearchAcc" name="txttimkiem_acc" class="form-control rounded" placeholder="Tìm kiếm theo Tên tài khoản, Họ và tên, CCCD" aria-label="Search" aria-describedby="search-addon" />
                 <button class="input-group-text border-0" id="searchAddon">
                   <i class="fas fa-search"></i>
                 </button>
@@ -137,7 +137,7 @@
               <table class="table table-striped projects">
                 <thead>
                   <tr>
-                    <th style="width: 1%">stt</th>
+                    <th style="width: 1%">STT</th>
                     <th style="width: 10%">Tên tài khoản</th>
                     <th style="width: 10%">Mật khẩu</th>
                     <th style="width: 20%" class="text-center">Họ Tên</th>
@@ -162,7 +162,7 @@
                       if($currentpage<1){
                         $currentpage = 1;}
                         else{ $currentpage; }
-                      $sql_limit = "select * from Account where display=1 and (userName like '%$search%' or password like '%$search%' or name like '%$search%' or position like '%$search%' or identityCard like '%$search%' or birth like '%$search%' ) limit " . ($currentpage-1)*$pagesize .",".$pagesize;
+                      $sql_limit = "select * from Account where display=1 and (userName like '%$search%' or name like '%$search%' or identityCard like '%$search%') limit " . ($currentpage-1)*$pagesize .",".$pagesize;
                 }
                 else{
                   $sql_limit = "select * from Account where display=1 limit ". ($currentpage-1)*$pagesize .",".$pagesize;
@@ -294,6 +294,7 @@
                   </div>
                   <!-- /.card -->
         </section>
+      </main>
 <?php 
         // include "../../feedback-btn.html" ?>
 <?php 
@@ -549,7 +550,6 @@
     $("#searchAddon").click(function(){
       var search = $("#txtSearchAcc").val();
       // if (search != "") {
-        alert(search);
         window.location.href = "Account.php?search="+ search;
         
       // }

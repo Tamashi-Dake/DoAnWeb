@@ -119,7 +119,7 @@
                 }
             
             $sql3 = "insert into account(userName,password,name,position,identityCard,birth,sex,display) values ('$user_add','$pass_add','$name_add','$pos_add','$idcard_add','$date_add',$sex_add,1)";
-            $conn->execute_query($sql3);
+            $conn->query($sql3);
            // header("Location: Account.php");
           //  echo "dh";
             }

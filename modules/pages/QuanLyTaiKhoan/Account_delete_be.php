@@ -23,7 +23,7 @@
     // $conn = mysqli_connect($servername, $username, $password, $database);
     $sql2 = "update account set display = 0 where userName='$var2'" ;
    // echo $sql2;
-    $conn->execute_query($sql2);}
+    $conn->query($sql2);}
     catch(Exception $ex){
         $error .= "<br><br>Lỗi hệ thống.<br>- Mã lỗi: ". $ex->getCode() ."<br>- Chi tiết: ". $ex->getMessage() ."<br>- Tại dòng code: ". $ex->getLine();
         $_SESSION['error_del']++;

@@ -9,9 +9,9 @@ session_start();
         $user_edit = $_POST['txtuser_edit'];
         $idcard_edit = $_POST['txtidcard_edit'];
         
-        $sql_edit_check_user="select * from Account where userName='".$user_edit."' and identityCard='".$idcard_edit."'";
+        $sql_edit_check_user="select * from Account where userName='".$user_edit."' and identityCard='".$idcard_edit."' and display = 1";
         $check_user = $conn->query($sql_edit_check_user);
-        $sql_edit_check_cccd="select * from Account where userName!='".$user_edit."' and identityCard='".$idcard_edit."'";
+        $sql_edit_check_cccd="select * from Account where userName!='".$user_edit."' and identityCard='".$idcard_edit."'  and display = 1";
         $check_cccd = $conn->query($sql_edit_check_cccd);
 
     // $user_edit = $pass_edit  = $name_edit  = $pos_edit  = $idcard_edit  = $date_edit  = $sex_edit  = "";
@@ -118,7 +118,7 @@ session_start();
             //   echo $sql3;
                 //  $_SESSION['success'] = "Sửa thành công";
                 
-                $conn->execute_query($sql3);
+                $conn->query($sql3);
             }
         }
     catch(Exception $ex){

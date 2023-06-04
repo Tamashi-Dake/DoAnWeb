@@ -21,7 +21,7 @@
                             class="form-control"
                             value=""
                             name="txtuser_edit"
-                            Onlyread
+                            readonly
                           />
                           <p class="errorMessenge" id="erMUserE"></p>
                         </div>
