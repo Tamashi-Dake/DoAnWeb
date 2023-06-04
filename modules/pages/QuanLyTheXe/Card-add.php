@@ -18,7 +18,7 @@
 <body class="hold-transition sidebar-mini">
 
   <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-default">
-    Thêm
+  <i class="fa-solid fa-plus"></i>Thêm
   </button>
 
   <div class="modal fade" id="modal-default">

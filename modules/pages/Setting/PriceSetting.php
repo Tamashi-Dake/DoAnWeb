@@ -143,6 +143,7 @@
 
                 
         </section>
+                </main>
         <?php 
         // include "../../feedback-btn.html" ?>
         <?php include "../../footer.html" ?>
