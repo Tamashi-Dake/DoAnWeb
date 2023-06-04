@@ -46,6 +46,7 @@ CREATE TABLE Feedback (
 
 CREATE TABLE Area (
     areaName VARCHAR(5) PRIMARY KEY,
+    vehicleType VARCHAR(30) CHECK (vehicleType IN ('Xe máy' , 'Ô tô')),
     maxSize INT,
     currentSize INT,
     display BIT
@@ -215,10 +216,10 @@ INSERT INTO Feedback (feedbackID, content, userName, display)
 VALUES (1003, 'Bị treo khi đăng nhập', 'nguyenthixuan', 1);
 
 -- Area
-INSERT INTO Area (areaName, maxSize, currentSize, display)
-VALUES ('B', 480, 11, 1);
-INSERT INTO Area (areaName, maxSize, currentSize, display)
-VALUES ('C', 160, 10, 1);
+INSERT INTO Area (areaName, vehicleType, maxSize, currentSize, display)
+VALUES ('B', 'Xe máy', 480, 11, 1);
+INSERT INTO Area (areaName, vehicleType, maxSize, currentSize, display)
+VALUES ('C', 'Ô tô', 160, 10, 1);
 
 -- ParkItem
 		-- 480 ô khu B, 160 ô khu C
