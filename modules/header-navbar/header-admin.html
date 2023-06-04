@@ -166,6 +166,7 @@
       #dropdownMenuButton {
         color: var(--link-color) !important;
         text-decoration: none;
+        background-color: var(--header-color) !important;
       }
 
       .dropdown-menu,
@@ -198,6 +199,10 @@
 
       .padding-0 {
         padding-left: 0 !important;
+      }
+
+      #blackBG {
+        background-color: var(--header-color) !important;
       }
       /* .bot[data-popper-placement^="bottom-start"] {
         float: right;
@@ -280,12 +285,19 @@
       >
         &#8942;
       </a>
-      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenu">
+      <ul
+        id="blackBG"
+        class="dropdown-menu"
+        aria-labelledby="navbarDropdownMenu"
+      >
         <li>
           <a class="dropdown-item" href="#">
             <i class="fas fa-solid fa-file"></i>Thống kê
           </a>
-          <ul class="dropdown-menu dropdown-submenu dropdown-submenu-left">
+          <ul
+            id="blackBG"
+            class="dropdown-menu dropdown-submenu dropdown-submenu-left"
+          >
             <li>
               <a
                 class="dropdown-item padding-0"
@@ -315,7 +327,10 @@
           <a class="dropdown-item" href="#"
             ><i class="fas fa-solid fa-gear"></i>Setting
           </a>
-          <ul class="dropdown-menu dropdown-submenu dropdown-submenu-left">
+          <ul
+            id="blackBG"
+            class="dropdown-menu dropdown-submenu dropdown-submenu-left"
+          >
             <li>
               <a
                 class="dropdown-item"

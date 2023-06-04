@@ -189,7 +189,7 @@
                             <td class='project-actions text-center'>";
 ?>
                               <button type="button" class="btn btn-default btnEditAccount" data-toggle="modal" data-target="#modal" data-user="<?php echo $row['userName']; ?>" data-stt="<?php echo $s; ?>">
-                                <i class="fas fa-solid fa-pen-to-square">Edit
+                              <i class="fas fa-pen"></i>Edit
                               </button>
 <?php 
          include "Account_delete_confirm.php" 
