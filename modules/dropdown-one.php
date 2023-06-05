@@ -76,7 +76,14 @@
             height: 25px;
             border: 2px solid rgb(226, 147, 0);
             border-radius: 2px;
-            font-size: 18px;
+            font-size: 16px;
+        }
+        .dropdown-select {
+            width: 130px;
+            height: 26px;
+            border: 2px solid rgb(226, 147, 0);
+            border-radius: 2px;
+            font-size: 16px;
         }
         
         .dropdown-button {
@@ -153,9 +160,12 @@
                 <div class="dropdown-time">
                     Từ
                     <input type="date" class="dropdown-time-input"> Đến
-                    <input type="date" class="dropdown-time-input">
+                    <input type="date" class="dropdown-time-input"> Loại thẻ
+                    <select class="selectType_dropdown dropdown-select" name="selectType_Add">
+                        <option value="Thường">Thường</option>
+                        <option value="Tháng">Tháng</option>
+                      </select>
                     <button class="dropdown-button">Tìm</button>
-                    <button class="dropdown-button">Back</button>
                 </div>
                 <div class="dropdown-list-enter-out">
                     <div class="dropdown-list-enter">
