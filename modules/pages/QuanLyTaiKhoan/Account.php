@@ -177,31 +177,39 @@
                     $s=$_GET['stt'];
               while($row = $result->fetch_assoc()) {
                 if($row["display"]==1){
-                        echo "<tr>
-                            <td>". $s ."</td>
-                            <td>" . $row["userName"] . "</td>
-                            <td>" . $row["password"] . "</td>
-                            <td>" . $row["name"] . "</td>
-                            <td>" . $row["position"] . "</td>
-                            <td>" . $row["identityCard"] . "</td>
-                            <td>" . $row["birth"] . "</td>
-                            <td>" . $row["sex"] . "</td>
-                            <td class='project-actions text-center'>";
 ?>
+                          <tr>
+                            <td><?php echo($s) ?></td>
+                            <td><?php echo($row["userName"]) ?></td>
+                            <td><?php echo($row["password"]) ?></td>
+                            <td><?php echo($row["name"]) ?></td>
+                            <td><?php echo($row["position"]) ?></td>
+                            <td><?php echo($row["identityCard"]) ?></td>
+                            <td><?php echo($row["birth"]) ?></td>
+                            <td>
+                              <?php
+                                if($row["sex"] == 1) {
+                                  echo ("Nam");
+                                }
+                                if($row["sex"] == 0) {
+                                  echo ("Nữ");
+                                }
+                              ?>
+                            </td>
+                            <td class='project-actions text-center'>
                               <button type="button" class="btn btn-default btnEditAccount" data-toggle="modal" data-target="#modal" data-user="<?php echo $row['userName']; ?>" data-stt="<?php echo $s; ?>">
                               <i class="fas fa-pen"></i>Edit
                               </button>
 <?php 
          include "Account_delete_confirm.php" 
 ?>
-<?php
-                            echo"
                               <button type='button' class='btn btn-danger'  data-toggle='modal' data-target='#modalDel'>
                                 <i class='fas fa-trash'> </i>
                                 Xóa
                               </button>
                             </td>
-                        </tr>";
+                        </tr>
+<?php
                         $s++;
                 }
               }
@@ -209,11 +217,15 @@
           
 
                     $conn->close();
+                    
 ?>
                         </tbody>
                       </table>
                     </div>
                     <!-- /.card-body -->
+<?php                    
+                    if($ps!=1){ 
+?>
                     <div aria-label="Page navigation">
                       <ul class="pagination justify-content-center">
                       <li>
@@ -292,6 +304,7 @@
                       </ul>
                     </div>
                   </div>
+                  <?php } ?>
                   <!-- /.card -->
         </section>
       </main>
