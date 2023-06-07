@@ -24,7 +24,7 @@
     }else{
     $sql_count = "select * from Account where display=1";
     }
-    $pagesize=10;
+    $pagesize=7;
     $d = mysqli_query($conn,$sql_count);
     $count=$d->num_rows;
     $ps = ceil($count/$pagesize);
@@ -209,11 +209,13 @@
           
 
                     $conn->close();
+                    
 ?>
                         </tbody>
                       </table>
                     </div>
                     <!-- /.card-body -->
+                    <?php                    if($ps!=1){ ?>
                     <div aria-label="Page navigation">
                       <ul class="pagination justify-content-center">
                       <li>
@@ -292,6 +294,7 @@
                       </ul>
                     </div>
                   </div>
+                  <?php } ?>
                   <!-- /.card -->
         </section>
       </main>
