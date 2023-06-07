@@ -231,6 +231,9 @@
         </div>
         <!-- /.card-body -->
         <!-- phân trang -->
+<?php
+        if ($number_pages > 1) {
+?>
         <div aria-label="Page navigation">
           <ul class="pagination justify-content-center">
             <li class="page-item ">
@@ -273,6 +276,9 @@
             </li>
           </ul>
         </div>
+<?php
+        }
+?>
       </div>
       <!-- /.card -->
     </section>
