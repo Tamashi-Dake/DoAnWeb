@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include "connection.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,15 +26,15 @@
 }
     <?php
     include "guessIndex.css";
-    include "bootstrap.css"
+    include "bootstrap.css";
+    include "connection.php";
     ?>
-    
 </style>
 <?php include "./modules/header-navbar/header.html" ?>
 
 	<main>
       <div class="search-bar-wapper">
-        <form class="search-bar" action="">
+        <form class="search-bar" action="index-guess.php" method="post">
           <input
             type="text"
             placeholder="Nhập vào biển số hoặc ID thẻ"
@@ -42,6 +43,42 @@
           <button type="submit"><i class="fa fa-search"></i></button>
         </form>
       </div>
+      <?php
+    if(!isset($_POST['search'])){
+      $_POST['search'] = "";
+    }
+    else{
+      $search = $_POST['search']; 
+      $sql_search = "select * from webbaiguixe.vehicleinout inner join  webbaiguixe.parkitem on vehicleinout.cardID=parkitem.cardID where vehicleinout.display=1 and ( vehicleinout.cardID='".$search."' or vehicleinout.licensePlate='".$search."') and type=1 order by vehicleinout.vehicleInOutID desc limit 1";
+      $rs=$conn->query($sql_search);
+    ?>
+      <?php 
+      if($rs->num_rows > 0){ 
+        while($row = $rs->fetch_assoc()) {
+          // id và biển số cùng 1 dòng với nhau
+          // areaName vs location cùng dòng
+          // css cho đẹp đẹp tí,để nó dưới thanh tìm kiếm
+          //chỉnh cho 1 file r copy nó sang index-employee và admin là được
+          echo "<p>
+          ID thẻ: ". $row['cardID'] ." 
+          </p>
+          <p>
+          Biển số: ". $row['licensePlate'] ."
+          </p>"."
+          Khu: ". $row['areaName'] ."
+          </p>
+          <p>
+            Ô đỗ: ". $row['location'] ."
+          </p>";
+          }
+    }
+      else{
+        // $_SESSION['rp_error'] = "ko có xe trong bãi";
+        // echo $_SESSION['rp_error'];
+        // unset($_SESSION['rp_error']);
+      }
+    }
+      ?>
     </main>
     <?php include "./modules/footer.html" ?>
 </body>
