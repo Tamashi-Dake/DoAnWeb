@@ -10,12 +10,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- <link rel="stylesheet" href="/DoAnWeb/login/assets/main.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <!-- test -->
 
 <body>
     <style>
+        <?php
+    include "../../guessIndex.css";
+    include "../../bootstrap.css";
+    include "../../connection.php";
+    ?>
         body {
             box-sizing: border-box;
             margin: 0;
@@ -27,59 +32,27 @@
         }
         
         #login {
-            position: absolute;
+            position: relative;
             display: flex;
             flex-direction: column;
             justify-content: center;
             width: 800px;
-            height: 400px;
-            background-color: black;
-            top: 25%;
+            height: 330 px;
+            background-color: #333333;
             border-radius: 5px;
             -webkit-border-radius: 5px;
             -moz-border-radius: 5px;
             -ms-border-radius: 5px;
             -o-border-radius: 5px;
-            border: 5px;
+            border: 3px solid rgb(226, 147, 0);
             color: #fff;
+            margin-bottom: 10vh;
+            left: 50%;
+            transform: translateX(-50%);
         }
-        
-        .bor::before,
-        .bor::after {
-            content: '';
-            position: absolute;
-            top: -3px;
-            left: -3px;
-            background: linear-gradient(45deg, #FFAE46, #FFF050, #FFAE46, #FFF050, #FFAE46, #FFF050);
-            background-size: 400%;
-            width: calc(100% + 6px);
-            height: calc(100% + 6px);
-            z-index: -1;
-            border-radius: 5px;
-            -webkit-border-radius: 5px;
-            -moz-border-radius: 5px;
-            -ms-border-radius: 5px;
-            -o-border-radius: 5px;
-            animation: animate 20s linear infinite;
-            -webkit-animation: animate 20s linear infinite;
-        }
-        
-        @keyframes animate {
-            0% {
-                background-position: 0 0;
-            }
-            50% {
-                background-position: 900% 0;
-            }
-            100% {
-                background-position: 0 0;
-            }
-        }
-        
-        .bor::after {
-            filter: blur(40px);
-            -webkit-filter: blur(40px);
-            opacity: 0.5;
+    
+        .login-name {
+            position: relative;
         }
         
         .img-login {
@@ -102,6 +75,7 @@
             text-transform: uppercase;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin-top: 30px;
         }
         
         .input-login {
@@ -154,24 +128,32 @@
             margin-left: 65px;
         }
         
-        i {
+        .close-dropdown {
             position: absolute;
-            padding: 15px;
+            right: 0;
+            top: 0;
+            color: #fff;
+            padding: 12px;
             cursor: pointer;
-            margin-left: 355px;
+            opacity: 0.9;
         }
         
-        i:hover {
-            height: 15px;
-            width: 15px;
+        .close-dropdown:hover {
+            opacity: 0.9;
             background-color: rgb(226, 147, 0);
-            border-top-right-radius: 4px;
+            cursor: pointer;
+            border-top-right-radius: 2px;
         }
     </style>
-    <div id="login">
+    <?php
+    include "../modules/header-navbar/header.html";
+  ?>
+    <div style="margin-top: 10vh" id="login">
         <form action="login_be.php" class="login-name bor" method="post">
-            <img src="/DoAnWeb/login/imgs/duy.jpg" alt="duy" class="img-login">
-            <i style="color: brown;" class="fa fa-xmark"></i>
+            <img src="/DoAnWeb/img/smol logo.png" alt="ADEPRO" class="img-login">
+            <div class="close-dropdown">
+                    <i class="bi bi-x-lg"></i>
+                </div>
             <h1 class="name-login">ĐĂNG NHẬP</h1>
             <div class="user-login">
                 <p class="text-login">Tên đăng nhập:</p>
@@ -193,6 +175,9 @@
                 </div>
         </form>
     </div>
+    <?php
+    include "../modules/footer.html";
+  ?>    
 
 </body>
 

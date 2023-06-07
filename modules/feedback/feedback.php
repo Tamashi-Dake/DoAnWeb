@@ -32,11 +32,13 @@
         }
         
         .feedback {
-            background-color: black;
+            background-color: #353030;
             position: relative;
             display: block;
             height: 450px;
             width: 350px;
+            border: 3px solid rgb(226, 147, 0);
+            border-radius: 5px;
         }
         
         .name-feedback {
@@ -125,7 +127,7 @@
             -ms-border-radius: 5px;
             -o-border-radius: 5px;
             position: relative;
-            left: 6%;
+            left: 10%;
         }
         
         .send-feedback {
@@ -143,7 +145,7 @@
             -ms-border-radius: 5px;
             -o-border-radius: 5px;
             position: relative;
-            left: 33%;
+            left: 31%;
         }
     </style>
     <?php
@@ -152,9 +154,7 @@
     <div style="margin-top: 10vh" id="feedback">
         <form action="feedback_be.php" method="post" class="feedback">
             <h1 class="name-feedback">FEEDBACK</h1>
-            <div class="close-feedback">
-                <i class="bi bi-x-lg"></i>
-            </div>
+        
             <div class="name">
                 <input class="input-feedback input-feedback-name" type="text" name="txtdesc" placeholder="Full name">
             </div>
