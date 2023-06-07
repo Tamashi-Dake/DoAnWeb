@@ -59,7 +59,7 @@
 	<main>
 
       <div class="search-bar-wapper">
-        <form class="search-bar" action="">
+        <form class="search-bar" action="index-employee.php" method="post">
           <input
             type="text"
             placeholder="Nhập vào biển số hoặc ID thẻ"
@@ -101,13 +101,19 @@
             </p>
           </div>
           <?php
+          if($row['type']==0){
+            $_SESSION['rp_error'] = "ko có xe trong bãi";?>
+         <p><i class="fa-sharp fa-solid fa-cars"></i><?php echo $_SESSION['rp_error']; ?> </p>
+            <?php
+          }
           }
       }
       else{
-        // $_SESSION['rp_error'] = "ko có xe trong bãi";
-        // echo $_SESSION['rp_error'];
-        // unset($_SESSION['rp_error']);
+        $_SESSION['rp_error'] = "ko có xe trong bãi";?>
+         <p><i class="fa-sharp fa-solid fa-cars"></i><?php echo $_SESSION['rp_error']; ?> </p>
+        <?php
       }
+      unset($_SESSION['rp_error']);
     }
       ?>
       
