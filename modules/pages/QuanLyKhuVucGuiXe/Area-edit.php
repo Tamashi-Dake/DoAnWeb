@@ -1,6 +1,3 @@
-  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal">
-      <i class="fas fa-light fa-file-pen"></i>Edit
-  </button>
 
   <div class="modal show" id="modal">
       <div class="modal-dialog">

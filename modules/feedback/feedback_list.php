@@ -82,19 +82,26 @@
 
                     // read data of each row
               while($row = $result->fetch_assoc()) {
-                        echo "<tr>
-                            <td>" . $row["userName"] . "</td>
-                            <td>" . $row["feedbackID"] . "</td>
-                            <td>" . $row["content"] . "</td> 
-                            <td class='project-actions text-center'>";
-                            echo"
-                              <a class='btn btn-danger' href='#'>
+                        ?>
+                        <tr>
+                            <td>
+                              <?php echo ($row["userName"]) ?>
+                            </td>
+                            <td>
+                              <?php echo ($row["feedbackID"]) ?>
+                            </td>
+                            <td>
+                              <?php echo ($row["content"]) ?>
+                            </td>
+                            <td class='project-actions text-center'>
+                              <button type="button" class='btn btn-danger btn_delete' data-toggle="modal" data-target="#modalDel" id="btn_delete_<?php echo($row["feedbackID"]) ?>" data-cardid="<?php echo($row["feedbackID"]) ?>">
                                 <i class='fas fa-trash'> </i>
                                 Xóa
-                              </a>
+                              </button>
                             </td>
-                        </tr>";
-                    }
+                        </tr>
+                            <?php
+                            }
 
                     $conn->close();
                     ?>
@@ -105,7 +112,13 @@
   </main>
   <?php
     include "../footer.html";
+    include "feedback-delete.php";
   ?>
+  
+  <!-- jQuery -->
+  <script src="../plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

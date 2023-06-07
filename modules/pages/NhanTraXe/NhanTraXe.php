@@ -68,6 +68,9 @@
         margin-bottom: 0;
         font-size:0.7rem;
     }
+    .readonly{
+        background-color:#bcbcbc !important;
+    }
     </style>
     <?php include "../../header-navbar/header.php";
 date_default_timezone_set('Asia/Ho_Chi_Minh');
@@ -97,18 +100,18 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
                         </div>
                         <div class="form-group">
                             <label for="txtType">Loại thẻ</label>
-                            <input readonly type="text" class="form-control" id="txtType" placeholder=""
+                            <input readonly type="text" class="form-control readonly" id="txtType" placeholder=""
                                 value="'. $type .'">
                             <p class="errorMessenge">Báo lỗi</p>
                         </div>
                         <div class="form-group">
                             <label for="txtDate">Ngày</label>
-                            <input readonly type="text" class="form-control" id="txtDate" value="'. $date .'" />
+                            <input readonly type="text" class="form-control readonly" id="txtDate" value="'. $date .'" />
                             <p class="errorMessenge">Báo lỗi</p>
                         </div>
                         <div class="form-group">
                             <label for="txtTime">Giờ</label>
-                            <input readonly type="text" class="form-control" id="txtTime" value="'. $time .'">
+                            <input readonly type="text" class="form-control readonly" id="txtTime" value="'. $time .'">
                             <p class="errorMessenge">Báo lỗi</p>
                         </div>
                     </div>
@@ -145,23 +148,23 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
                         </div>
                         <div class="form-group">
                             <label for="txtType">Loại thẻ</label>
-                            <input readonly type="text" class="form-control" id="txtType" placeholder=""
+                            <input readonly type="text" class="form-control readonly" id="txtType" placeholder=""
                                 value="'. $type .'">
                             <p class="errorMessenge">Báo lỗi</p>
                         </div>
                         <div class="form-group">
                             <label for="txtDate">Ngày</label>
-                            <input readonly type="text" class="form-control" id="txtDate" value="'. $date .'" />
+                            <input readonly type="text" class="form-control readonly" id="txtDate" value="'. $date .'" />
                             <p class="errorMessenge">Báo lỗi</p>
                         </div>
                         <div class="form-group">
                             <label for="txtTime">Giờ</label>
-                            <input readonly type="text" class="form-control" id="txtTime" value="'. $time .'">
+                            <input readonly type="text" class="form-control readonly" id="txtTime" value="'. $time .'">
                             <p class="errorMessenge">Báo lỗi</p>
                         </div>
                         <div class="form-group">
                             <label for="txtTien">Thành tiền</label>
-                            <input readonly class="form-control" id="txtTien" value="<'. $money .'">
+                            <input readonly class="form-control readonly" id="txtTien" value="<'. $money .'">
                         </div>
                     </div>
                     <!-- /.card-body -->

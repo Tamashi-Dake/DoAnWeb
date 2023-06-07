@@ -1,20 +1,18 @@
 <?php 
-// session_start();
-
-	// include("connection.php");
-	// include("functions.php");
-
-	// $user_data = check_login($conn);
-
-?>
-<?php
-// We need to use sessions, so you should always start sessions using the below code.
-// session_start();
-// // If the user is not logged in redirect to the login page...
-// if (!isset($_SESSION['loggedin'])) {
-// 	header('Location: index.html');
-// 	exit;
-// }
+  session_start(); 
+  // check login và phân quyền
+  if (isset($_SESSION['login']) == false) {
+    header("Location: /DoAnWeb/login/index.php");
+  }
+  else {
+    if (($_SESSION['login']) == false) {
+      header("Location: /DoAnWeb/login/index.php");
+    }
+    else {
+      if (($_SESSION['position']) == "Nhân viên") {
+        header("Location: /DoAnWeb/index-employee.php");
+      }
+      else {
 ?>
 
 
@@ -65,3 +63,8 @@
     <?php include "./modules/footer.html" ?>
 </body>
 </html>
+<?php 
+      }
+    }
+  }
+?>

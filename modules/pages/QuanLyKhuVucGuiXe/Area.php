@@ -97,20 +97,31 @@
 
                     // read data of each row
               while($row = $result->fetch_assoc()) {
-                        echo "<tr>
-                            <td></td>
-                            <td>" . $row["areaName"] . "</td>
-                            <td>" . $row["maxSize"] . "</td>
-                            <td>" . $row["currentSize"] . "</td>
-                            <td class='project-actions text-center'>";
-                            include "Area-edit.php";
-                            echo"
-                              <a class='btn btn-danger' href='#'>
-                                <i class='fas fa-trash'> </i>
-                                Xóa
-                              </a>
-                            </td>
-                        </tr>";
+                        ?>
+                <tr>
+                    <td></td>
+                    <td>
+                      <?php echo ($row["areaName"]) ?>
+                    </td>
+                    <td>
+                      <?php echo ($row["maxSize"]) ?>
+                    </td>
+                    <td>
+                      <?php echo ($row["currentSize"]) ?>
+                    </td>
+                    <td class='project-actions text-center'>
+                      <button type="button" class="btn btn-default btn_edit" data-toggle="modal" data-target="#modal" id="btn_edit_<?php echo($row["areaName"]) ?>" data-cardid="<?php echo($row["areaName"]) ?>">
+                        <i class="fas fa-solid fa-pen-to-square"></i>
+                        Edit
+                      </button>
+                      
+                      <button type="button" class='btn btn-danger btn_delete' data-toggle="modal" data-target="#modalDel" id="btn_delete_<?php echo($row["areaName"]) ?>" data-cardid="<?php echo($row["areaName"]) ?>">
+                        <i class='fas fa-trash'> </i>
+                        Xóa
+                      </button>
+                    </td>
+                </tr>
+                    <?php
                     }
 
                     $conn->close();
@@ -138,4 +149,6 @@
         <?php 
         // include "../../feedback-btn.html" ?>
         <?php include "../../footer.html" ?>
+        <?php include "Area-edit.php" ?>
+        <?php include "Area-delete.php" ?>
 </body>
