@@ -8,7 +8,7 @@
         </button>
       </div>
       <div class="modal-body">
-
+        
               <div class="card-body">
                 <div class="form-group">
                   <label for="confirm">Bạn có chắc chắn XÓA?</label>
@@ -16,7 +16,7 @@
               </div>
       </div>
       <div class="modal-footer justify-content-between">
-        <a class="btn btn-secondary" id="btn_submit_delete">Có</a>
+        <a class="btn btn-secondary" id="btn_submit_delete" href='feedback_list_delete_be.php?feedbackID=<?php echo $row['feedbackID']; ?>'>Có</a>
         <button class="btn btn-primary" data-dismiss="modal" aria-label="Close">Không</button>
       </div>
     </div>
