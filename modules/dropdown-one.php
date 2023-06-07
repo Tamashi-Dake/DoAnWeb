@@ -30,12 +30,14 @@
             position: relative;
             display: block;
             width: 800px;
-            height: 400px;
-            background-color: black;
+            height: 410px;
+            background-color: #353030;
             color: aliceblue;
             border: 3px solid rgb(226, 147, 0);
             border-radius: 5px;
-            margin-left: 25%;
+            right: 0;
+            left: 50%;
+            transform: translateX(-50%);
         }
         
         .close-dropdown {
@@ -62,6 +64,7 @@
             text-transform: uppercase;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin-top: 30px;
         }
         
         .dropdown-time {
@@ -69,6 +72,7 @@
             padding-bottom: 20px;
             font-size: 20px;
             text-align: center;
+            color: rgb(232, 228, 186);
         }
         
         .dropdown-time-input {
@@ -118,6 +122,7 @@
             padding-bottom: 20px;
             border-radius: 5px;
             border: 2px solid rgb(226, 147, 0);
+            color: rgb(232, 228, 186);
         }
         
         

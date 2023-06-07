@@ -31,11 +31,12 @@
             display: block;
             width: 800px;
             height: 400px;
-            background-color: black;
+            background-color: #353030;
             color: aliceblue;
             border: 3px solid rgb(226, 147, 0);
             border-radius: 5px;
-            margin-left: 25%;
+            left: 50%;
+            transform: translateX(-50%);
         }
         
         .close-dropdown {
@@ -62,6 +63,7 @@
             text-transform: uppercase;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin-top: 30px;
         }
         
         .dropdown-time {
@@ -69,6 +71,7 @@
             padding-bottom: 20px;
             font-size: 20px;
             text-align: center;
+            color: rgb(232, 228, 186);
         }
         
         .dropdown-time-input {
@@ -109,6 +112,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            font-size: 5px;
         }
         
         .dropdown-list-enter {
@@ -119,7 +123,8 @@
             padding-bottom: 20px;
             border-radius: 5px;
             border: 2px solid rgb(226, 147, 0);
-            margin-right: 100px;
+            margin-right: 88px;
+            color: rgb(232, 228, 186);
         }
         
         .dropdown-list-out {
@@ -130,7 +135,8 @@
             padding-bottom: 20px;
             border-radius: 5px;
             border: 2px solid rgb(226, 147, 0);
-            margin-left: 100px;
+            margin-left: 88px;
+            color: rgb(232, 228, 186);
         }
         
         .dropdown-input {
