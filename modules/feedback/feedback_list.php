@@ -114,7 +114,7 @@
           <h3 class="card-titl e">Danh sách Feedback</h3>
           <div style="margin-left:auto;">
             <div class="input-group rounded">
-              <input type="search" id="txtSearchFb" class="form-control rounded" placeholder="Tìm kiếm" aria-label="Search"
+              <input type="search" id="txtSearchFb" class="form-control rounded" placeholder="Tìm kiếm theo FeedbackID hoặc Tài khoản" aria-label="Search"
                 aria-describedby="search-addon" />
               <button id="searchFbon">
                 <span class="input-group-text border-0" id="search-addon">
@@ -128,9 +128,9 @@
               <table class="table table-striped projects">
                 <thead>
                   <tr>
-                  <th style="width: 8%" class="text-center">FeedbackID</th>
-                    <th style="width: 20%" class="text-center">Username</th>
-                    <th style="width: 50%" class="text-center">Title</th>
+                  <th style="width: 8%" class="text-center">Feedback ID</th>
+                    <th style="width: 20%" class="text-center">Tên tài khoản</th>
+                    <th style="width: 50%" class="text-center">Nội dung</th>
                     <th style="width: 15%" class="text-center">
                     <?php
                     ?>
