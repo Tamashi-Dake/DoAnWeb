@@ -35,7 +35,7 @@
     include "../../header-navbar/header.php";
     // include "./chiaKhu.html";
   ?>
-   <h3>chọn vị trí quản lý</h3>
+   <h3>Chọn khu làm việc</h3>
   <main>
     <div class="Areas">
       <h5>vị trí cho xe máy</h5>
