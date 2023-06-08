@@ -1,3 +1,18 @@
+<?php
+    session_start();
+    if (isset($_SESSION['login']) == false) {
+      header("Location: /DoAnWeb/login/index.php");
+    }
+    else {
+      if (($_SESSION['login']) == false) {
+        header("Location: /DoAnWeb/login/index.php");
+      }
+      else {
+        if (($_SESSION['position']) == "Nhân viên") {
+          header("Location: /DoAnWeb/index-employee.php");
+        }
+        else {
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +23,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
-
+<script src="./plugins/jquery/jquery.min.js"></script>
 <body>
     <style>
         <?php
@@ -164,56 +179,158 @@
             position: relative;
         }
     </style>
-    <?php
+        <?php
     include "../modules/header-navbar/header-admin.html";
     ?>
     <main style="margin-top: 10vh">
+    <?php
+    if (isset($_SESSION['error_dd_txt'])) {
+      if ($_SESSION['error_dd_txt'] != "") {
+?>
+        <div id="error_box" class="alert alert-danger alert-dismissible fade show" style="position: sticky;top: 8vh;width: 100%; z-index:1; text-align: center;">
+          <strong>Thất bại! </strong><span id="error"><?php echo($_SESSION['error_dd_txt']) ?></span>
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+<?php
+        // $_SESSION['error'] = "";
+        unset($_SESSION['error_dd_txt']);
+      }
+    }
+    else {
+      if (isset($_SESSION['success_dd_txt'])) {
+        if ($_SESSION['success_dd_txt'] != "") {
+?>
+          <div id="error_box" class="alert alert-success alert-dismissible fade show" style="position: sticky;top: 8vh;width: 100%; z-index:1; text-align: center;">
+            <strong>Thành công! </strong><span id="error"><?php echo($_SESSION['success_dd_txt']) ?>,Từ ngày <?php if(isset($_SESSION['txtDateStart'])){echo $_SESSION['txtDateStart'];} 
+          ?> đến ngày <?php if(isset($_SESSION['txtDateEnd'])){echo $_SESSION['txtDateEnd'];} else {echo "chu";} ?></span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+          </div>
+<?php
+          // $_SESSION['success'] = "";
+          unset($_SESSION['success_dd_txt']);
+        }
+      }
+    }
+?>
         <section>
         <div id="dropdown-test">
             <div class="dropdown-list">
                 <div class="close-dropdown">
                     <i class="bi bi-x-lg"></i>
                 </div>
+                <form action="dropdown_be.php" method="post">
                 <h1 class="dropdown-list-name">Lượng xe vào ra</h1>
                 <div class="dropdown-time">
                     Từ
-                    <input type="date" class="dropdown-time-input"> Đến
-                    <input type="date" class="dropdown-time-input"> Loại thẻ 
+                    <input type="date" id="txtDateStart" name="txtDateStart" class="dropdown-time-input" required oninvalid="this.setCustomValidity('Không được để trống')" oninput="this.setCustomValidity('')"> 
+                    Đến
+                    <input type="date" id="txtDateEnd" name="txtDateEnd" class="dropdown-time-input" required oninvalid="this.setCustomValidity('Không được để trống')" oninput="this.setCustomValidity('')">
+                    Loại thẻ 
                     <select class="selectType_dropdown dropdown-select" name="selectType_Add">
                         <option value="Thường">Thường</option>
                         <option value="Tháng">Tháng</option>
                       </select>
-                    <button class="dropdown-button">Tìm</button>
+                    <button class="dropdown-button" id="searchddbtn">Tìm</button>
                 </div>
+                </form>
                 <div class="dropdown-list-enter-out">
                     <div class="dropdown-list-enter">
                         <h2>Lượng xe vào</h2>
                         <div>
                             <h3>Ô tô</h3>
-                            <input type="number" value="0" class="dropdown-list-enter-car dropdown-input">
+                            <input type="number" readonly value="<?php if(isset($_SESSION['c1'])){
+                                echo $_SESSION['c1'];
+                            }else{ echo 0;} ?>" class="dropdown-list-enter-car dropdown-input">
                         </div>
                         <div>
                             <h3>Xe máy</h3>
-                            <input type="number" value="0" class="dropdown-list-enter-moto dropdown-input">
+                            <input type="number" readonly value="<?php if(isset($_SESSION['m1'])){
+                                echo $_SESSION['m1'];
+                            } else{ echo 0;} ?>" class="dropdown-list-enter-moto dropdown-input">
                         </div>
                     </div>
                     <div class="dropdown-list-out">
                         <h2>Lượng xe ra</h2>
                         <div>
                             <h3>Ô tô</h3>
-                            <input type="number" value="0" class="dropdown-list-out-car dropdown-input">
+                            <input type="number" value="<?php if(isset($_SESSION['c0'])){
+                                echo $_SESSION['c0'];
+                            } else{ echo 0;} ?>" class="dropdown-list-out-car dropdown-input">
                         </div>
                         <div>
                             <h3>Xe máy</h3>
-                            <input type="number" value="0" class="dropdown-list-out-moto dropdown-input">
+                            <input type="number" value="<?php if(isset($_SESSION['m1'])){
+                                echo $_SESSION['m0'];
+                            } else{ echo 0;} ?>" class="dropdown-list-out-moto dropdown-input">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         </section>
+        <?php 
+            unset($_SESSION['m0']);
+            unset($_SESSION['m1']);
+            unset($_SESSION['c0']);
+            unset($_SESSION['c1']);
+        ?>
     </main>
         <?php include "../modules/footer.html" ?>
 </body>
+<script>
+<?php
+      if (isset($_POST['txtDateStart'])) {
+?>
+        $("#txtDateStart").val("<?php echo($_POST['txtDateStart']) ?>");
+<?php
+      }
+?>
+<?php
+      if (isset($_POST['txtDateEnd'])) {
+?>
+        $("#txtDateEnd").val("<?php echo($_POST['txtDateEnd']) ?>");
+<?php
+      }
+?>
+     $("document").ready(function(){
+        
+    //     var SearchDDArr = $("#searchddbtn");
+    //     SearchDDArr.onclick(function(e){
+    //         var dates = $(this).data("dates");
+    //         var datee = $(this).data("datee");
+    //         $.ajax({
+    //       url:"dropdown_be.php",
+    //       type:"post",
+    //       dataType:"html",
+    //       data:{
+    //         dates,datee
+    //       }
+    //     }).done(function(rs){
+    //       var row = JSON.parse(rs);
+    //       var userName = row.userName;
+    //       var password = row.password;
+    //       var name = row.name;
+    //       var position = row.position;
+    //       var identityCard = row.identityCard;
+    //       var birth = row.birth;
+    //       var sex = row.sex;
 
+          
+    //       $("#inputUser_Edit").val(userName);
+    //       $("#inputPassword_Edit").val(password);
+    //       $("#inputName_Edit").val(name);
+    //       $("#inputCCCD_Edit").val(identityCard);
+    //       $("#inputBday_Edit").val(birth);
+    //       // alert(userName +" "+ password +" "+ name +" "+ position +" "+ identityCard +" "+ birth +" "+ sex);
+    //       $("#selectChucVu_Edit option[value='"+ position +"']").prop("selected", true);
+    //       $("#selectGioiTinh_Edit option[value='"+ sex +"']").prop("selected", true);
+    //     });
+    //     });
+         });
+</script>
 </html>
+<?php
+        }
+    }
+}
+?>
