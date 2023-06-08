@@ -1,3 +1,19 @@
+<?php 
+  session_start(); 
+  // check login và phân quyền
+  if (isset($_SESSION['login']) == false) {
+    header("Location: /DoAnWeb/login/index.php");
+  }
+  else {
+    if (($_SESSION['login']) == false) {
+      header("Location: /DoAnWeb/login/index.php");
+    }
+    else {
+      if (($_SESSION['position']) == "Admin") {
+        header("Location: /DoAnWeb/index-admin.php");
+      }
+      else {
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +25,7 @@
     <link rel="stylesheet" href="/DoAnWed/modules/feedback/feedback_css.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
-
+<script src="../plugins/jquery/jquery.min.js"></script>
 <body>
     <style>
                 <?php
@@ -155,16 +171,17 @@
         <form action="feedback_be.php" method="post" class="feedback">
             <h1 class="name-feedback">FEEDBACK</h1>
         
-            <div class="name">
+            <!-- <div class="name">
                 <input class="input-feedback input-feedback-name" type="text" name="txtdesc" placeholder="Full name">
             </div>
             <div class="name">
                 <input class="input-feedback input-feedback-title" type="text" name="txttitle" placeholder="Title">
-            </div>
-            <textarea class="textarea-feedback" cols="10" rows="5" name="txtopn" placeholder="Enter your opinios here"></textarea>
+            </div> -->
+            <textarea class="textarea-feedback" id="inputOpn" cols="10" rows="5" name="txtopn" placeholder="Enter your opinios here"></textarea>
 
-            <button class="back-feedback feedback-button ">Back</button>
-            <button class="send-feedback feedback-button">Send</button>
+            <!-- <button class="back-feedback feedback-button ">Back</button> -->
+            <button class="send-feedback feedback-button" id="fbSendBtn">Send</button>
+            <p id="erMFb"><font color="red">đang</font></p>
         </form>
 
     </div>  
@@ -173,5 +190,39 @@
   ?>
 
 </body>
-
+<script>
+    $(document).ready(function(){
+        if($('#inputOpn').val()==""){
+            $('#fbSendBtn').attr("disabled",true);
+            $('#erMFb').html("Ý kiến đang đê trống");
+        }
+         $('#inputOpn').on('input',function(){
+               text = $('#inputOpn').val();
+        //       const regex = new RegExp(/.{1,300}$/);
+        //       if(regex.test(text)==false){
+        //         $('#erMFb').html("Nhập quá nhiều");
+        //         $('#fbSendBtn').attr("disabled",true);
+        //       }
+        //       else{
+        //         $('#erMFb').html(" ");
+        //         $('#fbSendBtn').attr("disabled",false);
+        //       }
+        // định giới hạn kí tự nhập và ko cho nhập linh tinh nhưng thôi do việc kiểm soát là rất khó
+        // tk nào nhập vớ vẩn thì nó cx lưu user vào,quản lý vào xem là biết,đuổi luôn:))
+              if($('#inputOpn').val() == ""){
+                $('#erMFb').html("Ý kiến đang để trống");
+                $('#fbSendBtn').attr("disabled",true);
+              }
+              else{
+                $('#erMFb').html(" ");
+                $('#fbSendBtn').attr("disabled",false);
+              }
+           });
+    });
+</script>
 </html>
+<?php
+      }
+    }
+  }
+?>
