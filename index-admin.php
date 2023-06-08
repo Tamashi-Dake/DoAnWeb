@@ -72,23 +72,19 @@
       <?php 
       if($rs->num_rows > 0){ 
         while($row = $rs->fetch_assoc()) {
-          // id và biển số cùng 1 dòng với nhau
-          // areaName vs location cùng dòng
-          // css cho đẹp đẹp tí,để nó dưới thanh tìm kiếm
-          //chỉnh cho 1 file r copy nó sang index-guess và admin là được
           ?>
           <div class="searchResult">        
             <p >
-            <i class="fa-regular fa-id-badge"></i>ID thẻ: <?php echo $row['cardID'] ?> 
+            <i class="fasearch fa-regular fa-id-badge first"></i>ID thẻ: <?php echo $row['cardID'] ?> 
             </p>
             <p>
-            <i class="fa-sharp fa-solid fa-cars"></i>Biển số: <?php echo $row['licensePlate']?> 
+            <i class="fasearch fa-solid fa-car"></i>Biển số: <?php echo $row['licensePlate']?> 
             </p>
             <p>
-            <i class="fa-solid fa-building-user"></i>Khu: <?php echo  $row['areaName']?> 
+            <i class="fasearch fa-solid fa-building-user"></i>Khu: <?php echo  $row['areaName']?> 
             </p>
             <p>
-            <i class="fa-solid fa-map-location-dot"></i>Ô đỗ: <?php echo  $row['location']?> 
+            <i class="fasearch fa-solid fa-map-location-dot"></i>Ô đỗ: <?php echo  $row['location']?> 
             </p>
           </div>
           <?php
@@ -100,8 +96,10 @@
           }
       }
       else{
-        $_SESSION['rp_error'] = "ko có xe trong bãi";?>
-         <p><i class="fa-sharp fa-solid fa-cars"></i><?php echo $_SESSION['rp_error']; ?> </p>
+        $_SESSION['rp_error'] = "Xe hiện không có trong bãi hoặc thẻ xe chưa được sử dụng";?>
+         <div class="searchResult" style="grid-template-columns:1fr; max-width:50%;">        
+              <p><i class="fasearch fa-regular fa-face-smile-beam"></i><?php echo $_SESSION['rp_error']; ?> </p>
+         </div>
         <?php
       }
       unset($_SESSION['rp_error']);

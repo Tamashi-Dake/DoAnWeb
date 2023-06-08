@@ -56,3 +56,27 @@ main {
 .form-group {
   text-align: left;
 }
+.searchResult {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: var(--search-bar-color);
+  position: absolute;
+  top: 65%;
+  left: 25%;
+  min-width: 50%;
+  border-radius: 10px;
+}
+.searchResult p {
+  padding: 20px;
+  margin-bottom: 0;
+  color: black;
+}
+.fasearch {
+  padding: 10px;
+  min-width: 45px;
+}
+/* .flex {
+  max-width: 80%;
+  display: flex;
+  justify-content: space-around;
+} */
