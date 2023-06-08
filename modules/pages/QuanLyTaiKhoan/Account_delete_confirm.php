@@ -21,7 +21,7 @@
         </div>
       </div>
       <div class="modal-footer justify-content-between">
-        <a class="btn btn-secondary" id="btn_submit_delete" href='Account_delete_be.php?userName=<?php echo $row['userName']; ?>'>Có</a>
+        <a class="btn btn-secondary" id="btn_submit_delete_acc">Có</a>
         <button class="btn btn-primary" data-dismiss="modal" aria-label="Close">Không</button>
       </div>
     </div>

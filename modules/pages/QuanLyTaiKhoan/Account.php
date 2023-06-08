@@ -24,7 +24,7 @@
     }else{
     $sql_count = "select * from Account where display=1";
     }
-    $pagesize=10;
+    $pagesize=5;
     $d = mysqli_query($conn,$sql_count);
     $count=$d->num_rows;
     $ps = ceil($count/$pagesize);
@@ -200,10 +200,7 @@
                               <button type="button" class="btn btn-default btnEditAccount" data-toggle="modal" data-target="#modal" data-user="<?php echo $row['userName']; ?>" data-stt="<?php echo $s; ?>">
                               <i class="fas fa-pen"></i>Edit
                               </button>
-<?php 
-         include "Account_delete_confirm.php" 
-?>
-                              <button type='button' class='btn btn-danger'  data-toggle='modal' data-target='#modalDel'>
+                              <button type='button' class='btn btn-danger btn_delete'  data-toggle='modal' data-target='#modalDel' data-user="<?php echo $row['userName']; ?>">
                                 <i class='fas fa-trash'> </i>
                                 Xóa
                               </button>
@@ -315,6 +312,7 @@
 ?> 
 <?php 
     include "Account-edit.php";
+    include "Account_delete_confirm.php";
 ?>
     <script src="../../plugins/jquery/jquery.min.js"></script>
   </body>
@@ -354,6 +352,15 @@
           $("#selectChucVu_Edit option[value='"+ position +"']").prop("selected", true);
           $("#selectGioiTinh_Edit option[value='"+ sex +"']").prop("selected", true);
         });
+      };
+    }
+    var btn_delete_list_acc = $(".btn_delete");
+    for (var i = 0; i < btn_delete_list_acc.length; i++) {
+      btn_delete_list_acc[i].onclick = function(e)
+      {
+        var user = $(this).data("user");
+
+        $("#btn_submit_delete_acc").attr("href", "Account_delete_be.php?userName="+ user)
       };
     }
     // lũ dưới nhìn có vẻ dài đấy nhưng thực chất chả khác nhau là mấy,có thể viết 1 function xong dùng cả lũ nhưng thôi,lỡ làm 1 cái r copy đi,xóa đi làm lại hơi mệt
