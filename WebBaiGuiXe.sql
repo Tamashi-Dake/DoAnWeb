@@ -94,7 +94,7 @@ CREATE TABLE Payment (
     money INT,
     time DATETIME,
     monthCardID INT,
-    CONSTRAINT KNP1 FOREIGN KEY (cardID)
+    CONSTRAINT KNP1 FOREIGN KEY (monthCardID)
         REFERENCES Card (cardID),
     vehicleInOutID INT,
     CONSTRAINT KNP2 FOREIGN KEY (vehicleInOutID)
