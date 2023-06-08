@@ -30,35 +30,40 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <div class="row" style="display:block">
-                        <div class="col-md-6" style="    max-width: 100%;">
-                            <div class="card card-primary" style="box-shadow:none; margin:0;">
-                                <div class="card-body">
-                                    <div class="form-group">
-                                        <label for="inputArea">Tên khu</label>
-                                        <input type="text" id="inputArea" class="form-control" value="#" />
-                                        <p class="errorMessenge">Báo lỗi</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="inputMaxSize">Số xe tối đa</label>
-                                        <input type="text" id="inputMaxSize" class="form-control" value="#" />
-                                        <p class="errorMessenge">Báo lỗi</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="inputCurrentSize">Số xe hiện tại</label>
-                                        <input type="text" id="inputCurrentSize" class="form-control" value="#" />
-                                        <p class="errorMessenge">Báo lỗi</p>
+                <form action="Area-add-action.php" method="POST">
+                    <div class="modal-body">
+                        <div class="row" style="display:block">
+                            <div class="col-md-6" style="    max-width: 100%;">
+                                <div class="card card-primary" style="box-shadow:none; margin:0;">
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label for="txtAreaName_Add">Tên khu</label>
+                                            <input type="text" id="txtAreaName_Add" name="txtAreaName_Add" class="form-control" value="" required oninvalid="this.setCustomValidity('Không được để trống')"/>
+                                            <p id="errorAreaName_Add" class="errorMessenge">.</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="selectVehicleType_Add">Loại xe</label>
+                                            <select id="selectVehicleType_Add" name="selectVehicleType_Add">
+                                                <option value="Xe máy">Xe máy</option>
+                                                <option value="Ô tô">Ô tô</option>
+                                            </select>
+                                            <p id="errorVehicleType_Add" class="errorMessenge">.</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="txtMaxSize_Add">Số xe tối đa</label>
+                                            <input type="text" id="txtMaxSize_Add" name="txtMaxSize_Add" class="form-control" value="" required oninvalid="this.setCustomValidity('Không được để trống')"/>
+                                            <p id="errorMaxSize_Add" class="errorMessenge">.</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer justify-content-between">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Reset</button>
-                        <button type="button" class="btn btn-primary">Thêm</button>
+                        <button type="reset" class="btn btn-default" id="btn_reset_add">Reset</button>
+                        <button type="submit" class="btn btn-primary" id="btn_add">Thêm</button>
                     </div>
-                </div>
+                </form>
                 <!-- /.modal-content -->
             </div>
             <!-- /.modal-dialog -->
