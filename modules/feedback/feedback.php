@@ -181,7 +181,7 @@
 
             <!-- <button class="back-feedback feedback-button ">Back</button> -->
             <button class="send-feedback feedback-button" id="fbSendBtn">Send</button>
-            <p id="erMFb"><font color="red">đang</font></p>
+            <p id="erMFb"><font color="red"></font></p>
         </form>
 
     </div>  
