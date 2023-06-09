@@ -45,7 +45,7 @@
             position: relative;
             display: block;
             width: 80%;
-            height: 400px;
+            height: 350px;
             background-color: #353030;
             color: aliceblue;
             border: 3px solid rgb(226, 147, 0);
@@ -82,11 +82,37 @@
         }
         
         .dropdown-time {
-            padding-top: 5px;
-            padding-bottom: 20px;
+            display: flex;
             font-size: 20px;
-            text-align: center;
             color: rgb(232, 228, 186);
+            justify-content: center;
+            align-items: center;
+        }
+        .dropdown-time-one {
+            width: 30%;
+            height: 100%;
+            margin-right: 88px;
+
+        }
+        .dropdown-time-for{
+            width: 30%;
+            height: 100%;
+
+            margin-left: 88px;
+        }
+        .dropdown-time-two{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        .dropdown-time-test{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .dropdown-type {
+            font-size: 22px;
+            margin-right: 10px;
         }
         
         .dropdown-time-input {
@@ -110,7 +136,7 @@
             color: #fff;
             background-color: rgb(226, 147, 0);
             font-size: 20px;
-            width: 100px;
+            width: 80px;
             height: 35px;
             outline: none;
             border: 2px solid white;
@@ -215,16 +241,27 @@
                 <form action="dropdown_be.php" method="post">
                 <h1 class="dropdown-list-name">Lượng xe vào ra</h1>
                 <div class="dropdown-time">
-                    Từ
+                    <div class="dropdown-time-one">
+                    <div class="dropdown-time-two">
+                    <h2 class="dropdown-type">Từ:</h2>
                     <input type="date" id="txtDateStart" name="txtDateStart" class="dropdown-time-input" required oninvalid="this.setCustomValidity('Không được để trống')" oninput="this.setCustomValidity('')"> 
-                    Đến
+                    </div>
+                    <div class="dropdown-time-two">
+                    <h2 class="dropdown-type">Đến:</h2>
                     <input type="date" id="txtDateEnd" name="txtDateEnd" class="dropdown-time-input" required oninvalid="this.setCustomValidity('Không được để trống')" oninput="this.setCustomValidity('')">
-                    Loại thẻ 
+                    </div>
+                    </div>
+                    <div class="dropdown-time-for">
+                    <div class="dropdown-time-test">
+                    <h2 class="dropdown-type">Loại thẻ:</h2>
                     <select class="selectType_dropdown dropdown-select" name="selectType_Add">
                         <option value="Thường">Thường</option>
                         <option value="Tháng">Tháng</option>
-                      </select>
+                    </select>
+                    </div>
                     <button class="dropdown-button" id="searchddbtn">Tìm</button>
+                    </div>
+                    
                 </div>
                 </form>
                 <div class="dropdown-list-enter-out">

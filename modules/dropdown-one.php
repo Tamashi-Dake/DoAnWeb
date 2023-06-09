@@ -44,8 +44,8 @@
         .dropdown-list {
             position: relative;
             display: block;
-            width: 800px;
-            height: 410px;
+            width: 60%;
+            height: 350px;
             background-color: #353030;
             color: aliceblue;
             border: 3px solid rgb(226, 147, 0);
@@ -83,13 +83,38 @@
         }
         
         .dropdown-time {
-            padding-top: 5px;
-            padding-bottom: 20px;
+            display: flex;
             font-size: 20px;
-            text-align: center;
             color: rgb(232, 228, 186);
+            justify-content: center;
+            align-items: center;
         }
-        
+        .dropdown-time-one {
+            width: 30%;
+            height: 100%;
+            margin-right: 88px;
+
+        }
+        .dropdown-time-for{
+            width: 30%;
+            height: 100%;
+
+            margin-left: 88px;
+        }
+        .dropdown-time-two{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        .dropdown-time-test{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .dropdown-type {
+            font-size: 22px;
+            margin-right: 10px;
+        }
         .dropdown-time-input {
             width: 130px;
             height: 25px;
@@ -110,7 +135,7 @@
             color: #fff;
             background-color: rgb(226, 147, 0);
             font-size: 20px;
-            width: 100px;
+            width: 80px;
             height: 35px;
             outline: none;
             border: 2px solid white;
@@ -127,6 +152,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-top: 30px;
         }
         
         .dropdown-list-enter {
@@ -149,21 +175,17 @@
             font-size: 18px;
         }
         
-        .back-feedback {
-            cursor: pointer;
-            color: #fff;
-            background-color: rgb(226, 147, 0);
-            font-size: 20px;
-            width: 100px;
-            height: 40px;
-            outline: none;
-            border: 2px solid white;
-            border-radius: 5px;
-            -webkit-border-radius: 5px;
-            -moz-border-radius: 5px;
-            -ms-border-radius: 5px;
-            -o-border-radius: 5px;
-            position: relative;
+        .input-number{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .input-type{
+            font-size: 22px;
+            margin-right: 10px;
+        }
+        .input-type-oto{
+            padding-left: 27px;
         }
     </style>
     <?php
@@ -206,29 +228,40 @@
                 <form action="dropdown-one_be.php" method="post">
                 <h1 class="dropdown-list-name">Báo cáo doanh thu</h1>
                 <div class="dropdown-time">
-                    Từ
-                    <input type="date" id="txtDateStartOne" name="txtDateStartOne" class="dropdown-time-input" required oninvalid="this.setCustomValidity('Không được để trống')" oninput="this.setCustomValidity('')">
-                    Đến
-                    <input type="date" id="txtDateEndOne" name="txtDateEndOne" class="dropdown-time-input" required oninvalid="this.setCustomValidity('Không được để trống')" oninput="this.setCustomValidity('')"> 
-                    Loại thẻ
-                    <select class="selectType_dropdown dropdown-select" name="selectType_Add_one">
+                    <div class="dropdown-time-one">
+                    <div class="dropdown-time-two">
+                    <h2 class="dropdown-type">Từ:</h2>
+                    <input type="date" id="txtDateStart" name="txtDateStart" class="dropdown-time-input" required oninvalid="this.setCustomValidity('Không được để trống')" oninput="this.setCustomValidity('')"> 
+                    </div>
+                    <div class="dropdown-time-two">
+                    <h2 class="dropdown-type">Đến:</h2>
+                    <input type="date" id="txtDateEnd" name="txtDateEnd" class="dropdown-time-input" required oninvalid="this.setCustomValidity('Không được để trống')" oninput="this.setCustomValidity('')">
+                    </div>
+                    </div>
+                    <div class="dropdown-time-for">
+                    <div class="dropdown-time-test">
+                    <h2 class="dropdown-type">Loại thẻ:</h2>
+                    <select class="selectType_dropdown dropdown-select" name="selectType_Add">
                         <option value="Thường">Thường</option>
                         <option value="Tháng">Tháng</option>
-                      </select>
-                    <button class="dropdown-button">Tìm</button>
+                    </select>
+                    </div>
+                    <button class="dropdown-button" id="searchddbtn">Tìm</button>
+                    </div>
+                    
                 </div>
                 </form>
                 <div class="dropdown-list-enter-out">
                     <div class="dropdown-list-enter">
                         <h2>Tổng doanh thu</h2>
-                        <div>
-                            <h3>Ô tô</h3>
+                        <div class="input-number">
+                            <h3 class="input-type input-type-oto">Ô tô:</h3>
                             <input type="number" readonly value="<?php if(isset($_SESSION['car_dd_one'])){
                                 echo $_SESSION['car_dd_one'];
                             }else{ echo 0;} ?>" class="dropdown-list-enter-car dropdown-input">
                         </div>
-                        <div>
-                            <h3>Xe máy</h3>
+                        <div class="input-number">
+                            <h3 class="input-type">Xe máy:</h3>
                             <input type="number" readonly value="<?php if(isset($_SESSION['motor_dd_one'])){
                                 echo $_SESSION['motor_dd_one'];
                             } else{ echo 0;} ?>" class="dropdown-list-enter-moto dropdown-input">
