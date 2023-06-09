@@ -47,7 +47,7 @@
         if (mysqli_num_rows($result) > 0) {
           while ($row = mysqli_fetch_assoc($result)) {
 ?>
-            <a class="area-link" href="../QuanLyViTriGuiXe/parkingLocation.php?vehicleType=Xe máy">
+            <a class="area-link" href="../QuanLyViTriGuiXe/parkingLocation.php?vehicleType=Xe máy&areaName=<?php echo($row['areaName']) ?>">
               <div class="Area">
                 <i
                   class="fa area-icon fa-motorcycle"
@@ -75,7 +75,7 @@
         if (mysqli_num_rows($result) > 0) {
           while ($row = mysqli_fetch_assoc($result)) {
 ?>
-            <a class="area-link" href="../QuanLyViTriGuiXe/parkingLocation.php?vehicleType=Ô tô">
+            <a class="area-link" href="../QuanLyViTriGuiXe/parkingLocation.php?vehicleType=Ô tô&areaName=<?php echo($row['areaName']) ?>">
               <div class="Area">
                 <i
                   class="fa area-icon fa-motorcycle"
