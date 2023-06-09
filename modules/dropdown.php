@@ -44,7 +44,7 @@
         .dropdown-list {
             position: relative;
             display: block;
-            width: 800px;
+            width: 80%;
             height: 400px;
             background-color: #353030;
             color: aliceblue;
@@ -162,21 +162,17 @@
             font-size: 18px;
         }
         
-        .back-feedback {
-            cursor: pointer;
-            color: #fff;
-            background-color: rgb(226, 147, 0);
-            font-size: 20px;
-            width: 100px;
-            height: 40px;
-            outline: none;
-            border: 2px solid white;
-            border-radius: 5px;
-            -webkit-border-radius: 5px;
-            -moz-border-radius: 5px;
-            -ms-border-radius: 5px;
-            -o-border-radius: 5px;
-            position: relative;
+        .input-number{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .input-type{
+            font-size: 22px;
+            margin-right: 10px;
+        }
+        .input-type-oto{
+            padding-left: 27px;
         }
     </style>
         <?php
@@ -215,9 +211,7 @@
         <section>
         <div id="dropdown-test">
             <div class="dropdown-list">
-                <div class="close-dropdown">
-                    <i class="bi bi-x-lg"></i>
-                </div>
+                
                 <form action="dropdown_be.php" method="post">
                 <h1 class="dropdown-list-name">Lượng xe vào ra</h1>
                 <div class="dropdown-time">
@@ -236,14 +230,14 @@
                 <div class="dropdown-list-enter-out">
                     <div class="dropdown-list-enter">
                         <h2>Lượng xe vào</h2>
-                        <div>
-                            <h3>Ô tô</h3>
+                        <div class="input-number">
+                            <h3 class="input-type input-type-oto">Ô tô: </h3>
                             <input type="number" readonly value="<?php if(isset($_SESSION['c1'])){
                                 echo $_SESSION['c1'];
                             }else{ echo 0;} ?>" class="dropdown-list-enter-car dropdown-input">
                         </div>
-                        <div>
-                            <h3>Xe máy</h3>
+                        <div class="input-number">
+                            <h3 class="input-type">Xe máy:</h3>
                             <input type="number" readonly value="<?php if(isset($_SESSION['m1'])){
                                 echo $_SESSION['m1'];
                             } else{ echo 0;} ?>" class="dropdown-list-enter-moto dropdown-input">
@@ -251,14 +245,14 @@
                     </div>
                     <div class="dropdown-list-out">
                         <h2>Lượng xe ra</h2>
-                        <div>
-                            <h3>Ô tô</h3>
+                        <div class="input-number">
+                            <h3 class="input-type input-type-oto">Ô tô:</h3>
                             <input type="number" value="<?php if(isset($_SESSION['c0'])){
                                 echo $_SESSION['c0'];
                             } else{ echo 0;} ?>" class="dropdown-list-out-car dropdown-input">
                         </div>
-                        <div>
-                            <h3>Xe máy</h3>
+                        <div class="input-number">
+                            <h3 class="input-type">Xe máy:</h3>
                             <input type="number" value="<?php if(isset($_SESSION['m1'])){
                                 echo $_SESSION['m0'];
                             } else{ echo 0;} ?>" class="dropdown-list-out-moto dropdown-input">
