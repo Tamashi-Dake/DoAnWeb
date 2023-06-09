@@ -161,7 +161,8 @@
             -ms-border-radius: 5px;
             -o-border-radius: 5px;
             position: relative;
-            left: 31%;
+            left: 50%;
+            transform: translateX(-50%);
         }
     </style>
     <?php

@@ -2,7 +2,7 @@
 $servername = "localhost";
 $database = "webbaiguixe";
 $username = "root";
-$password = "123456";
+$password = "";
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $database);
 // Check connection

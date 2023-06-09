@@ -202,9 +202,7 @@
         <section>
         <div id="dropdown-test">
             <div class="dropdown-list">
-                <div class="close-dropdown">
-                    <i class="bi bi-x-lg"></i>
-                </div>
+                
                 <form action="dropdown-one_be.php" method="post">
                 <h1 class="dropdown-list-name">Báo cáo doanh thu</h1>
                 <div class="dropdown-time">
