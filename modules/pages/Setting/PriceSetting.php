@@ -24,6 +24,8 @@ else {
 
                 <!-- jQuery -->
                 <script src="../../plugins/jquery/jquery.min.js"></script>
+                <!-- Bootstrap 4 -->
+                <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
                 <!-- Google Font: Source Sans Pro -->
                 <link rel="stylesheet"
                     href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
@@ -165,11 +167,11 @@ else {
                                     <tbody>
                                         <tr>
                                             <td>Xe máy</td>
-                                            <td><input class='text-center form-control inputForm' id="numberMotor" type='number' name="numberMotor" step="1000" min="0" required oninvalid="this.setCustomValidity('Không được để trống')" oninput="this.setCustomValidity('')" value="<?php echo ($motor) ?>"></td>
+                                            <td><input class='text-center form-control inputForm' id="numberMotor" type='number' name="numberMotor" step="1000" min="0" required oninvalid="this.setCustomValidity('Không được để trống. Làm tròn đến hàng nghìn')" oninput="this.setCustomValidity('')" value="<?php echo ($motor) ?>"></td>
                                         </tr>
                                         <tr>
                                             <td>Ô tô</td>
-                                            <td><input class='text-center form-control inputForm' id="numberCar" type='number' name="numberCar" step="1000" min="0" required oninvalid="this.setCustomValidity('Không được để trống')" oninput="this.setCustomValidity('')" value="<?php echo ($car) ?>"></td>
+                                            <td><input class='text-center form-control inputForm' id="numberCar" type='number' name="numberCar" step="1000" min="0" required oninvalid="this.setCustomValidity('Không được để trống. Làm tròn đến hàng nghìn')" oninput="this.setCustomValidity('')" value="<?php echo ($car) ?>"></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -185,18 +187,18 @@ else {
                                         <tbody>
                                             <tr>
                                                 <td>Xe máy</td>
-                                                <td><input class='text-center form-control inputForm' id="numberMotorMonth" type='number' name="numberMotorMonth" step="1000" min="0" required oninvalid="this.setCustomValidity('Không được để trống')" oninput="this.setCustomValidity('')" value="<?php echo($motorMonth) ?>"></td>
+                                                <td><input class='text-center form-control inputForm' id="numberMotorMonth" type='number' name="numberMotorMonth" step="1000" min="0" required oninvalid="this.setCustomValidity('Không được để trống. Làm tròn đến hàng nghìn')" oninput="this.setCustomValidity('')" value="<?php echo($motorMonth) ?>"></td>
                                             </tr>
                                             <tr>
                                                 <td>Ô tô</td>
-                                                <td><input class='text-center form-control inputForm' id="numberCarMonth" type='number' name="numberCarMonth" step="1000" min="0" required oninvalid="this.setCustomValidity('Không được để trống')" oninput="this.setCustomValidity('')" value="<?php echo($carMonth) ?>"></td>
+                                                <td><input class='text-center form-control inputForm' id="numberCarMonth" type='number' name="numberCarMonth" step="1000" min="0" required oninvalid="this.setCustomValidity('Không được để trống. Làm tròn đến hàng nghìn')" oninput="this.setCustomValidity('')" value="<?php echo($carMonth) ?>"></td>
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <input class="right submit btn btn-primary" id="btnSave" type="submit" value="Lưu">
-                                    <!-- <button type="button" class='right btn btn-primary' data-toggle="modal" data-target="modalConfirm" id="btnSave">
+                                    <!-- <input class="right submit btn btn-primary" id="btnSave" type="submit" value="Lưu"> -->
+                                    <button type="button" class='right submit btn btn-primary' data-toggle="modal" data-target="#modalConfirm" id="btnSave">
                                         Lưu
-                                    </button> -->
+                                    </button>
                                     <div class="modal show" id="modalConfirm">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
@@ -208,19 +210,12 @@ else {
                                             </div>
                                             <div class="modal-body">
                                                 <div class="row" style="display:block">
-                                                <div class="col-md-6" style="    max-width: 100%;">
-                                                    <div class="card card-primary" style="box-shadow:none; margin:0;">
-                                                    <div class="card-body">
-                                                        <div class="form-group">
-                                                        <label for="confirm">Bạn có chắc chắn với sự thay đổi này?</label>
-                                                        </div>
-                                                    </div>
-                                                    </div>
-                                                </div>
+                                                    <label>Bạn có chắc chắn với sự thay đổi này?</label>
                                                 </div>
                                             </div>
                                             <div class="modal-footer justify-content-between">
-                                                <a class="btn btn-secondary" id="btnConfirmYes">Có</a>
+                                                <input class="btn btn-secondary" id="btnConfirmYes" type="submit" value="Có">
+                                                <!-- <a class="btn btn-secondary" id="btnConfirmYes">Có</a> -->
                                                 <button class="btn btn-primary" data-dismiss="modal" aria-label="Close">Không</button>
                                             </div>
                                             </div>
