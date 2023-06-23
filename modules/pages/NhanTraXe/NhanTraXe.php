@@ -178,6 +178,7 @@ if (isset($_SESSION['login']) == false) {
 
                             <div class="card-footer">
                                 <button type="reset" class="btn btn-secondary" id="btn_reset_Return">Đặt lại</button>
+                                <button type="submit" class="btn btn-warning" id="btn_warning_Return">Mất thẻ xe</button>
                                 <button type="submit" class="btn btn-primary" id="btn_submit_Return">Trả</button>
                             </div>
                         </form>
