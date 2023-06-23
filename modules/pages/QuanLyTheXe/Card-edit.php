@@ -67,6 +67,12 @@
                     <input type="text" id="txtLicensePlate_Edit" class="inputForMonthCard-Edit" name="txtLicensePlate_Edit" value="" required oninvalid="this.setCustomValidity('Không được để trống')"/>
                     <p id="errorLicensePlate_Edit" class="errorMessenge">.</p>
                   </div>
+                  <div class="form-group">
+                    <label for=""></label>
+                    <div class="form-group">
+                      <input type="checkbox" name="checkboxExtend_Edit" id="checkboxExtend_Edit" value="on"><span>Gia hạn</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

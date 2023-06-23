@@ -462,6 +462,7 @@
           $("#selectVehicleType_Edit option[value='"+ row.vehicleType +"']").prop('selected', true);
           $("#selectType_Edit option[value='"+ row.type +"']").prop('selected', true);
 
+
           // alert(row.date+ " " +row.customerName+ " " +row.customerIdentityCard+ " " +row.phoneNumber+ " " +row.licensePlate);
 
           $("#txtDate_Edit").val(row.date);
@@ -469,6 +470,8 @@
           $("#txtCustomerIdentityCard_Edit").val(row.customerIdentityCard);
           $("#txtPhoneNumber_Edit").val(row.phoneNumber);
           $("#txtLicensePlate_Edit").val(row.licensePlate);
+
+          $("#checkboxExtend_Edit").prop("checked", false);
 
           if ($("#selectType_Edit").val() == "Tháng") {
             $(".inputForMonthCard-Edit").prop('readonly', false);
@@ -481,14 +484,19 @@
           }
           if ($("#selectType_Edit").val() == "Thường") {
             $(".inputForMonthCard-Edit").prop('readonly', true);
+            $("#checkboxExtend_Edit").prop("disabled", true);
             clearFormEditWhenChangeTypeFormMonthToNormal();
           }
           $("#selectType_Edit").change(function () {
             if ($(this).val() == "Tháng") {
               $(".inputForMonthCard-Edit").prop('readonly', false);
+              $("#checkboxExtend_Edit").prop("disabled", false);
+              $("#checkboxExtend_Edit").prop("checked", false);
             }
             if ($(this).val() == "Thường") {
               $(".inputForMonthCard-Edit").prop('readonly', true);
+              $("#checkboxExtend_Edit").prop("disabled", true);
+              $("#checkboxExtend_Edit").prop("checked", false);
               clearFormEditWhenChangeTypeFormMonthToNormal();
             }
           });
@@ -596,6 +604,7 @@
       $("#txtCustomerIdentityCard_Edit").val("");
       $("#txtPhoneNumber_Edit").val("");
       $("#txtLicensePlate_Edit").val("");
+      $("#checkboxExtend_Edit").checked = false;
 
       $("#errorDate_Edit").html(".");
       $("#errorCustomerName_Edit").html(".");
