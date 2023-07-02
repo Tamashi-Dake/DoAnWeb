@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <script src="./plugins/jquery/jquery.min.js"></script>
-<body>
+<body style="background-color: beige !important;">
     <style>
         <?php
     include "../../guessIndex.css";
@@ -46,36 +46,21 @@
             display: block;
             width: 60%;
             height: 350px;
-            background-color: #353030;
-            color: aliceblue;
-            border: 3px solid rgb(226, 147, 0);
+            background-color: #D1CFB9;
+            color: black;
+            border: 3px solid transparent;
             border-radius: 5px;
             right: 0;
             left: 50%;
             transform: translateX(-50%);
         }
         
-        .close-dropdown {
-            position: absolute;
-            right: 0;
-            top: 0;
-            color: #fff;
-            padding: 12px;
-            cursor: pointer;
-            opacity: 0.9;
-        }
-        
-        .close-dropdown:hover {
-            opacity: 0.9;
-            background-color: rgb(226, 147, 0);
-            cursor: pointer;
-        }
         
         .dropdown-list-name {
             position: relative;
             text-align: center;
             font-size: 30px;
-            background: linear-gradient(to top, #FFAE46, #FFF050);
+            background: black;
             text-transform: uppercase;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -114,6 +99,7 @@
         .dropdown-type {
             font-size: 22px;
             margin-right: 10px;
+            color: black;
         }
         .dropdown-time-input {
             width: 130px;
@@ -158,11 +144,11 @@
         .dropdown-list-enter {
             width: 30%;
             height: 100%;
-            background-color: #000;
+            background-color: #E8E4BA;
             text-align: center;
             padding-bottom: 20px;
             border-radius: 5px;
-            border: 2px solid rgb(226, 147, 0);
+            border: 2px solid transparent;
             color: rgb(232, 228, 186);
         }
         
@@ -183,6 +169,7 @@
         .input-type{
             font-size: 22px;
             margin-right: 10px;
+            color: #000;
         }
         .input-type-oto{
             padding-left: 27px;
@@ -253,7 +240,7 @@
                 </form>
                 <div class="dropdown-list-enter-out">
                     <div class="dropdown-list-enter">
-                        <h2>Tổng doanh thu</h2>
+                        <h2 style="color:black;">Tổng doanh thu</h2>
                         <div class="input-number">
                             <h3 class="input-type input-type-oto">Ô tô:</h3>
                             <input type="number" readonly value="<?php if(isset($_SESSION['car_dd_one'])){
