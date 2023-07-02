@@ -22,6 +22,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://fontawesome.com/icons/car?f=classic&s=solid">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 </head>
 <script src="./plugins/jquery/jquery.min.js"></script>
 <body style="background-color: beige !important;">
@@ -158,7 +161,7 @@
         }
         
         .dropdown-list-enter {
-            width: 30%;
+            width: 25%;
             height: 100%;
             background-color: #E8E4BA;
             text-align: center;
@@ -170,7 +173,7 @@
         }
         
         .dropdown-list-out {
-            width: 30%;
+            width: 25%;
             height: 100%;
             background-color: #E8E4BA;
             text-align: center;
@@ -201,6 +204,11 @@
         }
         .input-type-oto{
             padding-left: 27px;
+        }
+        .icon_input {
+            color: #000;
+            font-size: 25px;
+            padding: 10px;
         }
     </style>
         <?php
@@ -270,13 +278,13 @@
                     <div class="dropdown-list-enter">
                         <h2 style="color:#000;">Lượng xe vào</h2>
                         <div class="input-number">
-                            <h3 class="input-type input-type-oto">Ô tô: </h3>
+                        <i class="fas fa-solid fa-car-side icon_input"></i>
                             <input type="number" readonly value="<?php if(isset($_SESSION['c1'])){
                                 echo $_SESSION['c1'];
                             }else{ echo 0;} ?>" class="dropdown-list-enter-car dropdown-input">
                         </div>
                         <div class="input-number">
-                            <h3 class="input-type">Xe máy:</h3>
+                        <i class="fa-solid fa-motorcycle icon_input"></i>
                             <input type="number" readonly value="<?php if(isset($_SESSION['m1'])){
                                 echo $_SESSION['m1'];
                             } else{ echo 0;} ?>" class="dropdown-list-enter-moto dropdown-input">
@@ -285,13 +293,13 @@
                     <div class="dropdown-list-out">
                         <h2 style="color:#000;">Lượng xe ra</h2>
                         <div class="input-number">
-                            <h3 class="input-type input-type-oto">Ô tô:</h3>
+                        <i class="fas fa-solid fa-car-side icon_input"></i>
                             <input type="number" value="<?php if(isset($_SESSION['c0'])){
                                 echo $_SESSION['c0'];
                             } else{ echo 0;} ?>" class="dropdown-list-out-car dropdown-input">
                         </div>
                         <div class="input-number">
-                            <h3 class="input-type">Xe máy:</h3>
+                        <i class="fa-solid fa-motorcycle icon_input"></i>
                             <input type="number" value="<?php if(isset($_SESSION['m1'])){
                                 echo $_SESSION['m0'];
                             } else{ echo 0;} ?>" class="dropdown-list-out-moto dropdown-input">

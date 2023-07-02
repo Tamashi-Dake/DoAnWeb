@@ -174,6 +174,11 @@
         .input-type-oto{
             padding-left: 27px;
         }
+        .icon_input {
+            color: #000;
+            font-size: 25px;
+            padding: 10px;
+        }
     </style>
     <?php
     include "../modules/header-navbar/header-admin.html";
@@ -242,13 +247,13 @@
                     <div class="dropdown-list-enter">
                         <h2 style="color:black;">Tổng doanh thu</h2>
                         <div class="input-number">
-                            <h3 class="input-type input-type-oto">Ô tô:</h3>
+                        <i class="fas fa-solid fa-car-side icon_input"></i>
                             <input type="number" readonly value="<?php if(isset($_SESSION['car_dd_one'])){
                                 echo $_SESSION['car_dd_one'];
                             }else{ echo 0;} ?>" class="dropdown-list-enter-car dropdown-input">
                         </div>
                         <div class="input-number">
-                            <h3 class="input-type">Xe máy:</h3>
+                        <i class="fa-solid fa-motorcycle icon_input"></i>
                             <input type="number" readonly value="<?php if(isset($_SESSION['motor_dd_one'])){
                                 echo $_SESSION['motor_dd_one'];
                             } else{ echo 0;} ?>" class="dropdown-list-enter-moto dropdown-input">
