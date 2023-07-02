@@ -1,8 +1,8 @@
-<div class="modal show" id="modalDel">
+<div class="modal show" id="modalMatThe">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">Xóa dữ liệu</h4>
+        <h4 class="modal-title">Mất thẻ xe</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -13,7 +13,7 @@
             <div class="card card-primary" style="box-shadow:none; margin:0;border:0;">
               <div class="card-body">
                 <div class="form-groups">
-                  <label for="confirm">Bạn có chắc chắn XÓA?</label>
+                  <label for="confirm">Bạn có muốn Mất thẻ xe?</label>
                 </div>
               </div>
             </div>
