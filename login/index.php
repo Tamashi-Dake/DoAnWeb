@@ -32,7 +32,7 @@
             flex-direction: column;
             justify-content: center;
             width: 800px;
-            height: 400px;
+            height: 330px;
             background-color: black;
             top: 25%;
             border-radius: 5px;
@@ -170,7 +170,7 @@
     </style>
     <div id="login">
         <form action="login_be.php" class="login-name bor" method="post">
-            <img src="/DoAnWeb/login/imgs/duy.jpg" alt="duy" class="img-login">
+            <img src="/DoAnWeb/img/smol logo.png" alt="duy" class="img-login">
             <i style="color: brown;" class="fa fa-xmark"></i>
             <h1 class="name-login">ĐĂNG NHẬP</h1>
             <div class="user-login">
