@@ -1,6 +1,6 @@
 
 
-<div style="position: fixed; background-color: lawngreen; font-size: 1.3em; width: 20%; top: 25vh; right: 10px; z-index: 0; box-sizing: border-box; max-height: 50vh; padding: 20px; border-radius: 20px; overflow: auto;">
+<div style="position: fixed; background-color: #c5c48d; font-size: 1.3em; width: 20%; top: 300px; right: 10px; z-index: 0; box-sizing: border-box; max-height: 50vh; padding: 20px; border-radius: 20px; overflow: auto;">
 <?php
     $sqlQuery = "SELECT * FROM area WHERE vehicleType = 'Xe máy'";
     $result = mysqli_query($conn, $sqlQuery);
