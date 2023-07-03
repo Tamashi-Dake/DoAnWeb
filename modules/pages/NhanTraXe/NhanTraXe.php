@@ -21,7 +21,9 @@ if (isset($_SESSION['login']) == false) {
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
             <title>ADEPRO - Nhận/Trả xe</title>
-
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         </head>
 
         <body>
@@ -178,7 +180,7 @@ if (isset($_SESSION['login']) == false) {
 
                             <div class="card-footer">
                                 <button type="reset" class="btn btn-secondary" id="btn_reset_Return">Đặt lại</button>
-                                <button type="button" class="btn btn-warning" id="btn_warning_Return">Mất thẻ xe</button>
+                                <button type="button" class='btn btn-warning' data-toggle="modal" data-target="#modalMatThe" id="btn_warning_Return">Mất thẻ xe</button>
                                 <button type="submit" class="btn btn-primary" id="btn_submit_Return">Trả</button>
                             </div>
                         </form>
@@ -186,10 +188,12 @@ if (isset($_SESSION['login']) == false) {
                 </div>
             </main>
             <?php include "../../footer.html" ?>
+            <?php include "MatTheXe.php" ?>
+            
         </body>
         </html>
-<script src="../../plugins/jquery/jquery.min.js"></script>
-<script>
+        <script src="../../plugins/jquery/jquery.min.js"></script>
+        <script>
     $(document).ready(function(){
 // Nhận xe
 // Gửi dữ liệu đi
@@ -479,10 +483,9 @@ if (isset($_SESSION['login']) == false) {
             }
         });
 
-// Trả xe bắt buộc
-
+    // Trả xe bắt buộc
         // Gửi dữ liệu vào database
-        $("#btn_warning_Return").click(function(event){
+        $("#btn_submit_delete").click(function(event){
             event.preventDefault();
             var licensePlate = $("#txtLicensePlate_Return").val();
             if (licensePlate == "") {

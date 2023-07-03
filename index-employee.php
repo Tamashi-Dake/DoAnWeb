@@ -85,7 +85,7 @@
           </div>
           <?php
           if($row['type']==0){
-            $_SESSION['rp_error'] = "ko có xe cần tìm trong bãi";?>
+            $_SESSION['rp_error'] = "Không có xe cần tìm trong bãi";?>
             <div class="searchResult">        
               <p><i class="fa-sharp fa-solid fa-cars"></i><?php echo $_SESSION['rp_error']; ?> </p>
             </div>
@@ -107,6 +107,7 @@
       
     </main>
     <?php include "./modules/footer.html" ?>
+    <?php include "./leftbar_rightbar.php" ?>
 </body>
 </html>
 <?php 
