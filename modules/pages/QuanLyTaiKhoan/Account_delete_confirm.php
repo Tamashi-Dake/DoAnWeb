@@ -9,7 +9,7 @@
       </div>
       <div class="modal-body">
         <div class="row" style="display:block">
-          <div class="col-md-6" style="    max-width: 100%;">
+          <div class="col-md-6" style="    min-width: 100%;">
             <div class="card card-primary" style="box-shadow:none; margin:0;">
               <div class="card-body">
                 <div class="form-group">
