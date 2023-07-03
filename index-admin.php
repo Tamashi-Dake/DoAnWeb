@@ -106,8 +106,8 @@
     }
       ?>
     </main>
-    <?php include "./leftbar_rightbar.php" ?>
     <?php include "./modules/footer.html" ?>
+    <?php include "./popup_quantity_empty.php" ?>
 </body>
 </html>
 <?php 

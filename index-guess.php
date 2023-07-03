@@ -93,5 +93,5 @@
       ?>
     </main>
     <?php include "./modules/footer.html" ?>
-    <?php include "./leftbar_rightbar.php" ?>
+    <?php include "./popup_quantity_empty.php" ?>
 </html>
