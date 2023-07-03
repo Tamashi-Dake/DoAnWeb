@@ -223,17 +223,17 @@
                     <div class="dropdown-time-one">
                     <div class="dropdown-time-two">
                     <h2 class="dropdown-type">Từ:</h2>
-                    <input type="date" id="txtDateStart" name="txtDateStart" class="dropdown-time-input" required oninvalid="this.setCustomValidity('Không được để trống')" oninput="this.setCustomValidity('')"> 
+                    <input type="date" id="txtDateStartOne" name="txtDateStartOne" class="dropdown-time-input" required oninvalid="this.setCustomValidity('Không được để trống')" oninput="this.setCustomValidity('')"> 
                     </div>
                     <div class="dropdown-time-two">
                     <h2 class="dropdown-type">Đến:</h2>
-                    <input type="date" id="txtDateEnd" name="txtDateEnd" class="dropdown-time-input" required oninvalid="this.setCustomValidity('Không được để trống')" oninput="this.setCustomValidity('')">
+                    <input type="date" id="txtDateEndOne" name="txtDateEndOne" class="dropdown-time-input" required oninvalid="this.setCustomValidity('Không được để trống')" oninput="this.setCustomValidity('')">
                     </div>
                     </div>
                     <div class="dropdown-time-for">
                     <div class="dropdown-time-test">
                     <h2 class="dropdown-type">Loại thẻ:</h2>
-                    <select class="selectType_dropdown dropdown-select" name="selectType_Add">
+                    <select class="selectType_dropdown dropdown-select" name="selectType_Add_one">
                         <option value="Thường">Thường</option>
                         <option value="Tháng">Tháng</option>
                     </select>
