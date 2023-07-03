@@ -78,7 +78,7 @@
             <a class="area-link" href="../QuanLyViTriGuiXe/parkingLocation.php?vehicleType=Ô tô&areaName=<?php echo($row['areaName']) ?>">
               <div class="Area">
                 <i
-                  class="fa area-icon fa-motorcycle"
+                  class="fa area-icon fa-car"
                   style="font-size: 2rem !important"
                 ></i>
                 <div class="Area-details">

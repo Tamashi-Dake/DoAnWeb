@@ -2,7 +2,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">Mất thẻ xe</h4>
+        <h4 class="modal-title">Trả xe bắt buộc</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -13,7 +13,7 @@
             <div class="card card-primary" style="box-shadow:none; margin:0;border:0;">
               <div class="card-body">
                 <div class="form-groups">
-                  <label for="confirm">Bạn có muốn Mất thẻ xe?</label>
+                  <label for="confirm">Trả xe bắt buộc chỉ áp dụng cho trường hợp bị mất thẻ xe. Bạn có chắc chắn muốn Trả xe bắt buộc?</label>
                 </div>
               </div>
             </div>
@@ -21,7 +21,7 @@
         </div>
       </div>
       <div class="modal-footer justify-content-between">
-        <a class="btn btn-secondary" id="btn_submit_delete">Có</a>
+        <a class="btn btn-secondary" data-dismiss="modal" aria-label="Close" id="btn_submit_delete">Có</a>
         <button class="btn btn-primary" data-dismiss="modal" aria-label="Close">Không</button>
       </div>
     </div>

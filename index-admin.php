@@ -89,7 +89,7 @@
           </div>
           <?php
           if($row['type']==0){
-            $_SESSION['rp_error'] = "ko có xe trong bãi";?>
+            $_SESSION['rp_error'] = "Không có xe trong bãi";?>
          <p><i class="fa-sharp fa-solid fa-cars"></i><?php echo $_SESSION['rp_error']; ?> </p>
             <?php
           }
@@ -106,6 +106,7 @@
     }
       ?>
     </main>
+    <?php include "./leftbar_rightbar.php" ?>
     <?php include "./modules/footer.html" ?>
 </body>
 </html>

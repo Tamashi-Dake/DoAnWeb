@@ -482,6 +482,54 @@ if (isset($_SESSION['login']) == false) {
                 });
             }
         });
+
+    // Trả xe bắt buộc
+        // Gửi dữ liệu vào database
+        $("#btn_submit_delete").click(function(event){
+            event.preventDefault();
+            var licensePlate = $("#txtLicensePlate_Return").val();
+            if (licensePlate == "") {
+                if (licensePlate == "") {
+                    $("#errorLicensePlate_Return").html("Không được để trống");
+                }
+            }
+            else {
+                var type = $("#txtType_Return").val();
+                var areaName = "<?php echo($_GET['areaName']) ?>";
+                var vehicleType = "<?php echo($_GET['vehicleType']) ?>";
+                $.ajax({
+                    url: "TraXeBatBuoc-action.php",
+                    type: "post",
+                    dataType: "html",
+                    data: {
+                        licensePlate, type, areaName, vehicleType
+                    }
+                }).done(function(result){
+                    decode = JSON.parse(result);
+                    var date = decode.date;
+                    var time = decode.time;
+                    var money = decode.money;
+                    var success = decode.success;
+                    var error = decode.error;
+                    
+                    // Thông báo lỗi logic nghiệp vụ
+                    if (success != "") {
+                        turnOnNoftification(true, success);
+                        $("#txtDate_Return").val(date);
+                        $("#txtTime_Return").val(time);
+                        $("#txtMoney_Return").val(money);
+                    }
+                    if (error != "") {
+                        turnOnNoftification(false, error);
+                        $("#txtDate_Return").val("");
+                        $("#txtTime_Return").val("");
+                        $("#txtMoney_Return").val("");
+                    }
+                    
+                    // alert("date: "+ date +"\ntime: "+ time +"\nmoney: "+ money + "\nsuccess: "+ success +"\nerror: "+ error);
+                });
+            }
+        });
     }); 
 </script>
 

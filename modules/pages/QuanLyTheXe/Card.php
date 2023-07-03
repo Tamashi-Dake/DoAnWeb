@@ -481,10 +481,13 @@
             $("#errorCustomerIdentityCard_Edit").html(".");
             $("#errorPhoneNumber_Edit").html(".");
             $("#errorLicensePlate_Edit").html(".");
+            $("#checkboxExtend_Edit").prop("disabled", false);
+            $("#checkboxExtend_Edit").prop("checked", false);
           }
           if ($("#selectType_Edit").val() == "Thường") {
             $(".inputForMonthCard-Edit").prop('readonly', true);
             $("#checkboxExtend_Edit").prop("disabled", true);
+            $("#checkboxExtend_Edit").prop("checked", false);
             clearFormEditWhenChangeTypeFormMonthToNormal();
           }
           $("#selectType_Edit").change(function () {
