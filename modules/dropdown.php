@@ -167,7 +167,7 @@
             text-align: center;
             padding-bottom: 20px;
             border-radius: 5px;
-            border: 2px solid rgb(226, 147, 0);
+            border: 2px solid transparent;
             margin-right: 88px;
             color: rgb(232, 228, 186);
         }
@@ -179,7 +179,7 @@
             text-align: center;
             padding-bottom: 20px;
             border-radius: 5px;
-            border: 2px solid rgb(226, 147, 0);
+            border: 2px solid transparent;
             margin-left: 88px;
             color: rgb(232, 228, 186);
         }
