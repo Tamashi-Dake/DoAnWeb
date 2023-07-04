@@ -90,7 +90,6 @@ session_start();
             }
             else{
                 $user_edit = $_POST["txtuser_edit"];
-                $pass_edit = $_POST["txtpass_edit"];
                 $name_edit = $_POST["txtname_edit"];
                 $pos_edit = $_POST["slpos_edit"];
                 $idcard_edit = $_POST["txtidcard_edit"];
@@ -107,7 +106,6 @@ session_start();
                 $sql3 = "update account 
                 set 
                 userName='$user_edit',
-                password='$pass_edit',
                 name='$name_edit',
                 position='$pos_edit',
                 identityCard='$idcard_edit',

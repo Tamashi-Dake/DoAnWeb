@@ -26,17 +26,6 @@
                           <p class="errorMessenge" id="erMUserE"></p>
                         </div>
                         <div class="form-group">
-                          <label for="inputPassword">Mật khẩu</label>
-                          <input
-                            type="text"
-                            id="inputPassword_Edit"
-                            class="form-control"
-                            value=""
-                            name="txtpass_edit"
-                          />
-                          <p class="errorMessenge" id="erMPassE"></p>
-                        </div>
-                        <div class="form-group">
                           <label for="inputName">Họ tên</label>
                           <input
                             type="text"

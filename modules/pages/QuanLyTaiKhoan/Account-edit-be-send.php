@@ -11,7 +11,6 @@
     $Edit=mysqli_query($conn,$sql);
     while($row = mysqli_fetch_assoc($Edit)){
         $Editarr['userName'] = $row['userName'];
-        $Editarr['password'] = $row['password'];
         $Editarr['name'] = $row['name'];
         $Editarr['position'] = $row['position'];
         $Editarr['identityCard'] = $row['identityCard'];

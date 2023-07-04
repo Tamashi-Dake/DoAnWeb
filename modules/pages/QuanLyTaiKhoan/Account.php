@@ -335,7 +335,6 @@
         }).done(function(rs){
           var row = JSON.parse(rs);
           var userName = row.userName;
-          var password = row.password;
           var name = row.name;
           var position = row.position;
           var identityCard = row.identityCard;
@@ -344,7 +343,6 @@
 
           
           $("#inputUser_Edit").val(userName);
-          $("#inputPassword_Edit").val(password);
           $("#inputName_Edit").val(name);
           $("#inputCCCD_Edit").val(identityCard);
           $("#inputBday_Edit").val(birth);
@@ -365,7 +363,7 @@
     }
     // lũ dưới nhìn có vẻ dài đấy nhưng thực chất chả khác nhau là mấy,có thể viết 1 function xong dùng cả lũ nhưng thôi,lỡ làm 1 cái r copy đi,xóa đi làm lại hơi mệt
     // edit account tb lỗi
-          $id = $us = $na = $pa = true;
+          $id = $us = $na = true;
           $('#inputCCCD_Edit').on('input',function(){
               text = $('#inputCCCD_Edit').val();
               const regex = new RegExp(/^[0-9]{12}$/);
@@ -400,24 +398,6 @@
                 $('#erMUserE').html("User đang để trống");
                 $('#submitEditAccount').attr("disabled",true);
                 $us = false;
-              }
-          });
-          $('#inputPassword_Edit').on('input',function(){
-              text = $('#inputPassword_Edit').val();
-              const regex = new RegExp(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/);
-              if(regex.test(text)==false){
-                $('#erMPassE').html("Nhập sai định dạng Password,tối thiểu 8 kí tự gồm chữ và số ko có kí tự đặc biệt");
-                $('#submitEditAccount').attr("disabled",true);
-                $pa = false;
-              }
-              else{
-                $('#erMPassE').html(" ");
-                $pa = true;
-              }
-              if($('#inputPassword_Edit').val() == ""){
-                $('#erMPassE').html("Password đang để trống");
-                $('#submitEditAccount').attr("disabled",true);
-                $pa = false;
               }
           });
           $('#inputName_Edit').on('input',function(){
@@ -514,7 +494,7 @@
               }
           });
           $('.form-control').on('input',function(){
-              if($id == true && $pa == true && $us == true && $na == true){
+              if($id == true && $us == true && $na == true){
                 $('#submitEditAccount').attr("disabled",false);
               }
               else{
