@@ -1,5 +1,10 @@
 <?php
     session_start();
+
+    if(isset($_SESSION['ForgetU']) == false || $_SESSION['ForgetU']==false){
+        header("Location: /DoAnWeb/login/forget_account_user.php");
+    }
+    else{
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +16,7 @@
     <title>Document</title>
     <!-- <link rel="stylesheet" href="/DoAnWeb/login/assets/main.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="../bootstrap.css" rel="stylesheet">
 </head>
 <!-- test -->
 
@@ -29,10 +35,11 @@
         #login {
             position: absolute;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            flex-direction:row;
+            justify-content: space-around;
+            justify-items: center;
             width: 800px;
-            height: 330px;
+            height: 400px;
             background-color: black;
             top: 25%;
             border-radius: 5px;
@@ -96,6 +103,7 @@
         
         .name-login {
             display: flex;
+            margin-top:8px;
             justify-content: center;
             font-size: 30px;
             background: linear-gradient(to top, #FFAE46, #FFF050);
@@ -118,7 +126,7 @@
         }
         
         .text-login {
-            margin-left: 465px;
+            margin-left: 20px;
             margin-bottom: 5px;
         }
         
@@ -169,47 +177,35 @@
         }
         #btnforget{
             margin-left: 20px;
-            padding:7px;
-            text-decoration-line: none;
-            cursor: pointer;
-            width: 150px;
-            color: #fff;
-            background-color: rgb(226, 147, 0);
-            font-size: 20px;
-            outline: none;
-            border: 2px solid white;
-            height: 40px;
-            border-radius: 5px;
+            margin
+        }
+        #login-box{
+            display:flex;
+            flex-direction:column;
+            justify-content:space-evenly;
         }
     </style>
     <div id="login">
-        <form action="login_be.php" class="login-name bor" method="post">
-            <img src="/DoAnWeb/img/smol logo.png" alt="duy" class="img-login">
-            <i style="color: brown;" class="fa fa-xmark"></i>
-            <h1 class="name-login">ĐĂNG NHẬP</h1>
+        <form action="forget_account_password_be.php" id="login-box" class="login-name bor" method="post">
+            <h1 class="name-login">Quên Mật Khẩu</h1>
             <div class="user-login">
-                <p class="text-login">Tên đăng nhập:</p>
-                <input type="text" class="input-text input-login" name="txtuser" placeholder="Username">
+                <b class="text-login">Mật khẩu cũ:</b>
+                <input type="text" class="input-text input-login" name="txtpassF" placeholder="Password">
             </div>
-            <div class="pass-login">
-                <p class="text-pass-login">Mật khẩu:</p>
-                <input type="password" class="input-pass input-login" name="txtpass" placeholder="Password">
-            </div>
-                <button class="button">LOGIN</button>
-                <a class="" href="forget_account_user.php" id="btnforget">Quên mật khẩu</a>
-                <div class="error_login" style="margin-top:20px;"><center><font color="red"><b><?php    if(!isset($_SESSION['error_login']))
+                <button class="button">Submit</button>
+                <div class="error_login" style="margin-top:20px;"><center><font color="red"><b><?php    if(!isset($_SESSION['error_login_F']))
                                                                     {
-                                                                        unset($_SESSION['error_login']);
+                                                                        unset($_SESSION['error_login_F']);
                                                                     }
                                                                     else
-                                                                        echo $_SESSION['error_login'];
-                                                                        unset($_SESSION['error_login']);
+                                                                        echo $_SESSION['error_login_F'];
                                                                     ?>
                                     </b></font></center>
+                                    <?php unset($_SESSION['error_login_F']);  ?>
                 </div>
         </form>
     </div>
 
 </body>
-
+<?php }?>
 </html>
