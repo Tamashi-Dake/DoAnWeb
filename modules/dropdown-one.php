@@ -183,7 +183,7 @@
     <?php
     include "../modules/header-navbar/header-admin.html";
     ?>
-    <main style="margin-top: 10vh">
+    <main style="margin-top: 10vh; height: 50vh;">
     <?php
     if (isset($_SESSION['error_dd_one_txt'])) {
       if ($_SESSION['error_dd_one_txt'] != "") {
