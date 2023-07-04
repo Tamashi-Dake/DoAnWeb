@@ -1,4 +1,3 @@
-create database webbaiguixe;
 USE webbaiguixe;
 -- Payment	(giá trị của hóa đơn chỉ mang tính minh họa cho Front-end, nên không có độ chính xác logic)
 -- 			(lý do, tính toán giữa các bảng tốn rất nhiều thời gian ("có thể" dùng Trigger để tính toán luôn), Front-end cứ dùng tạm dữ liệu phía dưới)
