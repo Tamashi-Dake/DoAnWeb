@@ -167,20 +167,6 @@
             background-color: rgb(226, 147, 0);
             border-top-right-radius: 4px;
         }
-        #btnforget{
-            margin-left: 20px;
-            padding:7px;
-            text-decoration-line: none;
-            cursor: pointer;
-            width: 150px;
-            color: #fff;
-            background-color: rgb(226, 147, 0);
-            font-size: 20px;
-            outline: none;
-            border: 2px solid white;
-            height: 40px;
-            border-radius: 5px;
-        }
     </style>
     <div id="login">
         <form action="login_be.php" class="login-name bor" method="post">
@@ -196,14 +182,12 @@
                 <input type="password" class="input-pass input-login" name="txtpass" placeholder="Password">
             </div>
                 <button class="button">LOGIN</button>
-                <a class="" href="forget_account_user.php" id="btnforget">Quên mật khẩu</a>
                 <div class="error_login" style="margin-top:20px;"><center><font color="red"><b><?php    if(!isset($_SESSION['error_login']))
                                                                     {
                                                                         unset($_SESSION['error_login']);
                                                                     }
                                                                     else
                                                                         echo $_SESSION['error_login'];
-                                                                        unset($_SESSION['error_login']);
                                                                     ?>
                                     </b></font></center>
                 </div>
